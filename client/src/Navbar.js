@@ -1,4 +1,5 @@
 import "./Navbar.css";
+import { BsSearch } from "react-icons/bs";
 
 function Navbar() {
   return (
@@ -7,6 +8,9 @@ function Navbar() {
       <div className="navbar">
         <p>Log In</p>
         <p>Create Acct</p>
+        <p>
+          <BsSearch />
+        </p>
       </div>
     </div>
   );
