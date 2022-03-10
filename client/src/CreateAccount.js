@@ -33,7 +33,6 @@ function CreateAccount() {
   function handleChange(e) {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name, value);
 
     setOwner({
       ...owner,
@@ -70,6 +69,15 @@ function CreateAccount() {
 
           <br />
           <button>Submit</button>
+          {errors.length > 0 && (
+            <ul>
+              {errors.map((error) => (
+                <p className="errors" key={error}>
+                  {error}
+                </p>
+              ))}
+            </ul>
+          )}
         </form>
       </div>
     </>

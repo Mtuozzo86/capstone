@@ -9,13 +9,13 @@
   text-align: center;
 }
 
-form {
-  /* border: 1px solid black; */
+/* form {
+  border: 1px solid black;
   height: 500px;
   width: 600px;
-}
+} */
 
-input {
+/* input {
   padding: 8px;
   margin: 10px;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
@@ -30,4 +30,4 @@ button {
   width: 78%;
   color: rgb(0, 0, 0);
   background-color: rgb(231, 226, 226);
-}
+} */

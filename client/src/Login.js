@@ -4,6 +4,8 @@ import { useState } from "react";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([]);
+  console.log(errors.error);
 
   function handleEmail(e) {
     setEmail(e.target.value);
@@ -24,6 +26,10 @@ function Login() {
         email,
         password,
       }),
+    }).then((resp) => {
+      if (!resp.ok) {
+        resp.json().then((message) => setErrors(message));
+      }
     });
   }
 
@@ -44,6 +50,7 @@ function Login() {
         />
         <br />
         <button>Submit</button>
+        {errors ? <p>{errors.error}</p> : null}
       </form>
     </div>
   );

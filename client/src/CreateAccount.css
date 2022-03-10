@@ -11,12 +11,12 @@
 
 form {
   /* border: 1px solid black; */
-  height: 500px;
+  height: 400px;
   width: 600px;
 }
 
 input {
-  padding: 8px;
+  padding: 12px 8px;
   margin: 10px;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
   border: 0px;
