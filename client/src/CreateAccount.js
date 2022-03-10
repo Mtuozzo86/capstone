@@ -33,35 +33,37 @@ function CreateAccount() {
   }
 
   return (
-    <div className="create-form-container">
-      <form onSubmit={handleSubmit}>
-        <input
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={owner.email}
-          onChange={handleChange}
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={owner.password}
-          onChange={handleChange}
-        />
+    <>
+      <div className="create-form-container">
+        <form onSubmit={handleSubmit}>
+          <input
+            name="email"
+            type="text"
+            placeholder="Email"
+            value={owner.email}
+            onChange={handleChange}
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={owner.password}
+            onChange={handleChange}
+          />
 
-        <input
-          name="password_confirmation"
-          type="password"
-          placeholder="Confirm Password"
-          value={owner.password_confirmation}
-          onChange={handleChange}
-        />
+          <input
+            name="password_confirmation"
+            type="password"
+            placeholder="Confirm Password"
+            value={owner.password_confirmation}
+            onChange={handleChange}
+          />
 
-        <br />
-        <button>Submit</button>
-      </form>
-    </div>
+          <br />
+          <button>Submit</button>
+        </form>
+      </div>
+    </>
   );
 }
 
