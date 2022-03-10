@@ -6,7 +6,11 @@ class OwnersController < ApplicationController
 
   def create
     owner = Owner.create(owner_params)
-    render json: owner
+    if owner.valid?
+      render json: owner
+    else
+      render json: { error: owner.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private

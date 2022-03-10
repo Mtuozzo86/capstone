@@ -2,6 +2,8 @@ import "./CreateAccount.css";
 import { useState } from "react";
 
 function CreateAccount() {
+  const [errors, setErrors] = useState([]);
+
   const [owner, setOwner] = useState({
     email: "",
     password: "",
@@ -18,6 +20,13 @@ function CreateAccount() {
       body: JSON.stringify({
         owner,
       }),
+    }).then((resp) => {
+      if (resp.ok) {
+        resp.json().then(() => console.log("good"));
+        setErrors([]);
+      } else {
+        resp.json().then((errors) => setErrors(errors.error));
+      }
     });
   }
 
