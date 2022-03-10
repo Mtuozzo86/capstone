@@ -3,11 +3,9 @@ import { useState } from "react";
 
 function CreateAccount() {
   const [owner, setOwner] = useState({
-    name: "",
     email: "",
-    phone: "",
-    website: "",
-    occupation: "",
+    password: "",
+    password_confirmation: "",
   });
 
   function handleSubmit(e) {
@@ -38,20 +36,6 @@ function CreateAccount() {
     <div className="create-form-container">
       <form onSubmit={handleSubmit}>
         <input
-          name="occupation"
-          type="text"
-          placeholder="Occupation"
-          value={owner.occupation}
-          onChange={handleChange}
-        />
-        <input
-          name="name"
-          type="text"
-          placeholder="Name"
-          value={owner.name}
-          onChange={handleChange}
-        />
-        <input
           name="email"
           type="text"
           placeholder="Email"
@@ -59,23 +43,21 @@ function CreateAccount() {
           onChange={handleChange}
         />
         <input
-          name="website"
-          type="text"
-          placeholder="Website"
-          value={owner.website}
+          name="password"
+          type="password"
+          placeholder="Password"
+          value={owner.password}
           onChange={handleChange}
         />
+
         <input
-          name="phone"
-          type="text"
-          placeholder="Phone"
-          value={owner.phone}
+          name="password_confirmation"
+          type="password"
+          placeholder="Confirm Password"
+          value={owner.password_confirmation}
           onChange={handleChange}
         />
-        <input type="text" placeholder="Street Address" />
-        <input type="text" placeholder="City" />
-        <input type="text" placeholder="State" />
-        <input type="text" placeholder="ZIP/Postal" />
+
         <br />
         <button>Submit</button>
       </form>

@@ -1,0 +1,3 @@
+Creating a brand new user
+In their model, create a - has_secure_password - macro
+Add -> password_digest <- string to their table
