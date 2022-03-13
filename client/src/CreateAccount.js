@@ -1,10 +1,27 @@
 import "./CreateAccount.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateAccount() {
+  const navigateToSuccessPage = useNavigate();
   const [errors, setErrors] = useState([]);
 
+  // HANDLING SUCCUSSFUL ACCOUNT CREATION
+
+  // HANDLING ERROR MESSAGES
+  const errorMessages = errors.length > 0 && (
+    <ul>
+      {errors.map((error) => (
+        <p className="errors" key={error}>
+          {error}
+        </p>
+      ))}
+    </ul>
+  );
+
   const [owner, setOwner] = useState({
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
     password_confirmation: "",
@@ -22,7 +39,7 @@ function CreateAccount() {
       }),
     }).then((resp) => {
       if (resp.ok) {
-        resp.json().then(() => console.log("good"));
+        resp.json().then(() => navigateToSuccessPage("/thankyou"));
         setErrors([]);
       } else {
         resp.json().then((errors) => setErrors(errors.error));
@@ -44,6 +61,26 @@ function CreateAccount() {
     <>
       <div className="create-form-container">
         <form onSubmit={handleSubmit}>
+          <div className="first-lastname">
+            {" "}
+            <input
+              className="name"
+              name="first_name"
+              type="text"
+              placeholder="First Name"
+              value={owner.first_name}
+              onChange={handleChange}
+            />
+            <input
+              className="name"
+              name="last_name"
+              type="text"
+              placeholder="Last Name"
+              value={owner.last_name}
+              onChange={handleChange}
+            />
+          </div>
+
           <input
             name="email"
             type="text"
@@ -69,15 +106,8 @@ function CreateAccount() {
 
           <br />
           <button>Submit</button>
-          {errors.length > 0 && (
-            <ul>
-              {errors.map((error) => (
-                <p className="errors" key={error}>
-                  {error}
-                </p>
-              ))}
-            </ul>
-          )}
+
+          {errorMessages}
         </form>
       </div>
     </>

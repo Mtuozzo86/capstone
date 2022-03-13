@@ -1,0 +1,27 @@
+.success-message {
+  margin-top: 100px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-home {
+  display: flex;
+
+  height: 90vh;
+}
+
+.react-icons {
+  border-radius: 15px;
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 14px;
+  vertical-align: middle;
+  font-size: 4rem;
+  color: rgb(48, 75, 75);
+  background-color: rgb(191, 207, 207);
+}

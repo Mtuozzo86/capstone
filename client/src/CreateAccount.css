@@ -1,10 +1,11 @@
 .create-form-container {
-  height: 90vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
+  font-size: 18px;
   color: rgb(184, 78, 78);
   text-align: center;
 }
@@ -29,5 +30,5 @@ button {
   border: 0px;
   width: 78%;
   color: rgb(0, 0, 0);
-  background-color: rgb(231, 226, 226);
+  background-color: rgb(191, 207, 207);
 }
