@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import { FaAddressCard, FaClock } from "react-icons/fa";
+import CreateOwnerAddress from "./OwnerForms/CreateOwnerAddress";
 
 function OwnerLandingPage({ loggedInUser }) {
   function handleLogout() {
@@ -8,17 +9,24 @@ function OwnerLandingPage({ loggedInUser }) {
     });
   }
 
+  const [edit, setIsEditting] = useState(false);
+
+  function handleClick() {
+    setIsEditting((edit) => !edit);
+  }
+
   return (
     <>
       <div className="container-home">
         <div className="react-icons">
-          <li>
+          <li onClick={handleClick}>
             <FaAddressCard />
           </li>
           <li>
             <FaClock />
           </li>
         </div>
+        {edit ? <CreateOwnerAddress /> : null}
       </div>
     </>
   );
