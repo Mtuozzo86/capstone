@@ -65,7 +65,9 @@ function CreateOwnerAddress({ loggedInUser }) {
           />
 
           <br />
-          <button>Submit</button>
+          <button type="submit" className="form-submit-button">
+            Submit
+          </button>
         </form>
       </div>
     </>

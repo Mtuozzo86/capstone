@@ -105,7 +105,9 @@ function CreateAccount() {
           />
 
           <br />
-          <button>Submit</button>
+          <button type="submit" className="form-submit-button">
+            Submit
+          </button>
 
           {errorMessages}
         </form>

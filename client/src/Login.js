@@ -54,7 +54,9 @@ function Login({ userInfo }) {
           onChange={handlePassword}
         />
         <br />
-        <button>Submit</button>
+        <button type="submit" className="form-submit-button">
+          Submit
+        </button>
         {errors ? <p>{errors.error}</p> : null}
       </form>
     </div>

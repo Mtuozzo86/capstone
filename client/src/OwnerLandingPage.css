@@ -1,0 +1,30 @@
+.react-calendar {
+  border: none;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
+  width: 400px;
+  height: auto;
+}
+
+.calendar {
+  margin: 100px;
+  border: none;
+}
+
+.landing-page-container-home {
+  display: flex;
+  height: 90vh;
+}
+
+.react-icons {
+  border-radius: 15px;
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 14px;
+  vertical-align: middle;
+  font-size: 4rem;
+  color: rgb(48, 75, 75);
+  background-color: rgb(191, 207, 207);
+  /* height: 90vh; */
+}
