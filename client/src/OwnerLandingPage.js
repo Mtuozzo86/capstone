@@ -17,7 +17,7 @@ function OwnerLandingPage({ loggedInUser }) {
 
   return (
     <>
-      <div className="container-home">
+      <div className="landing-page-container-home">
         <div className="react-icons">
           <li onClick={handleClick}>
             <FaAddressCard />
@@ -26,7 +26,12 @@ function OwnerLandingPage({ loggedInUser }) {
             <FaClock />
           </li>
         </div>
-        {edit ? <CreateOwnerAddress loggedInUser={loggedInUser}/> : null}
+
+        <h3>
+          Welcome to your portal. From here you can view your clients, schedule,
+          employees, and be your own boss.
+        </h3>
+        {edit ? <CreateOwnerAddress loggedInUser={loggedInUser} /> : null}
       </div>
     </>
   );
