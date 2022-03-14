@@ -28,3 +28,10 @@
   background-color: rgb(191, 207, 207);
   /* height: 90vh; */
 }
+
+.landing-page-info-container {
+  margin: 100px;
+  height: 400px;
+  width: 400px;
+  border: 1px solid black;
+}
