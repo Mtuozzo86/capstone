@@ -26,7 +26,7 @@ function OwnerLandingPage({ loggedInUser }) {
             <FaClock />
           </li>
         </div>
-        {edit ? <CreateOwnerAddress /> : null}
+        {edit ? <CreateOwnerAddress loggedInUser={loggedInUser}/> : null}
       </div>
     </>
   );

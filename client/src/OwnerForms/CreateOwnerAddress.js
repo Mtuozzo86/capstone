@@ -1,37 +1,67 @@
-function CreateOwnerAddress() {
+import { useState } from "react";
+
+function CreateOwnerAddress({ loggedInUser }) {
+  const [address, setAddress] = useState({
+    street: "",
+    city: "",
+    state: "",
+    zip: "",
+  });
+
+  function handleChange(e) {
+    const name = e.target.name;
+    let value = e.target.value;
+
+    setAddress({
+      ...address,
+      [name]: value,
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch(`/owners/${loggedInUser.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ address }),
+    });
+  }
+
   return (
     <>
       <div className="create-form-container">
-        <form onSubmit={null}>
+        <form onSubmit={handleSubmit}>
           <input
             name="street"
             type="text"
             placeholder="Street"
-            value={null}
-            onChange={null}
+            value={address.street}
+            onChange={handleChange}
           />
           <input
             name="city"
-            type="password"
+            type="text"
             placeholder="City"
-            value={null}
-            onChange={null}
+            value={address.city}
+            onChange={handleChange}
           />
 
           <input
             name="state"
             type="text"
             placeholder="State"
-            value={null}
-            onChange={null}
+            value={address.state}
+            onChange={handleChange}
           />
 
           <input
             name="zip"
             type="text"
             placeholder="Zip"
-            value={null}
-            onChange={null}
+            value={address.zip}
+            onChange={handleChange}
           />
 
           <br />

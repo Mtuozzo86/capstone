@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./Navbar";
-import { Routes, Route, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import CreateAccount from "./CreateAccount";
 import Login from "./Login";
 import OwnerLandingPage from "./OwnerLandingPage";
