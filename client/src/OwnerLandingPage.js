@@ -8,7 +8,6 @@ import "react-calendar/dist/Calendar.css";
 import "./OwnerLandingPage.css";
 
 function OwnerLandingPage({ loggedInUser }) {
-  console.log(loggedInUser.owner_addresses[0].street);
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
@@ -53,9 +52,8 @@ function OwnerLandingPage({ loggedInUser }) {
         </div>
 
         {landingPageContainer ? (
-          <div className="landing-page-info-container">
-            {loggedInUser.first_name}
-            {loggedInUser.owner_addresses[0].street}
+          <div className="landing-page-user-info-container">
+            <div className="user-info-name">{loggedInUser.first_name}</div>
           </div>
         ) : null}
 
