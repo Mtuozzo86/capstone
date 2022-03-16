@@ -39,21 +39,17 @@ function OwnerLandingPage({ loggedInUser }) {
   return (
     <>
       <div className="landing-page-container-home">
-        <div className="react-icons">
-          <li onClick={handleOwnerClick}>
-            <BsFillPersonFill />
-          </li>
-          <li onClick={handleAddressClick}>
-            <BsFillPersonLinesFill />
-          </li>
-          <li onClick={handleCalenderClick}>
-            <FaClock />
-          </li>
+        <div className="sidebar">
+          <li onClick={handleOwnerClick}>Dashboard</li>
+          <li onClick={handleAddressClick}>Address</li>
+          <li onClick={handleCalenderClick}>Calendar</li>
         </div>
 
         {landingPageContainer ? (
           <div className="landing-page-user-info-container">
             <div className="user-info-name">{loggedInUser.first_name}</div>
+            <p>Appointments:</p>
+            <p>Customers:</p>
           </div>
         ) : null}
 

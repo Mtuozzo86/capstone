@@ -22,7 +22,7 @@ function App() {
     setLoggedInUser(user);
   }
   return (
-    <>
+    <div className="wrapper">
       <Navbar />
 
       <Routes>
@@ -37,7 +37,7 @@ function App() {
         />
         <Route path="/thankyou" element={<CreateAccountSuccess />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

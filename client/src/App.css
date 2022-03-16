@@ -7,18 +7,9 @@
   justify-content: center;
 }
 
-.react-icons {
-  border-radius: 15px;
-  margin-top: 10px;
-  list-style: none;
+.wrapper {
   display: flex;
   flex-direction: column;
-  padding: 8px 14px;
-  vertical-align: middle;
-  font-size: 4rem;
-  color: rgb(48, 75, 75);
-  background-color: rgb(191, 207, 207);
-  /* height: 90vh; */
 }
 
 h3 {
