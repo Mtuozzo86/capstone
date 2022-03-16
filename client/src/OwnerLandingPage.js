@@ -37,7 +37,7 @@ function OwnerLandingPage({ loggedInUser }) {
   }
 
   return (
-    <>
+    <div className="landing-page-wrapper">
       <div className="landing-page-container-home">
         <div className="sidebar">
           <li onClick={handleOwnerClick}>Dashboard</li>
@@ -56,7 +56,7 @@ function OwnerLandingPage({ loggedInUser }) {
         {edit ? <CreateOwnerAddress loggedInUser={loggedInUser} /> : null}
         <div className="calendar">{openCalendar ? <Calendar /> : null}</div>
       </div>
-    </>
+    </div>
   );
 }
 

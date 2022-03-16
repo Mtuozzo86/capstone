@@ -22,9 +22,9 @@ function App() {
     setLoggedInUser(user);
   }
   return (
-    <div className="wrapper">
+    <div>
       <Navbar />
-
+      <div className="page-load"></div>
       <Routes>
         <Route
           path="/home"
