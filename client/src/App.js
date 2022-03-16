@@ -22,10 +22,11 @@ function App() {
     setLoggedInUser(user);
   }
   return (
-    <div>
-      <Navbar />
-      <div className="page-load"></div>
+    <div className="wrapper">
+      {/* <Navbar /> */}
+
       <Routes>
+        <Route path="/" element={<Navbar />} />
         <Route
           path="/home"
           element={<OwnerLandingPage loggedInUser={loggedInUser} />}

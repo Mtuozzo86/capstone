@@ -1,6 +1,8 @@
 import "./Login.css";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function Login({ userInfo }) {
   const [email, setEmail] = useState("");
@@ -39,26 +41,29 @@ function Login({ userInfo }) {
   }
 
   return (
-    <div className="login-form-container">
-      <form onSubmit={handleSubmit}>
-        <input
-          name="email"
-          type="text"
-          placeholder="Email"
-          onChange={handleEmail}
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          onChange={handlePassword}
-        />
-        <br />
-        <button type="submit" className="form-submit-button">
-          Submit
-        </button>
-        {errors ? <p>{errors.error}</p> : null}
-      </form>
+    <div className="login-form-flex">
+      <Navbar />
+      <div className="login-form-container">
+        <form onSubmit={handleSubmit}>
+          <input
+            name="email"
+            type="text"
+            placeholder="Email"
+            onChange={handleEmail}
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            onChange={handlePassword}
+          />
+          <br />
+          <button type="submit" className="form-submit-button">
+            Submit
+          </button>
+          {errors ? <p>{errors.error}</p> : null}
+        </form>
+      </div>
     </div>
   );
 }

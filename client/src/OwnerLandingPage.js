@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { FaClock } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
-import { BsFillPersonFill } from "react-icons/bs";
 import CreateOwnerAddress from "./OwnerForms/CreateOwnerAddress";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./OwnerLandingPage.css";
+import Navbar from "./Navbar";
 
 function OwnerLandingPage({ loggedInUser }) {
   function handleLogout() {
@@ -38,12 +36,14 @@ function OwnerLandingPage({ loggedInUser }) {
 
   return (
     <div className="landing-page-wrapper">
+      <div className="sidebar">
+        <li onClick={handleOwnerClick}>Dashboard</li>
+        <li onClick={handleAddressClick}>Address</li>
+        <li onClick={handleCalenderClick}>Calendar</li>
+      </div>
       <div className="landing-page-container-home">
-        <div className="sidebar">
-          <li onClick={handleOwnerClick}>Dashboard</li>
-          <li onClick={handleAddressClick}>Address</li>
-          <li onClick={handleCalenderClick}>Calendar</li>
-        </div>
+        
+        <Navbar />
 
         {landingPageContainer ? (
           <div className="landing-page-user-info-container">

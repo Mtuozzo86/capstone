@@ -4,14 +4,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* font-size: calc(10px + 2vmin); */
   font-size: 18px;
   color: rgb(184, 78, 78);
   text-align: center;
 }
 
 form {
-  /* border: 1px solid black; */
   height: 400px;
   width: 600px;
 }
@@ -28,7 +26,13 @@ input {
   padding: 8px;
   margin: 10px;
   border: 0px;
-  width: 78%;
+  width: 75%;
   color: rgb(0, 0, 0);
   background-color: rgb(191, 207, 207);
+}
+
+.create-form-flex {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

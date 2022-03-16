@@ -7,13 +7,16 @@
 }
 
 .landing-page-wrapper {
-  width: auto;
-  height: 100%;
+  display: flex;
+  width: 100%;
+  height: auto;
 }
 
 .landing-page-container-home {
   display: flex;
+  flex-direction: column;
   height: 100%;
+  width: 100%;
   background-color: rgba(238, 238, 238, 0.603);
 }
 
@@ -46,6 +49,10 @@
   width: 400px;
   background-color: white;
   border-radius: 8px;
+}
+
+.landing-page-user-info-container > p {
+  padding: 6px;
 }
 
 .user-info-name {
