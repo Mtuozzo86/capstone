@@ -5,6 +5,7 @@ import CreateAccount from "./CreateAccount";
 import Login from "./Login";
 import OwnerLandingPage from "./OwnerLandingPage";
 import CreateAccountSuccess from "./CreateAccountSuccess";
+import MainLandingPage from "./MainLandingPage";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
       {/* <Navbar /> */}
 
       <Routes>
-        <Route path="/" element={<Navbar />} />
+        <Route path="/" element={<MainLandingPage />} />
+
         <Route
           path="/home"
           element={<OwnerLandingPage loggedInUser={loggedInUser} />}
