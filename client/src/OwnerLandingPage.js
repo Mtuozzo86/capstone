@@ -1,5 +1,7 @@
 import { useState } from "react";
 import CreateOwnerAddress from "./OwnerForms/CreateOwnerAddress";
+import OwnerAddressList from "./OwnerAddress";
+import OwnerAddress from "./OwnerAddress";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./OwnerLandingPage.css";
@@ -42,7 +44,6 @@ function OwnerLandingPage({ loggedInUser }) {
         <li onClick={handleCalenderClick}>Calendar</li>
       </div>
       <div className="landing-page-container-home">
-        
         <Navbar />
 
         {landingPageContainer ? (
@@ -53,7 +54,7 @@ function OwnerLandingPage({ loggedInUser }) {
           </div>
         ) : null}
 
-        {edit ? <CreateOwnerAddress loggedInUser={loggedInUser} /> : null}
+        {edit ? <OwnerAddress loggedInUser={loggedInUser} /> : null}
         <div className="calendar">{openCalendar ? <Calendar /> : null}</div>
       </div>
     </div>
