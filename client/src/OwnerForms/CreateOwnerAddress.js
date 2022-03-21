@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-function CreateOwnerAddress({ loggedInUser }) {
-  console.log(loggedInUser);
-
+function CreateOwnerAddress({ loggedInUser, onSetAddress }) {
   const [address, setAddress] = useState({
     street: "",
     city: "",
@@ -28,7 +26,9 @@ function CreateOwnerAddress({ loggedInUser }) {
         "Content-type": "application/json",
       },
       body: JSON.stringify({ address }),
-    });
+    }).then((res) =>
+      res.json().then((info) => onSetAddress(info.owner_addresses))
+    );
   }
 
   return (

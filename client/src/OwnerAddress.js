@@ -2,7 +2,6 @@ import OwnerAddressList from "./OwnerAddressList";
 import CreateOwnerAddress from "./OwnerForms/CreateOwnerAddress";
 
 function OwnerAddress({ loggedInUser }) {
-  console.log(loggedInUser.owner_addresses);
   const addresses = loggedInUser.owner_addresses.map((item) => {
     return (
       <OwnerAddressList
