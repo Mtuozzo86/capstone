@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # get "/business/:business", to: "business#show"
   get "/owners/:business", to: "owners#business"
   resources :owners
   resources :owner_addresses
