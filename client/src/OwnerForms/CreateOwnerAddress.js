@@ -26,9 +26,7 @@ function CreateOwnerAddress({ loggedInUser, onSetAddress }) {
         "Content-type": "application/json",
       },
       body: JSON.stringify({ address }),
-    }).then((res) =>
-      res.json().then((info) => onSetAddress(info.owner_addresses))
-    );
+    }).then((res) => res.json().then((info) => onSetAddress(info)));
   }
 
   return (
