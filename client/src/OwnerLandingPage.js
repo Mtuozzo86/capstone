@@ -55,7 +55,7 @@ function OwnerLandingPage({ loggedInUser }) {
         ) : null}
 
         {edit ? <OwnerAddress loggedInUser={loggedInUser} /> : null}
-        <div className="calendar">{openCalendar ? <Calendar /> : null}</div>
+        {openCalendar ? <Calendar /> : null}
       </div>
     </div>
   );

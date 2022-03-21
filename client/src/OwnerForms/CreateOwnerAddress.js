@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 function CreateOwnerAddress({ loggedInUser }) {
+  console.log(loggedInUser);
+
   const [address, setAddress] = useState({
     street: "",
     city: "",
@@ -20,8 +22,8 @@ function CreateOwnerAddress({ loggedInUser }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch(`/owners/${loggedInUser.id}`, {
-      method: "PATCH",
+    fetch(`/owner_addresses/`, {
+      method: "POST",
       headers: {
         "Content-type": "application/json",
       },

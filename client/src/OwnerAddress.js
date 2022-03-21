@@ -1,4 +1,5 @@
 import OwnerAddressList from "./OwnerAddressList";
+import CreateOwnerAddress from "./OwnerForms/CreateOwnerAddress";
 
 function OwnerAddress({ loggedInUser }) {
   console.log(loggedInUser.owner_addresses);
@@ -14,7 +15,20 @@ function OwnerAddress({ loggedInUser }) {
     );
   });
 
-  return <p>{addresses}</p>;
+  return (
+    <div className="address-flex-container">
+      <div className="address">
+        {" "}
+        <h4 className="address-h4">Your Addresses</h4>
+        <div className="address-container">
+          <br />
+          {addresses}
+        </div>
+      </div>
+      <div className="add-address">Add Address</div>
+      <CreateOwnerAddress loggedInUser={loggedInUser} />
+    </div>
+  );
 }
 
 export default OwnerAddress;

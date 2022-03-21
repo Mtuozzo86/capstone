@@ -1,3 +1,5 @@
+/* EVERYTHING AFTER SIGNING IN AS AN OWNER */
+
 .react-calendar {
   border: none;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
@@ -62,4 +64,39 @@
   padding: 10px;
   background-color: rgb(191, 207, 207);
   box-shadow: 0px 0px 0px 0px;
+}
+
+/* ADDRESS INFO */
+
+.address-flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.address-container {
+  margin: 70px;
+}
+
+.address-h4 {
+  padding-left: 50px;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.add-address {
+  padding-top: 25px;
+}
+
+.address-box {
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
+  margin-bottom: 18px;
+  height: auto;
+  width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 8px 0px;
 }
