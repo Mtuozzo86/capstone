@@ -6,17 +6,19 @@ function OwnerAddress({ loggedInUser }) {
   const [addressList, setAddressList] = useState([]);
 
   useEffect(() => {
-    fetch("/owners")
+    fetch("/owner_addresses")
       .then((resp) => resp.json())
-      .then((stuff) => console.log(stuff.owner_addresses));
+      .then((info) => setAddressList(info));
   }, []);
 
   function handleAddress(addressInfo) {
-    setAddressList(addressInfo);
+    console.log(addressInfo);
+    const newAddress = addressInfo;
+    const listOfNewAddresses = [newAddress, ...addressList];
+    setAddressList(listOfNewAddresses);
   }
 
-  console.log(addressList);
-  const addresses = loggedInUser.owner_addresses.map((item) => {
+  const addresses = addressList.map((item) => {
     return (
       <OwnerAddressList
         key={item.id}

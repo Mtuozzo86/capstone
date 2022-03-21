@@ -6,8 +6,6 @@ import "react-calendar/dist/Calendar.css";
 import "./CSS/OwnerLandingPage.css";
 
 function OwnerLandingPage({ loggedInUser }) {
-  console.log(loggedInUser);
-
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
