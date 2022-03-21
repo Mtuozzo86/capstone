@@ -92,6 +92,8 @@
 }
 
 .address-box {
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
   margin-bottom: 18px;
   height: auto;
@@ -99,4 +101,9 @@
   background-color: white;
   border-radius: 8px;
   padding: 8px 0px;
+}
+
+.delete {
+  font-size: 24px;
+  color: red;
 }

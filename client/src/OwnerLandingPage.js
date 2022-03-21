@@ -1,11 +1,9 @@
 import { useState } from "react";
-import CreateOwnerAddress from "./OwnerForms/CreateOwnerAddress";
-import OwnerAddressList from "./OwnerAddress";
 import OwnerAddress from "./OwnerAddress";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
-import "./OwnerLandingPage.css";
 import Navbar from "./Navbar";
+import "react-calendar/dist/Calendar.css";
+import "./CSS/OwnerLandingPage.css";
 
 function OwnerLandingPage({ loggedInUser }) {
   function handleLogout() {

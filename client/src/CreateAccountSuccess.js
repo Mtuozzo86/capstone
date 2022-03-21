@@ -1,4 +1,4 @@
-import "./App.css";
+import "./CSS/App.css";
 import { Link } from "react-router-dom";
 
 function CreateAccountSuccess() {

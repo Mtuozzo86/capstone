@@ -18,7 +18,6 @@ function OwnerAddress({ loggedInUser }) {
   return (
     <div className="address-flex-container">
       <div className="address">
-        {" "}
         <h4 className="address-h4">Your Addresses</h4>
         <div className="address-container">
           <br />

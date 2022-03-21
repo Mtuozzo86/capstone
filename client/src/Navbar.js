@@ -1,4 +1,4 @@
-import "./Navbar.css";
+import "./CSS/Navbar.css";
 import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 

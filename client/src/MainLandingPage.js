@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import "./MainLandingPage.css";
+import "./CSS/MainLandingPage.css";
 
 function MainLandingPage() {
   return (

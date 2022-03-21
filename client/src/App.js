@@ -1,5 +1,4 @@
-import "./App.css";
-import Navbar from "./Navbar";
+import "./CSS/App.css";
 import { Routes, Route } from "react-router-dom";
 import CreateAccount from "./CreateAccount";
 import Login from "./Login";
@@ -24,8 +23,6 @@ function App() {
   }
   return (
     <div className="wrapper">
-      {/* <Navbar /> */}
-
       <Routes>
         <Route path="/" element={<MainLandingPage />} />
 
@@ -33,7 +30,9 @@ function App() {
           path="/home"
           element={<OwnerLandingPage loggedInUser={loggedInUser} />}
         />
+
         <Route path="/create" element={<CreateAccount />} />
+
         <Route
           path="/login"
           element={<Login userInfo={handleUserLoggedIn} />}
