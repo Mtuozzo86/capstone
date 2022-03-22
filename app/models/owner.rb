@@ -10,6 +10,6 @@ class Owner < ApplicationRecord
   validates :last_name, presence: true
 
   def self.business(name)
-    Owner.where("lower(business) LIKE ?", name)
+    Owner.where("lower(business) Like ?", name.downcase)
   end
 end
