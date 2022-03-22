@@ -8,4 +8,8 @@ class Owner < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  def self.business(name)
+    Owner.where("lower(business) LIKE ?", name)
+  end
 end

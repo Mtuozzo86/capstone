@@ -1,4 +1,8 @@
 class OwnersController < ApplicationController
+  def business
+    owner = Owner.business(params[:business])
+    render json: owner
+  end
 
   def show
     owner = Owner.find_by(id: params[:id])
@@ -6,7 +10,6 @@ class OwnersController < ApplicationController
   end
 
   def update
-    
     owner = Owner.find_by(id: session[:user_id])
     owner.owner_addresses.update(params.require(:address).permit(:street, :city))
     render json: owner
