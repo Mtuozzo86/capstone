@@ -1,6 +1,6 @@
 class OwnerAddressesController < ApplicationController
   def index
-    @addresses = OwnerAddress.all
+    addresses = OwnerAddress.all
     render json: addresses
   end
 

@@ -5,18 +5,17 @@ import { useState, useEffect } from "react";
 function OwnerAddress({ loggedInUser }) {
   const { owner_addresses } = loggedInUser;
   const [addressList, setAddressList] = useState([]);
-  console.log(owner_addresses);
 
-  // useEffect(() => {
-  //   fetch("/owner_addresses")
-  //     .then((resp) => resp.json())
-  //     .then((info) => setAddressList(info));
-  // }, []);
+  useEffect(() => {
+    fetch("/owner_addresses")
+      .then((resp) => resp.json())
+      .then((info) => setAddressList(info));
+  }, []);
 
   function handleAddress(addressInfo) {
     const newAddress = addressInfo;
-    const listOfNewAddresses = [newAddress, ...addressList];
-    setAddressList(listOfNewAddresses);
+    const updatedAddressList = [...addressList, newAddress];
+    setAddressList(updatedAddressList);
   }
 
   const addresses = addressList.map((item) => {
