@@ -7,9 +7,10 @@ import CreateAccountSuccess from "./CreateAccountSuccess";
 import MainLandingPage from "./MainLandingPage";
 import { useState, useEffect } from "react";
 import WhatCustomerSees from "./WhatCustomerSees";
+import PleaseLoginScreen from "./PleaseLoginScreen";
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({});
+  const [loggedInUser, setLoggedInUser] = useState(null);
 
   useEffect(() => {
     fetch("/me").then((response) => {
@@ -28,10 +29,14 @@ function App() {
         <Route path="/business/:business" element={<WhatCustomerSees />} />
         <Route path="/" element={<MainLandingPage />} />
 
-        <Route
-          path="/home"
-          element={<OwnerLandingPage loggedInUser={loggedInUser} />}
-        />
+        {loggedInUser ? (
+          <Route
+            path="/home"
+            element={<OwnerLandingPage loggedInUser={loggedInUser} />}
+          />
+        ) : (
+          <Route path="/home" element={<PleaseLoginScreen />} />
+        )}
 
         <Route path="/create" element={<CreateAccount />} />
 
