@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function CreateOwnerAddress({ loggedInUser, onSetAddress }) {
+function CreateOwnerAddress({ onSetAddress }) {
   const [address, setAddress] = useState({
     street: "",
     city: "",

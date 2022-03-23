@@ -1,9 +1,8 @@
 import OwnerAddressList from "./OwnerAddressList";
-import CreateOwnerAddress from "./OwnerForms/CreateOwnerAddress";
+import CreateOwnerAddress from "../OwnerForms/CreateOwnerAddress";
 import { useState, useEffect } from "react";
 
 function OwnerAddress({ loggedInUser }) {
-  const { owner_addresses } = loggedInUser;
   const [addressList, setAddressList] = useState([]);
 
   useEffect(() => {

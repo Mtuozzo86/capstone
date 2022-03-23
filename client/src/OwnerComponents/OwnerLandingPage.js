@@ -1,15 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import OwnerAddress from "./OwnerAddress";
 import Calendar from "react-calendar";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 import "react-calendar/dist/Calendar.css";
-import "./CSS/OwnerLandingPage.css";
+import "../CSS/OwnerLandingPage.css";
 
 function OwnerLandingPage({ loggedInUser }) {
+  const navigate = useNavigate();
+
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
-    });
+    }).then(navigate("/"));
   }
 
   const [edit, setIsEditting] = useState(false);

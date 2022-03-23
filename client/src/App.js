@@ -1,8 +1,8 @@
 import "./CSS/App.css";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import CreateAccount from "./CreateAccount";
 import Login from "./Login";
-import OwnerLandingPage from "./OwnerLandingPage";
+import OwnerLandingPage from "./OwnerComponents/OwnerLandingPage";
 import CreateAccountSuccess from "./CreateAccountSuccess";
 import MainLandingPage from "./MainLandingPage";
 import { useState, useEffect } from "react";
