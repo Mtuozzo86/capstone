@@ -1,15 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function WhatCustomerSees() {
   let webAddress = useParams();
-
+  const [business, setBusiness] = useState([]);
+  console.log(business);
   useEffect(() => {
     fetch(`/owners/${webAddress.business}`)
       .then((resp) => resp.json())
-      .then((stuff) => console.log(stuff[0]));
-  }, []);
-  return <h1>test</h1>;
+      .then((stuff) => setBusiness(stuff[0]));
+  }, [webAddress.business]);
+
+  return (
+    <div>
+      <div>
+        <h2>Owner: {business.first_name + business.last_name}</h2>
+      </div>
+      <div>Name of business: {business.business}</div>
+    </div>
+  );
 }
 
 export default WhatCustomerSees;
