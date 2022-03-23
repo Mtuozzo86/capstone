@@ -37,9 +37,14 @@ function OwnerLandingPage({ loggedInUser }) {
   return (
     <div className="landing-page-wrapper">
       <div className="sidebar">
-        <li onClick={handleOwnerClick}>Dashboard</li>
-        <li onClick={handleAddressClick}>Address</li>
-        <li onClick={handleCalenderClick}>Calendar</li>
+        <div className="sidebar-nav">
+          <li onClick={handleOwnerClick}>Dashboard</li>
+          <li onClick={handleAddressClick}>Address</li>
+          <li onClick={handleCalenderClick}>Calendar</li>
+        </div>
+        <li onClick={handleLogout} className="sidebar-logout">
+          Log out
+        </li>
       </div>
       <div className="landing-page-container-home">
         <Navbar />

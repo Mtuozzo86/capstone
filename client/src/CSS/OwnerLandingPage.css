@@ -23,6 +23,7 @@
 }
 
 .sidebar {
+  justify-content: space-between;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -35,14 +36,20 @@
   width: 150px;
 }
 
-.sidebar > li {
-  padding-bottom: 20px;
+.sidebar-nav > li,
+.sidebar-logout {
+  padding-bottom: 30px;
   cursor: pointer;
 }
 
-.sidebar > li:hover {
+.sidebar-nav > li:hover,
+.sidebar-logout:hover {
   color: white;
 }
+
+/* .sidebar-logout {
+  padding-bottom: 50px;
+} */
 
 .landing-page-user-info-container {
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
