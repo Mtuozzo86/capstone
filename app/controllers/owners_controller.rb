@@ -1,4 +1,5 @@
 class OwnersController < ApplicationController
+  # rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   def business
     owner = Owner.business(params[:business])
     render json: owner
@@ -33,5 +34,10 @@ class OwnersController < ApplicationController
 
   def owner_params
     params.require(:owner).permit(:email, :password, :password_confirmation, :first_name, :last_name)
+  end
+
+    
+  def record_not_found
+    render plain: "Nothing found", status: 404
   end
 end

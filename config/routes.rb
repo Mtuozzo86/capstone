@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/owners/:business", to: "owners#business"
+  get "/business/:business", to: "business#business"
   resources :owners
   resources :owner_addresses
   # Routing logic: fallback requests for React Router.

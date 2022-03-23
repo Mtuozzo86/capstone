@@ -4,12 +4,21 @@ import { useParams } from "react-router-dom";
 function WhatCustomerSees() {
   let webAddress = useParams();
   const [business, setBusiness] = useState([]);
+  const [error, setError] = useState([]);
+  console.log("Error =", error);
 
   useEffect(() => {
-    fetch(`/owners/${webAddress.business}`)
-      .then((resp) => resp.json())
-      .then((stuff) => setBusiness(stuff[0]));
-  });
+    fetch(`/business/${webAddress.business}`)
+      // .then((resp) => resp.json())
+      // .then((stuff) => setBusiness(stuff[0]));
+      .then((resp) => {
+        if (resp.ok) {
+          resp.json().then((stuff) => setBusiness(stuff));
+        } else {
+          resp.json().then((error) => setError(error));
+        }
+      });
+  }, [webAddress.business]);
 
   return (
     <div>
