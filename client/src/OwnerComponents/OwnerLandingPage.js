@@ -7,7 +7,14 @@ import "react-calendar/dist/Calendar.css";
 import "../CSS/OwnerLandingPage.css";
 
 function OwnerLandingPage({ loggedInUser }) {
+  const [date, setDate] = useState(new Date());
   const navigate = useNavigate();
+  const clickedDate = date.toLocaleString();
+  console.log(clickedDate);
+
+  function handleCalender(test) {
+    setDate(test);
+  }
 
   function handleLogout() {
     fetch("/logout", {
@@ -61,7 +68,7 @@ function OwnerLandingPage({ loggedInUser }) {
         ) : null}
 
         {edit ? <OwnerAddress loggedInUser={loggedInUser} /> : null}
-        {openCalendar ? <Calendar /> : null}
+        {openCalendar ? <Calendar onChange={handleCalender} /> : null}
       </div>
     </div>
   );
