@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import NoPageFoundError from "./NoPageFoundError";
+import BusinessFound from "./BusinessFound";
 
 function WhatCustomerSees() {
   let webAddress = useParams();
   const [business, setBusiness] = useState([]);
-  const [error, setError] = useState([]);
-  console.log("Error =", error);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch(`/business/${webAddress.business}`)
@@ -15,19 +16,12 @@ function WhatCustomerSees() {
         if (resp.ok) {
           resp.json().then((stuff) => setBusiness(stuff));
         } else {
-          resp.json().then((error) => setError(error));
+          resp.json().then(setError(true));
         }
       });
   }, [webAddress.business]);
 
-  return (
-    <div>
-      <div>
-        <h2>Owner: {business.first_name + " " + business.last_name}</h2>
-      </div>
-      <div>Name of business: {business.business}</div>
-    </div>
-  );
+  return <div>{error ? <NoPageFoundError /> : <BusinessFound companyInfo={business}/>}</div>;
 }
 
 export default WhatCustomerSees;

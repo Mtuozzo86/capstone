@@ -6,7 +6,7 @@ import OwnerLandingPage from "./OwnerLandingPage";
 import CreateAccountSuccess from "./CreateAccountSuccess";
 import MainLandingPage from "./MainLandingPage";
 import { useState, useEffect } from "react";
-import WhatCustomerSees from "./WhatCustomerSees";
+import WhatCustomerSees from "./CustomerComponents/WhatCustomerSees";
 import PleaseLoginScreen from "./PleaseLoginScreen";
 
 function App() {
