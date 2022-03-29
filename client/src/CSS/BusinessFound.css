@@ -1,17 +1,14 @@
 .business-found-wrapper {
-    display: flex;
-    min-height: 100vh;
-    align-items: stretch;
-    
-    
+  display: flex;
+  /* min-height: 100vh;
+    align-items: stretch; */
+  width: 100%;
+  flex-direction: column;
 }
 
 .business-navbar {
-display: flex;
-justify-content: space-around;
-width: 100vh;
-    
-   
-    
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 12px 0px;
 }
-

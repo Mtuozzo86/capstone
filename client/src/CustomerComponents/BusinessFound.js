@@ -8,6 +8,9 @@ function BusinessFound({ companyInfo }) {
   return (
     <div className="business-found-wrapper">
       <BusinessNavbar />
+      <div>
+        <h1>{companyInfo.business}</h1>
+      </div>
     </div>
   );
 }

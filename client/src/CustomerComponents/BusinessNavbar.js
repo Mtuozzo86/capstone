@@ -4,7 +4,7 @@ import "../CSS/App.css";
 
 function BusinessNavbar() {
   return (
-    <div className="navbar-header">
+    <div className="business-navbar">
       <div>About</div>
       <div>Contact</div>
       <div>Schedule</div>
