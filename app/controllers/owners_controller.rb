@@ -7,8 +7,9 @@ class OwnersController < ApplicationController
   end
 
   def update
+    
     owner = Owner.find_by(id: params[:id])
-    owner.update(business: params[:businessName])
+    owner.update(profile_params)
     render json: owner
   end
 
@@ -30,6 +31,10 @@ class OwnersController < ApplicationController
 
   def owner_params
     params.require(:owner).permit(:email, :password, :password_confirmation, :first_name, :last_name)
+  end
+
+  def profile_params
+    params.permit(:biography, :business)
   end
 
   def record_not_found

@@ -1,29 +1,39 @@
 import { useState, useEffect } from "react";
 import "../CSS/OwnerProfile.css";
+import OwnerProfileAddBio from "./OwnerProfileAddBio";
 import OwnerProfileAddBusiness from "./OwnerProfileAddBusiness";
 
 function OwnerProfile({ owner }) {
   useEffect(() => {
     fetch(`/owners/${owner.id}`)
       .then((resp) => resp.json())
-      .then((info) => setOwnerBusiness(info.business));
-  }, []);
+      .then((info) => setLoggedInUser(info));
+  }, [owner.id]);
+  const [loggedInUser, setLoggedInUser] = useState({});
 
-  const fullName = owner.first_name + " " + owner.last_name;
-  const { business, email, phone, website, occupation } = owner;
+  const fullName = loggedInUser.first_name + " " + loggedInUser.last_name;
+  const { business, email, phone, website, occupation, biography } =
+    loggedInUser;
 
   const [addBusiness, setAddBusiness] = useState(false);
   const [ownerBusiness, setOwnerBusiness] = useState(business);
-  console.log(ownerBusiness);
+  const [addOwnerBio, setAddOwnerBio] = useState(false);
+  const [ownerBio, setOwnerBio] = useState(biography);
 
   function handleCancelAddBusiness() {
     setAddBusiness(false);
+    setAddOwnerBio(false);
   }
 
   function handleAddBusiness(addedBusiness) {
-    console.log(addedBusiness);
     setOwnerBusiness(addedBusiness);
     setAddBusiness(false);
+  }
+
+  function handleAddBio(bio) {
+    console.log(bio);
+    setOwnerBio(bio);
+    setAddOwnerBio(false);
   }
 
   return (
@@ -59,6 +69,25 @@ function OwnerProfile({ owner }) {
         </div>
         <div>{email ? email : <p>Enter an email</p>}</div>
         <div>{occupation ? occupation : <p>Enter your occupation</p>}</div>
+        <div>
+          {ownerBio ? (
+            ownerBio
+          ) : (
+            <p
+              className="owner-profile__info-container-business"
+              onClick={() => setAddOwnerBio(true)}
+            >
+              Enter something about yourself
+            </p>
+          )}
+          {addOwnerBio ? (
+            <OwnerProfileAddBio
+              owner={owner}
+              onHandleCancel={handleCancelAddBusiness}
+              onAddBio={handleAddBio}
+            />
+          ) : null}
+        </div>
       </div>
     </div>
   );
