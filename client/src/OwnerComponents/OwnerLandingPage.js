@@ -5,6 +5,7 @@ import Navbar from "../Navbar";
 import "../CSS/OwnerLandingPage.css";
 import CalenderTest from "../CalenderTest";
 import OwnerProfile from "./OwnerProfile";
+import Sidebar from "./Sidebar";
 
 function OwnerLandingPage({ loggedInUser }) {
   const navigate = useNavigate();
@@ -19,15 +20,23 @@ function OwnerLandingPage({ loggedInUser }) {
   const [openCalendar, setOpenCalendar] = useState(false);
   const [landingPageContainer, setLandingPageContainer] = useState(true);
   const [ownerProfile, setOwnerProfile] = useState(false);
+  const setState = [
+    setIsEditting,
+    setOpenCalendar,
+    setLandingPageContainer,
+    setOwnerProfile,
+  ];
 
   function handleViews(component) {
-    let arrayOfComponents = [
-      setIsEditting,
-      setOpenCalendar,
-      setLandingPageContainer,
-      setOwnerProfile,
-    ];
-    arrayOfComponents.filter((setState) => {
+    console.log(setState);
+    // let arrayOfComponents = [
+    //   setIsEditting,
+    //   setOpenCalendar,
+    //   setLandingPageContainer,
+    //   setOwnerProfile,
+    // ];
+
+    setState.filter((setState) => {
       if (setState === component) {
         return setState(true);
       } else {
@@ -36,21 +45,13 @@ function OwnerLandingPage({ loggedInUser }) {
     });
   }
 
+  // function handleView(component) {
+  //   console.log(component);
+  // }
+
   return (
     <div className="landing-page-wrapper">
-      <div className="sidebar">
-        <div className="sidebar-nav">
-          <li onClick={() => handleViews(setLandingPageContainer)}>
-            Dashboard
-          </li>
-          <li onClick={() => handleViews(setIsEditting)}>Address</li>
-          <li onClick={() => handleViews(setOpenCalendar)}>Calendar</li>
-          <li onClick={() => handleViews(setOwnerProfile)}>Profile</li>
-        </div>
-        <li onClick={handleLogout} className="sidebar-logout">
-          Log out
-        </li>
-      </div>
+      <Sidebar onHandlePageView={handleViews} components={setState} />
       <div className="landing-page-container-home">
         <Navbar />
 
@@ -65,7 +66,6 @@ function OwnerLandingPage({ loggedInUser }) {
         {openCalendar ? <CalenderTest /> : null}
         {ownerProfile ? <OwnerProfile owner={loggedInUser} /> : null}
       </div>
-      test
     </div>
   );
 }
