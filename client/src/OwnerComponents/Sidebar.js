@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
 function Sidebar({ onHandlePageView, components }) {
-  const {
-    setIsEditting,
-    setOpenCalendar,
-    setLandingPageContainer,
-    setOwnerProfile,
-  } = components;
+  const clickComponent = components.map((component, index) => {
+    return (
+      <li key={index} onClick={() => handleViews(component.comp)}>
+        {component.clickName}
+      </li>
+    );
+  });
+
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
@@ -14,17 +16,12 @@ function Sidebar({ onHandlePageView, components }) {
   const navigate = useNavigate();
 
   function handleViews(component) {
-    console.log(component);
+    onHandlePageView(component);
   }
 
   return (
     <div className="sidebar">
-      <div className="sidebar-nav">
-        <li onClick={() => handleViews(setLandingPageContainer)}>Dashboard</li>
-        <li onClick={() => handleViews(setIsEditting)}>Address</li>
-        <li onClick={() => handleViews(setOpenCalendar)}>Calendar</li>
-        <li onClick={() => handleViews(setOwnerProfile)}>Profile</li>
-      </div>
+      <div className="sidebar-nav">{clickComponent}</div>
       <li onClick={handleLogout} className="sidebar-logout">
         Log out
       </li>

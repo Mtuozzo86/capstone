@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import OwnerAddress from "./OwnerAddress";
 import Navbar from "../Navbar";
 import "../CSS/OwnerLandingPage.css";
@@ -8,50 +7,43 @@ import OwnerProfile from "./OwnerProfile";
 import Sidebar from "./Sidebar";
 
 function OwnerLandingPage({ loggedInUser }) {
-  const navigate = useNavigate();
-
-  function handleLogout() {
-    fetch("/logout", {
-      method: "DELETE",
-    }).then(navigate("/"));
-  }
-
-  const [edit, setIsEditting] = useState(false);
+  const [address, setAddress] = useState(false);
   const [openCalendar, setOpenCalendar] = useState(false);
   const [landingPageContainer, setLandingPageContainer] = useState(true);
   const [ownerProfile, setOwnerProfile] = useState(false);
-  const setState = [
-    setIsEditting,
-    setOpenCalendar,
-    setLandingPageContainer,
-    setOwnerProfile,
+
+  const componentWithName = [
+    {
+      comp: setLandingPageContainer,
+      clickName: "Dashboard",
+    },
+    {
+      comp: setAddress,
+      clickName: "Address",
+    },
+    {
+      comp: setOpenCalendar,
+      clickName: "Calendar",
+    },
+    {
+      comp: setOwnerProfile,
+      clickName: "Profile",
+    },
   ];
 
   function handleViews(component) {
-    console.log(setState);
-    // let arrayOfComponents = [
-    //   setIsEditting,
-    //   setOpenCalendar,
-    //   setLandingPageContainer,
-    //   setOwnerProfile,
-    // ];
-
-    setState.filter((setState) => {
-      if (setState === component) {
-        return setState(true);
+    componentWithName.filter((elem) => {
+      if (elem.comp === component) {
+        return elem.comp(true);
       } else {
-        return setState(false);
+        return elem.comp(false);
       }
     });
   }
 
-  // function handleView(component) {
-  //   console.log(component);
-  // }
-
   return (
     <div className="landing-page-wrapper">
-      <Sidebar onHandlePageView={handleViews} components={setState} />
+      <Sidebar onHandlePageView={handleViews} components={componentWithName} />
       <div className="landing-page-container-home">
         <Navbar />
 
@@ -62,7 +54,7 @@ function OwnerLandingPage({ loggedInUser }) {
             <p>Customers:</p>
           </div>
         ) : null}
-        {edit ? <OwnerAddress loggedInUser={loggedInUser} /> : null}
+        {address ? <OwnerAddress loggedInUser={loggedInUser} /> : null}
         {openCalendar ? <CalenderTest /> : null}
         {ownerProfile ? <OwnerProfile owner={loggedInUser} /> : null}
       </div>
