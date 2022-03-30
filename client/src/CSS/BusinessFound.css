@@ -1,14 +1,35 @@
 .business-found-wrapper {
   display: flex;
-  /* min-height: 100vh;
-    align-items: stretch; */
+  align-items: center;
   width: 100%;
   flex-direction: column;
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+.business-found {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .business-navbar {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  padding: 12px 0px;
+  padding: 20px 0px;
+}
+
+.business-found-company-name {
+  padding: 10px 0px;
+  width: 50%;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 24px;
+}
+
+.business-navbar > * {
+  width: 25%;
+  text-align: center;
+  font-size: 18px;
 }
