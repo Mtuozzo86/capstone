@@ -65,6 +65,7 @@ function OwnerLandingPage({ loggedInUser }) {
         {openCalendar ? <CalenderTest /> : null}
         {ownerProfile ? <OwnerProfile owner={loggedInUser} /> : null}
       </div>
+      test
     </div>
   );
 }
