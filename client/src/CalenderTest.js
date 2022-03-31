@@ -1,7 +1,17 @@
 import { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import CalenderDays from "./CalenderDays";
 
-function CalenderTest({ clicked }) {
+function CalenderTest() {
+  //   const [dayInfo, setDayInfo] = useState({});
   const [bookings, setBookings] = useState([]);
+  const [selectedDay, setSelectedDay] = useState(new Date());
+  const date = selectedDay.toLocaleDateString();
+
+  function handleCalender(test) {
+    setSelectedDay(test);
+  }
 
   const nineToFive = [
     "9:00am - 9:45am",
@@ -14,9 +24,15 @@ function CalenderTest({ clicked }) {
     "4:00pm - 4:45pm",
   ];
 
+  const timeFrame = nineToFive.map((time) => {
+    return (
+      <li onClick={() => handleClick(time)} key={time}>
+        {time}
+      </li>
+    );
+  });
+
   function handleClick(times) {
-    // const clickedTime = nineToFive.filter((time) => time === times);
-    // console.log(clickedTime);
     const clickedTimeFrame = times;
     const listOfBookings = [...bookings, clickedTimeFrame];
     setBookings(listOfBookings);
@@ -24,18 +40,12 @@ function CalenderTest({ clicked }) {
 
   return (
     <div>
-      <p>{clicked}</p>
+      <p>{date}</p>
+      <CalenderDays date={date} />
       <div>Select a time</div>
-      <ul>
-        {nineToFive.map((time) => {
-          return (
-            <li onClick={() => handleClick(time)} key={time}>
-              {time}
-            </li>
-          );
-        })}
-      </ul>
+      <ul>{timeFrame}</ul>
       <h1>{bookings} : is booked</h1>
+      <Calendar onChange={handleCalender} calendarType={"US"} />
     </div>
   );
 }
