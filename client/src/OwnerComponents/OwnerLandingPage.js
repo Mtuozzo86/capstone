@@ -5,12 +5,13 @@ import Calendar from "react-calendar";
 import Navbar from "../Navbar";
 import "react-calendar/dist/Calendar.css";
 import "../CSS/OwnerLandingPage.css";
+import CalenderTest from "../CalenderTest";
 
 function OwnerLandingPage({ loggedInUser }) {
   const [date, setDate] = useState(new Date());
   const navigate = useNavigate();
-  const clickedDate = date.toLocaleString();
-  console.log(clickedDate);
+
+  const clickedDate = date.toLocaleDateString();
 
   function handleCalender(test) {
     setDate(test);
@@ -44,6 +45,10 @@ function OwnerLandingPage({ loggedInUser }) {
     setIsEditting(false);
   }
 
+  function handleReactCalenderClick(e) {
+    alert(e);
+  }
+
   return (
     <div className="landing-page-wrapper">
       <div className="sidebar">
@@ -58,7 +63,7 @@ function OwnerLandingPage({ loggedInUser }) {
       </div>
       <div className="landing-page-container-home">
         <Navbar />
-
+        <CalenderTest clicked={clickedDate} />
         {landingPageContainer ? (
           <div className="landing-page-user-info-container">
             <div className="user-info-name">{loggedInUser.first_name}</div>
@@ -66,9 +71,14 @@ function OwnerLandingPage({ loggedInUser }) {
             <p>Customers:</p>
           </div>
         ) : null}
-
         {edit ? <OwnerAddress loggedInUser={loggedInUser} /> : null}
-        {openCalendar ? <Calendar onChange={handleCalender} /> : null}
+        {openCalendar ? (
+          <Calendar
+            onChange={handleCalender}
+            calendarType={"US"}
+            
+          />
+        ) : null}
       </div>
     </div>
   );
