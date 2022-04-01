@@ -1,7 +1,12 @@
-function CalenderDays({ date }) {
-  console.log(date);
-
-  return <h1>hello</h1>;
+function CalendarDays({ day }) {
+  return (
+    <h1>
+      {day.day}
+      <>{day.appointments}</>
+      <br />
+      {day.booked}
+    </h1>
+  );
 }
 
-export default CalenderDays;
+export default CalendarDays;

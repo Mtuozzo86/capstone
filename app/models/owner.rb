@@ -1,5 +1,6 @@
 class Owner < ApplicationRecord
   has_many :owner_addresses
+  has_many :appointments
   has_secure_password
 
   validates :email, uniqueness: { case_sensitive: false },
