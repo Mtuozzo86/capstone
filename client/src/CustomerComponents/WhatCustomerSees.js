@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import NoPageFoundError from "./NoPageFoundError";
 import BusinessFound from "./BusinessFound";
 import { Routes, Route } from "react-router-dom";
+import About from "./About";
 
 function WhatCustomerSees() {
   let webAddress = useParams();
@@ -18,7 +19,7 @@ function WhatCustomerSees() {
         resp.json().then(setError(true));
       }
     });
-  }, []);
+  }, [webAddress.business]);
 
   return (
     <div className="business-found-wrapper">

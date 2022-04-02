@@ -129,6 +129,7 @@ function OwnerProfile({ owner }) {
                 <img
                   className="owner-profile__image-avatar"
                   src={ownerAvatar}
+                  alt=""
                 />
               </div>
               <div className="delete">

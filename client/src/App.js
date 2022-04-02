@@ -27,11 +27,8 @@ function App() {
   return (
     <div className="wrapper">
       <Routes>
-        <Route
-          exact
-          path="/business/:business"
-          element={<WhatCustomerSees />}
-        ></Route>
+        <Route path="/:business" element={<WhatCustomerSees />}></Route>
+   
 
         <Route path="/" element={<MainLandingPage />} />
         {loggedInUser ? (
