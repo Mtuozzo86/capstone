@@ -44,7 +44,7 @@ function Login({ userInfo }) {
     <div className="login-form-flex">
       <Navbar />
       <div className="login-form-container">
-        <form onSubmit={handleSubmit}>
+        <form className="login-signin" onSubmit={handleSubmit}>
           <input
             name="email"
             type="text"

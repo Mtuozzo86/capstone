@@ -62,7 +62,7 @@ function CreateAccount() {
     <div className="create-form-flex">
       <Navbar />
       <div className="create-form-container">
-        <form onSubmit={handleSubmit}>
+        <form className="login-signin" onSubmit={handleSubmit}>
           <div className="first-lastname">
             {" "}
             <input

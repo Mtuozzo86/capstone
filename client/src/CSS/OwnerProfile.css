@@ -2,3 +2,34 @@
     display: flex;
     flex-direction: column;
 }
+
+.owner-profile__info-container {
+    margin-top: 10px;
+    margin-left: 10px;
+    
+}
+
+.owner-profile__info-container > * {
+    
+    width: 35%;
+    padding: 10px;
+    padding: 12px 8px;
+    margin: 30px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
+    width: 50%;
+    }
+
+
+
+.business-submit-button {
+    padding: 8px;
+    margin: 10px;
+    border: 0px;
+    width: 20%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(191, 207, 207);
+}
+
+.owner-profile__info-container-business {
+    cursor: pointer;
+}
