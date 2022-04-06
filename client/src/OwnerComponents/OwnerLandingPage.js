@@ -20,42 +20,32 @@ function OwnerLandingPage({ loggedInUser }) {
   const [landingPageContainer, setLandingPageContainer] = useState(true);
   const [ownerProfile, setOwnerProfile] = useState(false);
 
-  function handleAddressClick() {
-    setOwnerProfile(false);
-    setIsEditting(true);
-    setOpenCalendar(false);
-    setLandingPageContainer(false);
-  }
-
-  function handleCalenderClick() {
-    setOwnerProfile(false);
-    setIsEditting(false);
-    setOpenCalendar(true);
-    setLandingPageContainer(false);
-  }
-
-  function handleOwnerClick() {
-    setOwnerProfile(false);
-    setLandingPageContainer(true);
-    setOpenCalendar(false);
-    setIsEditting(false);
-  }
-
-  function handleOwnerProfileClick() {
-    setOwnerProfile(true);
-    setIsEditting(false);
-    setOpenCalendar(false);
-    setLandingPageContainer(false);
+  function handleViews(component) {
+    let arrayOfComponents = [
+      setIsEditting,
+      setOpenCalendar,
+      setLandingPageContainer,
+      setOwnerProfile,
+    ];
+    arrayOfComponents.filter((setState) => {
+      if (setState === component) {
+        return setState(true);
+      } else {
+        return setState(false);
+      }
+    });
   }
 
   return (
     <div className="landing-page-wrapper">
       <div className="sidebar">
         <div className="sidebar-nav">
-          <li onClick={handleOwnerClick}>Dashboard</li>
-          <li onClick={handleAddressClick}>Address</li>
-          <li onClick={handleCalenderClick}>Calendar</li>
-          <li onClick={handleOwnerProfileClick}>Profile</li>
+          <li onClick={() => handleViews(setLandingPageContainer)}>
+            Dashboard
+          </li>
+          <li onClick={() => handleViews(setIsEditting)}>Address</li>
+          <li onClick={() => handleViews(setOpenCalendar)}>Calendar</li>
+          <li onClick={() => handleViews(setOwnerProfile)}>Profile</li>
         </div>
         <li onClick={handleLogout} className="sidebar-logout">
           Log out
@@ -73,7 +63,7 @@ function OwnerLandingPage({ loggedInUser }) {
         ) : null}
         {edit ? <OwnerAddress loggedInUser={loggedInUser} /> : null}
         {openCalendar ? <CalenderTest /> : null}
-        {ownerProfile ? <OwnerProfile owner={loggedInUser}/> : null}
+        {ownerProfile ? <OwnerProfile owner={loggedInUser} /> : null}
       </div>
     </div>
   );
