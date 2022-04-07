@@ -1,13 +1,10 @@
 class OwnersController < ApplicationController
-  # rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
-
   def show
     owner = Owner.find_by(id: params[:id])
     render json: owner
   end
 
   def update
-    
     owner = Owner.find_by(id: params[:id])
     owner.update(profile_params)
     render json: owner

@@ -2,18 +2,20 @@ import { useState, useEffect } from "react";
 import "../CSS/OwnerProfile.css";
 import OwnerProfileAddBio from "./OwnerProfileAddBio";
 import OwnerProfileAddBusiness from "./OwnerProfileAddBusiness";
+import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 
 function OwnerProfile({ owner }) {
   useEffect(() => {
     fetch(`/owners/${owner.id}`)
       .then((resp) => resp.json())
-      .then((info) => setLoggedInUser(info));
+      .then((info) => {
+        setOwnerBusiness(info.business);
+        setOwnerBio(info.biography);
+      });
   }, [owner.id]);
-  const [loggedInUser, setLoggedInUser] = useState({});
 
-  const fullName = loggedInUser.first_name + " " + loggedInUser.last_name;
-  const { business, email, phone, website, occupation, biography } =
-    loggedInUser;
+  const fullName = owner.first_name + " " + owner.last_name;
+  const { business, email, phone, website, occupation, biography } = owner;
 
   const [addBusiness, setAddBusiness] = useState(false);
   const [ownerBusiness, setOwnerBusiness] = useState(business);
@@ -31,9 +33,20 @@ function OwnerProfile({ owner }) {
   }
 
   function handleAddBio(bio) {
-    console.log(bio);
     setOwnerBio(bio);
     setAddOwnerBio(false);
+  }
+
+  function handleDeleteBusiness() {
+    fetch(`owners/${owner.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ business: null }),
+    })
+      .then((resp) => resp.json())
+      .then((info) => setOwnerBusiness(info.business));
   }
 
   return (
@@ -41,7 +54,7 @@ function OwnerProfile({ owner }) {
       <div>
         <p>
           Set your info here. Add additional information for your clients to see
-          when they view your information. To see.
+          when they view your information.
         </p>
       </div>
 
@@ -50,7 +63,12 @@ function OwnerProfile({ owner }) {
       <div className="owner-profile__info-container">
         <div>
           {ownerBusiness ? (
-            ownerBusiness
+            <div className="test">
+              <div>{ownerBusiness}</div>
+              <div className="delete">
+                <MdOutlineRemoveCircleOutline onClick={handleDeleteBusiness} />
+              </div>
+            </div>
           ) : (
             <p
               className="owner-profile__info-container-business"

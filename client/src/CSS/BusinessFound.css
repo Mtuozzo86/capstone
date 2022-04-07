@@ -1,0 +1,17 @@
+.business-found-wrapper {
+    display: flex;
+    min-height: 100vh;
+    align-items: stretch;
+    
+    
+}
+
+.business-navbar {
+display: flex;
+justify-content: space-around;
+width: 100vh;
+    
+   
+    
+}
+

@@ -33,3 +33,9 @@
 .owner-profile__info-container-business {
     cursor: pointer;
 }
+
+.test {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

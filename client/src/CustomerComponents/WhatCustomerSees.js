@@ -9,19 +9,20 @@ function WhatCustomerSees() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`/business/${webAddress.business}`)
-      // .then((resp) => resp.json())
-      // .then((stuff) => setBusiness(stuff[0]));
-      .then((resp) => {
-        if (resp.ok) {
-          resp.json().then((stuff) => setBusiness(stuff));
-        } else {
-          resp.json().then(setError(true));
-        }
-      });
+    fetch(`/business/${webAddress.business}`).then((resp) => {
+      if (resp.ok) {
+        resp.json().then((stuff) => setBusiness(stuff));
+      } else {
+        resp.json().then(setError(true));
+      }
+    });
   }, [webAddress.business]);
 
-  return <div>{error ? <NoPageFoundError /> : <BusinessFound companyInfo={business}/>}</div>;
+  return (
+    <div className="business-found-wrapper">
+      {error ? <NoPageFoundError /> : <BusinessFound companyInfo={business} />}
+    </div>
+  );
 }
 
 export default WhatCustomerSees;
