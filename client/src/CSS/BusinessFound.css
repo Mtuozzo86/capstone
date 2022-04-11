@@ -3,7 +3,7 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
-  background: linear-gradient(#e66465, #9198e5);
+  background: linear-gradient(#e2d4d4, #5b5f81);
 }
 
 .business-found {
@@ -22,7 +22,7 @@
 
 .business-found-company-name {
   padding: 10px 0px;
-  width: 50%;
+  width: 100%;
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 24px;
@@ -32,4 +32,22 @@
   width: 25%;
   text-align: center;
   font-size: 18px;
+}
+
+.business-found-owner{
+  display: flex;
+  width: 50%;
+  
+}
+
+.profile-picture {
+  height: 150px;
+  width: auto;
+  clip-path: circle();
+}
+
+.profile-name {
+  
+  align-self: flex-end;
+  font-size: larger;
 }

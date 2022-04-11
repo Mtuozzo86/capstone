@@ -39,3 +39,11 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.owner-profile__image-avatar{
+    height: 200px;
+    width: auto;
+    clip-path:circle();
+    
+}
+

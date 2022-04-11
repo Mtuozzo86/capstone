@@ -3,6 +3,7 @@ import "../CSS/OwnerProfile.css";
 import OwnerProfileAddBio from "./OwnerProfileAddBio";
 import OwnerProfileAddBusiness from "./OwnerProfileAddBusiness";
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
+import OwnerProfileAddAvatar from "./OwnerProfileAddAvatar";
 
 function OwnerProfile({ owner }) {
   useEffect(() => {
@@ -11,20 +12,28 @@ function OwnerProfile({ owner }) {
       .then((info) => {
         setOwnerBusiness(info.business);
         setOwnerBio(info.biography);
+        setOwnerAvatar(info.image);
       });
-  }, [owner.id]);
+  }, []);
 
+  const { business, email, phone, website, occupation, biography, image } =
+    owner;
   const fullName = owner.first_name + " " + owner.last_name;
-  const { business, email, phone, website, occupation, biography } = owner;
 
   const [addBusiness, setAddBusiness] = useState(false);
   const [ownerBusiness, setOwnerBusiness] = useState(business);
   const [addOwnerBio, setAddOwnerBio] = useState(false);
   const [ownerBio, setOwnerBio] = useState(biography);
+  const [addOwnerAvatar, setAddOwnerAvatar] = useState(false);
+  const [ownerAvatar, setOwnerAvatar] = useState(image);
 
   function handleCancelAddBusiness() {
     setAddBusiness(false);
     setAddOwnerBio(false);
+  }
+
+  function handleCancelAddAvatar() {
+    setAddOwnerAvatar(false);
   }
 
   function handleAddBusiness(addedBusiness) {
@@ -37,16 +46,26 @@ function OwnerProfile({ owner }) {
     setAddOwnerBio(false);
   }
 
-  function handleDeleteBusiness() {
+  function handleAddAvatar(img) {
+    setOwnerAvatar(img);
+    setAddOwnerAvatar(false);
+  }
+
+  function handleDeleteBusiness(attr) {
+    const attribute = attr;
+
     fetch(`owners/${owner.id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ business: null }),
+      body: JSON.stringify({ [attribute]: null }),
     })
       .then((resp) => resp.json())
-      .then((info) => setOwnerBusiness(info.business));
+      .then((info) => {
+        setOwnerBusiness(info.business);
+        setOwnerAvatar(info.image);
+      });
   }
 
   return (
@@ -66,7 +85,9 @@ function OwnerProfile({ owner }) {
             <div className="test">
               <div>{ownerBusiness}</div>
               <div className="delete">
-                <MdOutlineRemoveCircleOutline onClick={handleDeleteBusiness} />
+                <MdOutlineRemoveCircleOutline
+                  onClick={() => handleDeleteBusiness("business")}
+                />
               </div>
             </div>
           ) : (
@@ -82,6 +103,37 @@ function OwnerProfile({ owner }) {
               owner={owner}
               onCancelAddBusiness={handleCancelAddBusiness}
               onAddBusiness={handleAddBusiness}
+            />
+          ) : null}
+        </div>
+        <div>
+          {ownerAvatar ? (
+            <div className="test">
+              <div>
+                <img
+                  className="owner-profile__image-avatar"
+                  src={ownerAvatar}
+                />
+              </div>
+              <div className="delete">
+                <MdOutlineRemoveCircleOutline
+                  onClick={() => handleDeleteBusiness("image")}
+                />
+              </div>
+            </div>
+          ) : (
+            <p
+              className="owner-profile__info-container-business"
+              onClick={() => setAddOwnerAvatar(true)}
+            >
+              Add an image
+            </p>
+          )}
+          {addOwnerAvatar ? (
+            <OwnerProfileAddAvatar
+              owner={owner}
+              onHandleCancel={handleCancelAddAvatar}
+              onAddAvatar={handleAddAvatar}
             />
           ) : null}
         </div>

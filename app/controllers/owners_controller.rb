@@ -5,6 +5,7 @@ class OwnersController < ApplicationController
   end
 
   def update
+    # byebug
     owner = Owner.find_by(id: params[:id])
     owner.update(profile_params)
     render json: owner
@@ -31,7 +32,7 @@ class OwnersController < ApplicationController
   end
 
   def profile_params
-    params.permit(:biography, :business)
+    params.permit(:biography, :business, :image)
   end
 
   def record_not_found
