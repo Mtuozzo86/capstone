@@ -7,6 +7,8 @@ import OwnerProfile from "./OwnerProfile";
 import Sidebar from "./Sidebar";
 
 function OwnerLandingPage({ loggedInUser }) {
+  
+
   const [address, setAddress] = useState(false);
   const [openCalendar, setOpenCalendar] = useState(false);
   const [landingPageContainer, setLandingPageContainer] = useState(true);
@@ -56,7 +58,9 @@ function OwnerLandingPage({ loggedInUser }) {
         ) : null}
         {address ? <OwnerAddress loggedInUser={loggedInUser} /> : null}
         {openCalendar ? <CalenderTest /> : null}
-        {ownerProfile ? <OwnerProfile owner={loggedInUser} /> : null}
+        {ownerProfile ? (
+          <OwnerProfile owner={loggedInUser} image={loggedInUser.image} />
+        ) : null}
       </div>
     </div>
   );

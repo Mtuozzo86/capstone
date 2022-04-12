@@ -32,7 +32,7 @@ class OwnersController < ApplicationController
   end
 
   def profile_params
-    params.permit(:biography, :business, :image)
+    params.permit(:biography, :business, :image, :occupation)
   end
 
   def record_not_found

@@ -1,5 +1,5 @@
 import "./CSS/App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import CreateAccount from "./CreateAccount";
 import Login from "./Login";
 import OwnerLandingPage from "./OwnerComponents/OwnerLandingPage";
@@ -8,6 +8,7 @@ import MainLandingPage from "./MainLandingPage";
 import { useState, useEffect } from "react";
 import WhatCustomerSees from "./CustomerComponents/WhatCustomerSees";
 import PleaseLoginScreen from "./PleaseLoginScreen";
+import About from "./CustomerComponents/About";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -26,9 +27,13 @@ function App() {
   return (
     <div className="wrapper">
       <Routes>
-        <Route path="/business/:business" element={<WhatCustomerSees />} />
-        <Route path="/" element={<MainLandingPage />} />
+        <Route
+          exact
+          path="/business/:business"
+          element={<WhatCustomerSees />}
+        ></Route>
 
+        <Route path="/" element={<MainLandingPage />} />
         {loggedInUser ? (
           <Route
             path="/home"

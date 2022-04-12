@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-function OwnerProfileAddBusiness({
+function OwnerProfileAddOccupation({
   owner,
-  onCancelAddBusiness,
-  onAddBusiness,
+  onCancelAddOccupation,
+  onAddOccupation,
 }) {
-  const [business, setBusinessName] = useState("");
+  const [occupation, setOccupation] = useState("");
+  console.log(occupation);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -14,25 +15,25 @@ function OwnerProfileAddBusiness({
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ business }),
+      body: JSON.stringify({ occupation }),
     })
       .then((resp) => resp.json())
-      .then((data) => onAddBusiness(data.business));
+      .then((data) => onAddOccupation(data.occupation));
   }
 
   function handleCancel(off) {
-    onCancelAddBusiness(off);
+    onCancelAddOccupation(off);
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit} className="owner-profile-form-inputs">
         <input
-          name="business"
+          name="occupation"
           type="text"
-          placeholder="Enter business"
-          value={business}
-          onChange={(e) => setBusinessName(e.target.value)}
+          placeholder="Enter occupation"
+          value={occupation}
+          onChange={(e) => setOccupation(e.target.value)}
         />
         <div>
           <div>
@@ -49,4 +50,4 @@ function OwnerProfileAddBusiness({
   );
 }
 
-export default OwnerProfileAddBusiness;
+export default OwnerProfileAddOccupation;

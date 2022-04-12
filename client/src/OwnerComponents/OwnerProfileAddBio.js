@@ -30,12 +30,14 @@ function OwnerProfileAddBio({ owner, onHandleCancel, onAddBio }) {
           value={biography}
           onChange={(e) => setBio(e.target.value)}
         />
-        <button type="submit" className="business-submit-button">
-          Submit
-        </button>
-        <button onClick={handleCancel} className="business-submit-button">
-          Cancel
-        </button>
+        <div>
+          <button type="submit" className="business-submit-button">
+            Submit
+          </button>
+          <button onClick={handleCancel} className="business-submit-button">
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );

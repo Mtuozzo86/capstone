@@ -28,12 +28,14 @@ function OwnerProfileAddAvatar({ onHandleCancel, owner, onAddAvatar }) {
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
-        <button type="submit" className="business-submit-button">
-          Submit
-        </button>
-        <button onClick={handleCancel} className="business-submit-button">
-          Cancel
-        </button>
+        <div>
+          <button type="submit" className="business-submit-button">
+            Submit
+          </button>
+          <button onClick={handleCancel} className="business-submit-button">
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -1,24 +1,17 @@
-import { Routes, Route } from "react-router-dom";
+import { useParams, Routes, Route } from "react-router-dom";
 import BusinessNavbar from "./BusinessNavbar";
 import "../CSS/BusinessFound.css";
+import CustomerLandingPage from "./CustomerLandingPage";
+import About from "./About";
 
-function BusinessFound({ companyInfo }) {
-  const fullName = companyInfo.first_name + " " + companyInfo.last_name;
+function BusinessFound({ companyInfo, urlParam }) {
+  const params = useParams();
+  console.log(urlParam);
 
   return (
     <div className="business-found">
-      <BusinessNavbar />
-      <div className="business-found-company-name">
-        <h1>{companyInfo.business}</h1>
-      </div>
-      <div className="business-found-owner">
-        <img
-          className="profile-picture"
-          src={companyInfo.image}
-          alt="Profile picture"
-        />
-        <div className="profile-name">{fullName}</div>
-      </div>
+      <BusinessNavbar bio={companyInfo.biography} urlParam={urlParam} />
+      <CustomerLandingPage companyInfo={companyInfo} />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import OwnerProfileAddBio from "./OwnerProfileAddBio";
 import OwnerProfileAddBusiness from "./OwnerProfileAddBusiness";
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 import OwnerProfileAddAvatar from "./OwnerProfileAddAvatar";
+import OwnerProfileAddOwnerOccupation from "./OwnerProfileAddOccupation";
 
 function OwnerProfile({ owner }) {
   useEffect(() => {
@@ -13,6 +14,7 @@ function OwnerProfile({ owner }) {
         setOwnerBusiness(info.business);
         setOwnerBio(info.biography);
         setOwnerAvatar(info.image);
+        setOwnerOccupation(info.occupation);
       });
   }, []);
 
@@ -26,6 +28,8 @@ function OwnerProfile({ owner }) {
   const [ownerBio, setOwnerBio] = useState(biography);
   const [addOwnerAvatar, setAddOwnerAvatar] = useState(false);
   const [ownerAvatar, setOwnerAvatar] = useState(image);
+  const [addOwnerOccupation, setAddOwnerOccupation] = useState(false);
+  const [ownerOccupation, setOwnerOccupation] = useState(occupation);
 
   function handleCancelAddBusiness() {
     setAddBusiness(false);
@@ -36,9 +40,18 @@ function OwnerProfile({ owner }) {
     setAddOwnerAvatar(false);
   }
 
+  function handleCancelAddOccupation() {
+    setAddOwnerOccupation(false);
+  }
+
   function handleAddBusiness(addedBusiness) {
     setOwnerBusiness(addedBusiness);
     setAddBusiness(false);
+  }
+
+  function handleAddOccupation(occu) {
+    setOwnerOccupation(occu);
+    setAddOwnerOccupation(false);
   }
 
   function handleAddBio(bio) {
@@ -53,7 +66,6 @@ function OwnerProfile({ owner }) {
 
   function handleDeleteBusiness(attr) {
     const attribute = attr;
-
     fetch(`owners/${owner.id}`, {
       method: "PATCH",
       headers: {
@@ -65,6 +77,8 @@ function OwnerProfile({ owner }) {
       .then((info) => {
         setOwnerBusiness(info.business);
         setOwnerAvatar(info.image);
+        setOwnerBio(info.biography);
+        setOwnerOccupation(info.occupation);
       });
   }
 
@@ -81,6 +95,7 @@ function OwnerProfile({ owner }) {
 
       <div className="owner-profile__info-container">
         <div>
+          {/* BUSINESS NAME */}
           {ownerBusiness ? (
             <div className="test">
               <div>{ownerBusiness}</div>
@@ -107,6 +122,7 @@ function OwnerProfile({ owner }) {
           ) : null}
         </div>
         <div>
+          {/* AVATAR IMAGE */}
           {ownerAvatar ? (
             <div className="test">
               <div>
@@ -138,10 +154,44 @@ function OwnerProfile({ owner }) {
           ) : null}
         </div>
         <div>{email ? email : <p>Enter an email</p>}</div>
-        <div>{occupation ? occupation : <p>Enter your occupation</p>}</div>
         <div>
+          {/* OCCUPATION */}
+          {ownerOccupation ? (
+            <div className="test">
+              <div>{ownerOccupation}</div>
+              <div className="delete">
+                <MdOutlineRemoveCircleOutline
+                  onClick={() => handleDeleteBusiness("occupation")}
+                />
+              </div>
+            </div>
+          ) : (
+            <p
+              className="owner-profile__info-container-business"
+              onClick={() => setAddOwnerOccupation(true)}
+            >
+              Enter your occupation
+            </p>
+          )}
+          {addOwnerOccupation ? (
+            <OwnerProfileAddOwnerOccupation
+              owner={owner}
+              onCancelAddOccupation={handleCancelAddOccupation}
+              onAddOccupation={handleAddOccupation}
+            />
+          ) : null}
+        </div>
+        <div>
+          {/* BIOGRAPHY */}
           {ownerBio ? (
-            ownerBio
+            <div className="test">
+              <div>{ownerBio}</div>
+              <div className="delete">
+                <MdOutlineRemoveCircleOutline
+                  onClick={() => handleDeleteBusiness("biography")}
+                />
+              </div>
+            </div>
           ) : (
             <p
               className="owner-profile__info-container-business"
