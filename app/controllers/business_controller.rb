@@ -1,5 +1,5 @@
 class BusinessController < ApplicationController
-  def business
+  def show
     owner = Owner.find_by(business: params[:business])
     if owner
       render json: owner

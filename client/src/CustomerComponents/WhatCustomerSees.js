@@ -12,7 +12,7 @@ function WhatCustomerSees() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`/${webAddress.business}`).then((resp) => {
+    fetch(`/business/${webAddress.business}`).then((resp) => {
       if (resp.ok) {
         resp.json().then((stuff) => setBusiness(stuff));
       } else {
