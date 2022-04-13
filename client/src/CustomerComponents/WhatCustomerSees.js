@@ -16,7 +16,7 @@ function WhatCustomerSees() {
       if (resp.ok) {
         resp.json().then((stuff) => setBusiness(stuff));
       } else {
-        resp.json().then(setError(true));
+        resp.json().then((mesg) => setError(mesg.error));
       }
     });
   }, [webAddress.business]);
@@ -24,7 +24,7 @@ function WhatCustomerSees() {
   return (
     <div className="business-found-wrapper">
       {error ? (
-        <NoPageFoundError />
+        error
       ) : (
         <BusinessFound companyInfo={business} urlParam={webAddress} />
       )}
