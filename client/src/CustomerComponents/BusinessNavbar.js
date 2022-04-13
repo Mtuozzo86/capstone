@@ -2,12 +2,12 @@ import "../CSS/BusinessFound.css";
 import "../CSS/Navbar.css";
 import "../CSS/App.css";
 
-function BusinessNavbar({ bio, urlParam, OnHandleClick }) {
+function BusinessNavbar({ bio, urlParam }) {
   return (
     <div className="business-navbar">
-      <div onClick={() => OnHandleClick("About")}>About</div>
-      <div onClick={() => OnHandleClick("Contact")}>Contact</div>
-      <div onClick={() => OnHandleClick("Schedule")}>Schedule</div>
+      <div>About</div>
+      <div>Contact</div>
+      <div>Schedule</div>
     </div>
   );
 }
