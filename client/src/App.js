@@ -32,17 +32,18 @@ function App() {
         ></Route>
 
         <Route path="/" element={<MainLandingPage />} />
-        {loggedInUser ? (
-          <Route
-            path="/home"
-            element={<OwnerLandingPage loggedInUser={loggedInUser} />}
-          />
-        ) : (
-          <Route path="/home" element={<PleaseLoginScreen />} />
-        )}
+        <Route
+          path="/home"
+          element={
+            loggedInUser ? (
+              <OwnerLandingPage loggedInUser={loggedInUser} />
+            ) : (
+              <PleaseLoginScreen />
+            )
+          }
+        />
 
         <Route path="/create" element={<CreateAccount />} />
-
         <Route
           path="/login"
           element={<Login userInfo={handleUserLoggedIn} />}
