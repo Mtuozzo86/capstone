@@ -3,7 +3,7 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
-  background: linear-gradient(#e2d4d4, #5b5f81);
+  background: linear-gradient(#a08c8c, #5b5f81);
 }
 
 .business-found {
@@ -29,10 +29,27 @@
 }
 
 .business-navbar > * {
-  width: 25%;
+  width: 10%;
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  padding: 10px;
+  background: #4f618563;
+  border-radius: 20px;
+  border: none;
+  
 }
+
+.business-navbar > *:hover{
+  background: rgb(1, 25, 48);
+  cursor:pointer;
+  transition: .2s;
+  color: white;
+}
+
+
+
 
 .business-found-owner{
   display: flex;

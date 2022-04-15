@@ -8,9 +8,14 @@ import About from "./About";
 function BusinessFound({ companyInfo, urlParam }) {
   return (
     <div className="business-found">
-      <BusinessNavbar bio={companyInfo.biography} urlParam={urlParam} />
+      <BusinessNavbar urlParam={urlParam} />
+
       <Routes>
-        <Route path={`about`} element={<About />} />
+        <Route
+          index
+          element={<CustomerLandingPage companyInfo={companyInfo} />}
+        />
+        <Route path={`about`} element={<About bio={companyInfo.biography} />} />
       </Routes>
     </div>
   );
