@@ -8,6 +8,7 @@ import MainLandingPage from "./MainLandingPage";
 import { useState, useEffect } from "react";
 import WhatCustomerSees from "./CustomerComponents/WhatCustomerSees";
 import PleaseLoginScreen from "./PleaseLoginScreen";
+import About from "./CustomerComponents/About";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -26,10 +27,9 @@ function App() {
   return (
     <div className="wrapper">
       <Routes>
-        <Route
-          path="/business/:business"
-          element={<WhatCustomerSees />}
-        ></Route>
+        <Route path="/business/:business" element={<WhatCustomerSees />}>
+          <Route path="about" element={<About />} />
+        </Route>
 
         <Route path="/" element={<MainLandingPage />} />
         <Route

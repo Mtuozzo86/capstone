@@ -10,7 +10,7 @@ function BusinessFound({ companyInfo, urlParam }) {
     <div className="business-found">
       <BusinessNavbar bio={companyInfo.biography} urlParam={urlParam} />
       <Routes>
-        <Route path={`/about`} element={<About />} />
+        <Route path={`about`} element={<About />} />
       </Routes>
     </div>
   );
