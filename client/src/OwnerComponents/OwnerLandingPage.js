@@ -5,10 +5,9 @@ import "../CSS/OwnerLandingPage.css";
 import CalenderTest from "../CalenderTest";
 import OwnerProfile from "./OwnerProfile";
 import Sidebar from "./Sidebar";
+import OwnerLandingPageDashboard from "./OwnerLandingPageDashboard";
 
 function OwnerLandingPage({ loggedInUser }) {
-  
-
   const [address, setAddress] = useState(false);
   const [openCalendar, setOpenCalendar] = useState(false);
   const [landingPageContainer, setLandingPageContainer] = useState(true);
@@ -49,18 +48,14 @@ function OwnerLandingPage({ loggedInUser }) {
       <div className="landing-page-container-home">
         <Navbar />
 
-        {landingPageContainer ? (
-          <div className="landing-page-user-info-container">
-            <div className="user-info-name">{loggedInUser.first_name}</div>
-            <p>Appointments:</p>
-            <p>Customers:</p>
-          </div>
-        ) : null}
-        {address ? <OwnerAddress loggedInUser={loggedInUser} /> : null}
-        {openCalendar ? <CalenderTest /> : null}
-        {ownerProfile ? (
+        {landingPageContainer && (
+          <OwnerLandingPageDashboard loggedInUser={loggedInUser} />
+        )}
+        {address && <OwnerAddress loggedInUser={loggedInUser} />}
+        {openCalendar && <CalenderTest />}
+        {ownerProfile && (
           <OwnerProfile owner={loggedInUser} image={loggedInUser.image} />
-        ) : null}
+        )}
       </div>
     </div>
   );
