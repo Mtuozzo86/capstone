@@ -3,7 +3,8 @@ import { useState } from "react";
 function OwnerProfileAddBusiness({
   owner,
   onCancelAddBusiness,
-  onAddBusiness,
+  onAddAttribute,
+  setAddBusiness,
 }) {
   const [business, setBusinessName] = useState("");
 
@@ -17,7 +18,8 @@ function OwnerProfileAddBusiness({
       body: JSON.stringify({ business }),
     })
       .then((resp) => resp.json())
-      .then((data) => onAddBusiness(data.business));
+      .then((data) => onAddAttribute("business", data.business))
+      .then(setAddBusiness(false));
   }
 
   function handleCancel(off) {

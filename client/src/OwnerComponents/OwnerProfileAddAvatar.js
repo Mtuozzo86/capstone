@@ -1,10 +1,15 @@
 import { useState } from "react";
 
-function OwnerProfileAddAvatar({ onHandleCancel, owner, onAddAttribute }) {
+function OwnerProfileAddAvatar({
+  handleCancel,
+  owner,
+  onAddAttribute,
+  setAddOwnerAvatar,
+}) {
   const [image, setImage] = useState("");
-  function handleCancel(cancel) {
-    onHandleCancel(cancel);
-  }
+  // function handleCancel(cancel) {
+  //   onHandleCancel(cancel);
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,7 +21,10 @@ function OwnerProfileAddAvatar({ onHandleCancel, owner, onAddAttribute }) {
       body: JSON.stringify({ image }),
     })
       .then((resp) => resp.json())
-      .then((avatar) => onAddAttribute("image", avatar.image));
+      .then((avatar) => {
+        onAddAttribute("image", avatar.image);
+      })
+      .then(setAddOwnerAvatar(false));
   }
 
   return (
@@ -32,7 +40,10 @@ function OwnerProfileAddAvatar({ onHandleCancel, owner, onAddAttribute }) {
           <button type="submit" className="business-submit-button">
             Submit
           </button>
-          <button onClick={handleCancel} className="business-submit-button">
+          <button
+            onClick={() => handleCancel(false)}
+            className="business-submit-button"
+          >
             Cancel
           </button>
         </div>
