@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function OwnerProfileAddAvatar({ onHandleCancel, owner, onAddAvatar }) {
+function OwnerProfileAddAvatar({ onHandleCancel, owner, onAddAttribute }) {
   const [image, setImage] = useState("");
   function handleCancel(cancel) {
     onHandleCancel(cancel);
@@ -16,7 +16,7 @@ function OwnerProfileAddAvatar({ onHandleCancel, owner, onAddAvatar }) {
       body: JSON.stringify({ image }),
     })
       .then((resp) => resp.json())
-      .then((resp) => onAddAvatar(resp.image));
+      .then((avatar) => onAddAttribute("image", avatar.image));
   }
 
   return (

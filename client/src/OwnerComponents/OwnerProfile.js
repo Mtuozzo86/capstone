@@ -10,16 +10,12 @@ function OwnerProfile({ owner }) {
   useEffect(() => {
     fetch(`/owners/${owner.id}`)
       .then((resp) => resp.json())
-      .then((info) => {
-        setOwnerBusiness(info.business);
-        setOwnerBio(info.biography);
-        setOwnerAvatar(info.image);
-        setOwnerOccupation(info.occupation);
-      });
+      .then((person) => setLoggedInUser(person));
   }, []);
 
-  const { business, email, phone, website, occupation, biography, image } =
-    owner;
+  const [loggedInUser, setLoggedInUser] = useState(owner);
+
+  const { business, email, occupation, biography, image } = owner;
   const fullName = owner.first_name + " " + owner.last_name;
 
   const [addBusiness, setAddBusiness] = useState(false);
@@ -27,7 +23,7 @@ function OwnerProfile({ owner }) {
   const [addOwnerBio, setAddOwnerBio] = useState(false);
   const [ownerBio, setOwnerBio] = useState(biography);
   const [addOwnerAvatar, setAddOwnerAvatar] = useState(false);
-  const [ownerAvatar, setOwnerAvatar] = useState(image);
+  const [ownerAvatar, setOwnerAvatar] = useState(loggedInUser.image);
   const [addOwnerOccupation, setAddOwnerOccupation] = useState(false);
   const [ownerOccupation, setOwnerOccupation] = useState(occupation);
 
@@ -82,6 +78,10 @@ function OwnerProfile({ owner }) {
       });
   }
 
+  function handleAddAttribute(attribute, val) {
+    setLoggedInUser({ ...loggedInUser, [attribute]: [val] });
+  }
+
   return (
     <div className="owner-profile-wrapper">
       <div>
@@ -123,12 +123,12 @@ function OwnerProfile({ owner }) {
         </div>
         <div>
           {/* AVATAR IMAGE */}
-          {ownerAvatar ? (
+          {loggedInUser.image ? (
             <div className="test">
               <div>
                 <img
                   className="owner-profile__image-avatar"
-                  src={ownerAvatar}
+                  src={loggedInUser.image}
                   alt=""
                 />
               </div>
@@ -150,7 +150,7 @@ function OwnerProfile({ owner }) {
             <OwnerProfileAddAvatar
               owner={owner}
               onHandleCancel={handleCancelAddAvatar}
-              onAddAvatar={handleAddAvatar}
+              onAddAttribute={handleAddAttribute}
             />
           ) : null}
         </div>
