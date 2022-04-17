@@ -1,11 +1,7 @@
 import { useState } from "react";
 
-function OwnerProfileAddBio({ owner, onHandleCancel, onAddBio }) {
+function OwnerProfileAddBio({ owner, handleCancel, onAddBio, setAddOwnerBio }) {
   const [biography, setBio] = useState("");
-
-  function handleCancel(off) {
-    onHandleCancel(off);
-  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -17,7 +13,8 @@ function OwnerProfileAddBio({ owner, onHandleCancel, onAddBio }) {
       body: JSON.stringify({ biography }),
     })
       .then((resp) => resp.json())
-      .then((info) => onAddBio(info.biography));
+      .then((info) => onAddBio("biography", info.biography))
+      .then(setAddOwnerBio(false));
   }
 
   return (
@@ -34,7 +31,10 @@ function OwnerProfileAddBio({ owner, onHandleCancel, onAddBio }) {
           <button type="submit" className="business-submit-button">
             Submit
           </button>
-          <button onClick={handleCancel} className="business-submit-button">
+          <button
+            onClick={() => handleCancel(false)}
+            className="business-submit-button"
+          >
             Cancel
           </button>
         </div>

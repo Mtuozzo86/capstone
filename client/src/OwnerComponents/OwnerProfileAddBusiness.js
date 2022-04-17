@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function OwnerProfileAddBusiness({
   owner,
-  onCancelAddBusiness,
+  handleCancel,
   onAddAttribute,
   setAddBusiness,
 }) {
@@ -22,10 +22,6 @@ function OwnerProfileAddBusiness({
       .then(setAddBusiness(false));
   }
 
-  function handleCancel(off) {
-    onCancelAddBusiness(off);
-  }
-
   return (
     <div>
       <form onSubmit={handleSubmit} className="owner-profile-form-inputs">
@@ -41,7 +37,10 @@ function OwnerProfileAddBusiness({
             <button type="submit" className="business-submit-button">
               Submit
             </button>
-            <button onClick={handleCancel} className="business-submit-button">
+            <button
+              onClick={() => handleCancel(false)}
+              className="business-submit-button"
+            >
               Cancel
             </button>
           </div>

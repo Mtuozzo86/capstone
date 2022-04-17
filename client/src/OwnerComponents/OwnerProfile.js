@@ -11,11 +11,11 @@ function OwnerProfile({ owner }) {
     fetch(`/owners/${owner.id}`)
       .then((resp) => resp.json())
       .then((person) => setLoggedInUser(person));
-  }, []);
+  }, [owner]);
 
   const [loggedInUser, setLoggedInUser] = useState(owner);
 
-  const { email, occupation, biography } = owner;
+  const { email, occupation } = owner;
   const fullName = owner.first_name + " " + owner.last_name;
 
   const [addBusiness, setAddBusiness] = useState(false);
@@ -23,13 +23,7 @@ function OwnerProfile({ owner }) {
   const [addOwnerAvatar, setAddOwnerAvatar] = useState(false);
   const [addOwnerOccupation, setAddOwnerOccupation] = useState(false);
 
-  const [ownerBio, setOwnerBio] = useState(biography);
   const [ownerOccupation, setOwnerOccupation] = useState(occupation);
-
-  function handleCancelAddBusiness() {
-    setAddBusiness(false);
-    setAddOwnerBio(false);
-  }
 
   function handleCancelAddOccupation() {
     setAddOwnerOccupation(false);
@@ -38,11 +32,6 @@ function OwnerProfile({ owner }) {
   function handleAddOccupation(occu) {
     setOwnerOccupation(occu);
     setAddOwnerOccupation(false);
-  }
-
-  function handleAddBio(bio) {
-    setOwnerBio(bio);
-    setAddOwnerBio(false);
   }
 
   function handleDeleteBusiness(attr) {
@@ -57,8 +46,6 @@ function OwnerProfile({ owner }) {
       .then((resp) => resp.json())
       .then((info) => {
         setLoggedInUser(info);
-        setOwnerBio(info.biography);
-        setOwnerOccupation(info.occupation);
       });
   }
 
@@ -100,7 +87,7 @@ function OwnerProfile({ owner }) {
           {addBusiness ? (
             <OwnerProfileAddBusiness
               owner={owner}
-              onCancelAddBusiness={handleCancelAddBusiness}
+              handleCancel={setAddBusiness}
               onAddAttribute={handleAddAttribute}
               setAddBusiness={setAddBusiness}
             />
@@ -170,9 +157,9 @@ function OwnerProfile({ owner }) {
         </div>
         <div>
           {/* BIOGRAPHY */}
-          {ownerBio ? (
+          {loggedInUser.biography ? (
             <div className="test">
-              <div>{ownerBio}</div>
+              <div>{loggedInUser.biography}</div>
               <div className="delete">
                 <MdOutlineRemoveCircleOutline
                   onClick={() => handleDeleteBusiness("biography")}
@@ -190,8 +177,9 @@ function OwnerProfile({ owner }) {
           {addOwnerBio ? (
             <OwnerProfileAddBio
               owner={owner}
-              onHandleCancel={handleCancelAddBusiness}
-              onAddBio={handleAddBio}
+              handleCancel={setAddOwnerBio}
+              onAddBio={handleAddAttribute}
+              setAddOwnerBio={setAddOwnerBio}
             />
           ) : null}
         </div>
