@@ -41,7 +41,7 @@ function OwnerProfile({ owner }) {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ [attribute]: null }),
+      body: JSON.stringify({ [attribute]: "" }),
     })
       .then((resp) => resp.json())
       .then((info) => {
