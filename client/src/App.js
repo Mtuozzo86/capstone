@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="wrapper">
       <Routes>
-        <Route path="/business/:business" element={<WhatCustomerSees />}>
+        <Route path="/business/:website" element={<WhatCustomerSees />}>
           <Route path="about" element={<About />} />
         </Route>
 
