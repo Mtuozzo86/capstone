@@ -2,8 +2,9 @@ import { useState } from "react";
 
 function OwnerProfileAddOccupation({
   owner,
-  onCancelAddOccupation,
+  handleCancel,
   onAddOccupation,
+  setAddOwnerOccupation,
 }) {
   const [occupation, setOccupation] = useState("");
   console.log(occupation);
@@ -18,11 +19,8 @@ function OwnerProfileAddOccupation({
       body: JSON.stringify({ occupation }),
     })
       .then((resp) => resp.json())
-      .then((data) => onAddOccupation(data.occupation));
-  }
-
-  function handleCancel(off) {
-    onCancelAddOccupation(off);
+      .then((data) => onAddOccupation("occupation", data.occupation))
+      .then(setAddOwnerOccupation(false));
   }
 
   return (
@@ -40,7 +38,10 @@ function OwnerProfileAddOccupation({
             <button type="submit" className="business-submit-button">
               Submit
             </button>
-            <button onClick={handleCancel} className="business-submit-button">
+            <button
+              onClick={() => handleCancel(false)}
+              className="business-submit-button"
+            >
               Cancel
             </button>
           </div>

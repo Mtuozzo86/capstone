@@ -23,7 +23,7 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
           Go to the profile tab and add the name of your business. It will
           create a custom link you can copy to advertise anywhere you like.
         </p>
-        <Link to={`/business/${url}`}>{url}</Link>
+        <Link to={`/business/${url}`}>/business/{url}</Link>
       </div>
     </div>
   );

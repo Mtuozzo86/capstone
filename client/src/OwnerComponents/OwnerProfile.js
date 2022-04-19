@@ -130,9 +130,9 @@ function OwnerProfile({ owner }) {
         <div>{email ? email : <p>Enter an email</p>}</div>
         <div>
           {/* OCCUPATION */}
-          {ownerOccupation ? (
+          {loggedInUser.occupation ? (
             <div className="test">
-              <div>{ownerOccupation}</div>
+              <div>{loggedInUser.occupation}</div>
               <div className="delete">
                 <MdOutlineRemoveCircleOutline
                   onClick={() => handleDeleteBusiness("occupation")}
@@ -150,8 +150,9 @@ function OwnerProfile({ owner }) {
           {addOwnerOccupation ? (
             <OwnerProfileAddOwnerOccupation
               owner={owner}
-              onCancelAddOccupation={handleCancelAddOccupation}
-              onAddOccupation={handleAddOccupation}
+              handleCancel={setAddOwnerOccupation}
+              onAddOccupation={handleAddAttribute}
+              setAddOwnerOccupation={setAddOwnerOccupation}
             />
           ) : null}
         </div>
