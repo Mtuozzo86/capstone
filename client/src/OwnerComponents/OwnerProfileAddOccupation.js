@@ -7,7 +7,6 @@ function OwnerProfileAddOccupation({
   setAddOwnerOccupation,
 }) {
   const [occupation, setOccupation] = useState("");
-  console.log(occupation);
 
   function handleSubmit(e) {
     e.preventDefault();

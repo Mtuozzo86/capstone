@@ -15,25 +15,12 @@ function OwnerProfile({ owner }) {
 
   const [loggedInUser, setLoggedInUser] = useState(owner);
 
-  const { email, occupation } = owner;
   const fullName = owner.first_name + " " + owner.last_name;
 
   const [addBusiness, setAddBusiness] = useState(false);
   const [addOwnerBio, setAddOwnerBio] = useState(false);
   const [addOwnerAvatar, setAddOwnerAvatar] = useState(false);
   const [addOwnerOccupation, setAddOwnerOccupation] = useState(false);
-
-  const [ownerOccupation, setOwnerOccupation] = useState(occupation);
-
-  function handleCancelAddOccupation() {
-    setAddOwnerOccupation(false);
-  }
-
-  function handleAddOccupation(occu) {
-    setOwnerOccupation(occu);
-    setAddOwnerOccupation(false);
-  }
-
   function handleDeleteBusiness(attr) {
     const attribute = attr;
     fetch(`owners/${owner.id}`, {
@@ -127,7 +114,9 @@ function OwnerProfile({ owner }) {
             />
           ) : null}
         </div>
-        <div>{email ? email : <p>Enter an email</p>}</div>
+        <div>
+          {loggedInUser.email ? loggedInUser.email : <p>Enter an email</p>}
+        </div>
         <div>
           {/* OCCUPATION */}
           {loggedInUser.occupation ? (
@@ -175,14 +164,14 @@ function OwnerProfile({ owner }) {
               Enter something about yourself
             </p>
           )}
-          {addOwnerBio ? (
+          {addOwnerBio && (
             <OwnerProfileAddBio
               owner={owner}
               handleCancel={setAddOwnerBio}
               onAddBio={handleAddAttribute}
               setAddOwnerBio={setAddOwnerBio}
             />
-          ) : null}
+          )}
         </div>
       </div>
     </div>
