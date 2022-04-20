@@ -22,6 +22,8 @@ function WhatCustomerSees() {
     });
   }, [webAddress]);
 
+  if (!business) return <p>Loading!</p>;
+
   return (
     <div className="business-found-wrapper">
       {error ? (

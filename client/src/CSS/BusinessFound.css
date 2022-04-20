@@ -49,16 +49,20 @@
 
 .business-found-owner {
   display: flex;
+  flex-direction: column;
   width: 50%;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .profile-picture {
-  height: 150px;
-  width: auto;
+  /* height: 150px; */
+  width: 230px;
   clip-path: circle();
 }
 
 .profile-name {
-  align-self: flex-end;
+  /* align-self: flex-end; */
+  margin-top: 10px;
   font-size: larger;
 }

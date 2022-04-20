@@ -4,11 +4,12 @@ import BusinessNavbar from "./BusinessNavbar";
 import "../CSS/BusinessFound.css";
 import CustomerLandingPage from "./CustomerLandingPage";
 import About from "./About";
+import Contact from "./Contact";
 
 function BusinessFound({ companyInfo, urlParam }) {
   return (
     <div className="business-found">
-      <BusinessNavbar urlParam={urlParam} />
+      <BusinessNavbar />
 
       <Routes>
         <Route
@@ -16,6 +17,10 @@ function BusinessFound({ companyInfo, urlParam }) {
           element={<CustomerLandingPage companyInfo={companyInfo} />}
         />
         <Route path={`about`} element={<About bio={companyInfo.biography} />} />
+        <Route
+          path={`contact`}
+          element={<Contact companyInfo={companyInfo} />}
+        />
       </Routes>
     </div>
   );

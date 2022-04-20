@@ -1,5 +1,8 @@
 function CustomerLandingPage({ companyInfo }) {
   const fullName = companyInfo.first_name + " " + companyInfo.last_name;
+  if (!companyInfo.business) {
+    return <p>Loading! </p>;
+  }
 
   return (
     <div className="business-found">

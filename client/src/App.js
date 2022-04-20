@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import WhatCustomerSees from "./CustomerComponents/WhatCustomerSees";
 import PleaseLoginScreen from "./PleaseLoginScreen";
 import About from "./CustomerComponents/About";
+import Contact from "./CustomerComponents/Contact";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/business/:website" element={<WhatCustomerSees />}>
           <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
 
         <Route path="/" element={<MainLandingPage />} />
