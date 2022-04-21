@@ -10,10 +10,7 @@ function OwnerProfileAddBusiness({
 
   function handleSubmit(e) {
     e.preventDefault();
-    // const paramIt = {
-    //   business,
-    //   website: business.toLowerCase().split(" ").join("-"),
-    // };
+
     fetch(`/owners/${owner.id}`, {
       method: "PATCH",
       headers: {
