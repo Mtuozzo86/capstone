@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/business/:business", to: "business#show"
+  get "/business/:website", to: "business#show"
   # patch "owners/:id", to: "owners#create_business"
   resources :owners
   resources :owner_addresses
