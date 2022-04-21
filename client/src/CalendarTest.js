@@ -3,7 +3,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarDays from "./CalenderDays";
 
-function CalenderTest() {
+function CalendarTest() {
   const nineToFive = [
     "9:00am - 9:45am",
     "10:00am - 10:45am",
@@ -51,4 +51,4 @@ function CalenderTest() {
   );
 }
 
-export default CalenderTest;
+export default CalendarTest;

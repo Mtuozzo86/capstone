@@ -8,7 +8,7 @@ function BusinessNavbar() {
     <div className="business-navbar">
       <Link to="about">About</Link>
       <Link to="contact">Contact</Link>
-      <div>Schedule</div>
+      <Link to="schedule">Schedule</Link>
     </div>
   );
 }

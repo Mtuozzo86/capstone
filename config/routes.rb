@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # patch "owners/:id", to: "owners#create_business"
   resources :owners
   resources :owner_addresses
+  resources :appointments
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }

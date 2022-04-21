@@ -16,7 +16,9 @@ function OwnerAddress({ loggedInUser }) {
     const updatedAddressList = [...addressList, newAddress];
     setAddressList(updatedAddressList);
   }
-
+  if (!loggedInUser) {
+    return <p>Loading Address List</p>;
+  }
   const addresses = addressList.map((item) => {
     return (
       <OwnerAddressList

@@ -21,6 +21,7 @@ function OwnerProfile({ owner }) {
   const [addOwnerBio, setAddOwnerBio] = useState(false);
   const [addOwnerAvatar, setAddOwnerAvatar] = useState(false);
   const [addOwnerOccupation, setAddOwnerOccupation] = useState(false);
+
   function handleDeleteBusiness(attr) {
     const attribute = attr;
     fetch(`owners/${owner.id}`, {
@@ -45,7 +46,7 @@ function OwnerProfile({ owner }) {
       <div>
         <p>
           Set your info here. Add additional information for your clients to see
-          when they view your information.
+          when they view your page.
         </p>
       </div>
 

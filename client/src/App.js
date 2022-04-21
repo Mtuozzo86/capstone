@@ -10,6 +10,7 @@ import WhatCustomerSees from "./CustomerComponents/WhatCustomerSees";
 import PleaseLoginScreen from "./PleaseLoginScreen";
 import About from "./CustomerComponents/About";
 import Contact from "./CustomerComponents/Contact";
+import CalendarTest from "./CalendarTest";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -31,6 +32,7 @@ function App() {
         <Route path="/business/:website" element={<WhatCustomerSees />}>
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="schedule" element={<CalendarTest />} />
         </Route>
 
         <Route path="/" element={<MainLandingPage />} />

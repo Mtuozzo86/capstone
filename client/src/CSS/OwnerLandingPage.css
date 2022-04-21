@@ -1,9 +1,10 @@
 /* EVERYTHING AFTER SIGNING IN AS AN OWNER */
 
 .react-calendar {
+  
   border: none;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
-  width: 400px;
+  width: 700px;
   height: auto;
   margin: 100px;
 }

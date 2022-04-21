@@ -5,8 +5,9 @@ import "../CSS/BusinessFound.css";
 import CustomerLandingPage from "./CustomerLandingPage";
 import About from "./About";
 import Contact from "./Contact";
+import CalendarTest from "../CalendarTest";
 
-function BusinessFound({ companyInfo, urlParam }) {
+function BusinessFound({ companyInfo }) {
   return (
     <div className="business-found">
       <BusinessNavbar />
@@ -21,6 +22,7 @@ function BusinessFound({ companyInfo, urlParam }) {
           path={`contact`}
           element={<Contact companyInfo={companyInfo} />}
         />
+        <Route path={`schedule`} element={<CalendarTest />} />
       </Routes>
     </div>
   );
