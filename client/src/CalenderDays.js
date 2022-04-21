@@ -3,9 +3,19 @@ function CalendarDays({ day, onHandleClick }) {
 
   const timeFrame = day.availability.map((time) => {
     return (
-      <li onClick={() => handleClick(time)} key={time}>
+      <div
+        style={{
+          border: "1px solid black",
+          padding: 8,
+          fontSize: 18,
+          backgroundColor: "gray",
+          marginBottom: 6,
+        }}
+        onClick={() => handleClick(time)}
+        key={time}
+      >
         {time}
-      </li>
+      </div>
     );
   });
 
@@ -14,7 +24,7 @@ function CalendarDays({ day, onHandleClick }) {
   }
 
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h1>{day.chosenDay}</h1>
       <div>{timeFrame}</div>
       <h2>Booked Days</h2>
