@@ -13,6 +13,4 @@ class Owner < ApplicationRecord
   def self.business(name)
     Owner.where("lower(business) Like ?", name.downcase)
   end
-
-  private
 end
