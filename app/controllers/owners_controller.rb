@@ -5,10 +5,9 @@ class OwnersController < ApplicationController
   end
 
   def update
-    # byebug
     owner = Owner.find_by(id: params[:id])
     owner.update(profile_params)
-    
+
     render json: owner
   end
 

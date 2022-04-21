@@ -10,15 +10,23 @@ function OwnerProfileAddBusiness({
 
   function handleSubmit(e) {
     e.preventDefault();
+    // const paramIt = {
+    //   business,
+    //   website: business.toLowerCase().split(" ").join("-"),
+    // };
     fetch(`/owners/${owner.id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ business }),
+      body: JSON.stringify({
+        business,
+        website: business.toLowerCase().split(" ").join("-"),
+      }),
     })
       .then((resp) => resp.json())
       .then((data) => onAddAttribute("business", data.business))
+
       .then(setAddBusiness(false));
   }
 
