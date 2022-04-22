@@ -8,7 +8,7 @@ function MainLandingPage() {
 
       <div className="main-landing-page-items">
         <div className="item">
-          <h1>Welcome</h1>
+          <input className="main-landing-page-search" type="text" />
         </div>
         <div className="item">
           <h4>Browse</h4>
