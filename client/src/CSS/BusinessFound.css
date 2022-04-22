@@ -38,6 +38,7 @@
   background: #4f618563;
   border-radius: 20px;
   border: none;
+  transition: 0.3s;
 }
 
 .business-navbar > *:hover {
@@ -45,6 +46,7 @@
   cursor: pointer;
   transition: 0.2s;
   color: white;
+  transform: scale(1.07);
 }
 
 .business-found-owner {
@@ -65,4 +67,19 @@
   /* align-self: flex-end; */
   margin-top: 10px;
   font-size: larger;
+}
+
+.calender-days-times {
+  border: 1px solid black;
+  padding: 8px;
+  font-size: 18px;
+  background-color: gray;
+  margin-bottom: 6px;
+  transition: 0.2s;
+}
+
+.calender-days-times:hover {
+  transform: scale(1.06);
+  background-color: dodgerblue;
+  color: aliceblue;
 }

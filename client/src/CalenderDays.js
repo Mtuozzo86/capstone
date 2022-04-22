@@ -4,13 +4,7 @@ function CalendarDays({ day, onHandleClick }) {
   const timeFrame = day.availability.map((time) => {
     return (
       <div
-        style={{
-          border: "1px solid black",
-          padding: 8,
-          fontSize: 18,
-          backgroundColor: "gray",
-          marginBottom: 6,
-        }}
+        className="calender-days-times"
         onClick={() => handleClick(time)}
         key={time}
       >
