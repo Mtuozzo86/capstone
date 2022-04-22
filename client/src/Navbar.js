@@ -1,5 +1,5 @@
 import "./CSS/Navbar.css";
-import { BsSearch } from "react-icons/bs";
+
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -16,10 +16,6 @@ function Navbar() {
         <Link to="/create">
           <p>Create Acct</p>
         </Link>
-
-        <p>
-          <BsSearch />
-        </p>
       </div>
     </div>
   );

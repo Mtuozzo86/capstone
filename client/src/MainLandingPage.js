@@ -1,10 +1,11 @@
 import Navbar from "./Navbar";
 import "./CSS/MainLandingPage.css";
+import MainLandingPageNavbar from "./MainLandingPageNavbar";
 
 function MainLandingPage() {
   return (
     <div className="main-landing-page-container">
-      <Navbar />
+      <MainLandingPageNavbar />
 
       <div className="main-landing-page-items">
         <div className="item">
