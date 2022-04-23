@@ -5,7 +5,6 @@ import MainLandingPageNavbar from "./MainLandingPageNavbar";
 function MainLandingPage() {
   const [searched, setSearched] = useState("");
   const [results, setResults] = useState([]);
-  console.log(results);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -15,9 +14,15 @@ function MainLandingPage() {
   }
 
   const searchResults = results.filter((result) => {
-    return;
+    if (searched.length === 0) {
+      return;
+    }
+    return (
+      result.business.toLowerCase().includes(searched.toLowerCase()) ||
+      result.occupation.toLowerCase().includes(searched.toLowerCase())
+    );
   });
-
+  console.log(searchResults);
   return (
     <div className="main-landing-page-container">
       <MainLandingPageNavbar />
