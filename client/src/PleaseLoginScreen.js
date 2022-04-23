@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
+
 function PleaseLoginScreen() {
-  return <h1>Sorry, please login to use service</h1>;
+  return (
+    <h1>
+      Sorry, please <Link to="/login">login</Link> to use service
+    </h1>
+  );
 }
 
 export default PleaseLoginScreen;
