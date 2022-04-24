@@ -1,3 +1,5 @@
+import Review from "./Review";
+
 function CustomerLandingPage({ companyInfo }) {
   const fullName = companyInfo.first_name + " " + companyInfo.last_name;
   if (!companyInfo.business) {
@@ -17,6 +19,7 @@ function CustomerLandingPage({ companyInfo }) {
         />
         <div className="profile-name">{fullName}</div>
       </div>
+      <Review />
     </div>
   );
 }
