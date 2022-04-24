@@ -14,7 +14,7 @@
   width: 600px;
 }
 
-input {
+.input-create-account {
   padding: 12px 8px;
   margin: 10px;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);

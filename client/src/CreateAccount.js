@@ -66,7 +66,7 @@ function CreateAccount() {
           <div className="first-lastname">
             {" "}
             <input
-              className="name"
+              className="input-create-account"
               name="first_name"
               type="text"
               placeholder="First Name"
@@ -74,7 +74,7 @@ function CreateAccount() {
               onChange={handleChange}
             />
             <input
-              className="name"
+              className="input-create-account"
               name="last_name"
               type="text"
               placeholder="Last Name"
@@ -84,6 +84,7 @@ function CreateAccount() {
           </div>
 
           <input
+            className="input-create-account"
             name="email"
             type="text"
             placeholder="Email"
@@ -91,6 +92,7 @@ function CreateAccount() {
             onChange={handleChange}
           />
           <input
+            className="input-create-account"
             name="password"
             type="password"
             placeholder="Password"
@@ -99,6 +101,7 @@ function CreateAccount() {
           />
 
           <input
+            className="input-create-account"
             name="password_confirmation"
             type="password"
             placeholder="Confirm Password"
