@@ -13,12 +13,16 @@ function OwnerProfileAddAvatar({
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("image", image);
+
     fetch(`/owners/${owner.id}`, {
       method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ image }),
+      // headers: {
+      //   "Content-type": "application/json",
+      // },
+      body: formData,
     })
       .then((resp) => resp.json())
       .then((avatar) => {
@@ -31,11 +35,17 @@ function OwnerProfileAddAvatar({
     <div>
       <form onSubmit={handleSubmit} className="owner-profile-form-inputs">
         <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+
+        {/* <input
           name="avatar"
           type="text"
           value={image}
           onChange={(e) => setImage(e.target.value)}
-        />
+        /> */}
         <div>
           <button type="submit" className="business-submit-button">
             Submit

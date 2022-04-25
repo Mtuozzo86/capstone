@@ -22,14 +22,25 @@ function OwnerProfile({ owner }) {
   const [addOwnerAvatar, setAddOwnerAvatar] = useState(false);
   const [addOwnerOccupation, setAddOwnerOccupation] = useState(false);
 
+  function handleDeleteImage() {
+    const formData = new FormData();
+    formData.append("image", avatarImage.purge);
+    fetch(`owners/${owner.id}`, {
+      method: "PATCH",
+      body: formData,
+    })
+      .then((resp) => resp.json())
+      .then((owner) => console.log(owner));
+  }
+
   function handleDeleteBusiness(attr) {
-    const attribute = attr;
+    // const attribute = attr;
     fetch(`owners/${owner.id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ [attribute]: "" }),
+      body: JSON.stringify({ [attr]: "" }),
     })
       .then((resp) => resp.json())
       .then((info) => {
@@ -38,6 +49,7 @@ function OwnerProfile({ owner }) {
   }
 
   function handleAddAttribute(attribute, val) {
+    console.log(attribute, val);
     setLoggedInUser({ ...loggedInUser, [attribute]: [val] });
   }
 
@@ -94,7 +106,7 @@ function OwnerProfile({ owner }) {
               </div>
               <div className="delete">
                 <MdOutlineRemoveCircleOutline
-                  onClick={() => handleDeleteBusiness("image")}
+                  onClick={() => handleDeleteImage()}
                 />
               </div>
             </div>
