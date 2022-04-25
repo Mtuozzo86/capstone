@@ -54,7 +54,7 @@
   flex-direction: column;
   width: 50%;
   align-items: center;
-  margin-top: 50px;
+  margin: 50px 0px;
 }
 
 .profile-picture {
@@ -82,4 +82,45 @@
   transform: scale(1.06);
   background-color: dodgerblue;
   color: aliceblue;
+}
+
+/* REVIEW SECTION */
+.review-box {
+  /* border: 1px solid black; */
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: auto;
+  font-weight: 200;
+}
+
+.review-box-rating {
+  padding: 6px;
+}
+
+.review-box-commenter {
+  padding: 12px;
+  font-size: medium;
+  font-weight: 300;
+}
+
+/* ABOUT SECTION */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.about > p {
+  padding: 12px;
+  font-size: medium;
+  font-weight: 400;
+}
+
+.about-form {
+  width: 75%;
+  align-items: center;
 }

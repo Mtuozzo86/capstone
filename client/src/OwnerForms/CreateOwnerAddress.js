@@ -34,6 +34,7 @@ function CreateOwnerAddress({ onSetAddress }) {
       <div className="create-form-container">
         <form onSubmit={handleSubmit}>
           <input
+            className="input-create-account"
             name="street"
             type="text"
             placeholder="Street"
@@ -41,6 +42,7 @@ function CreateOwnerAddress({ onSetAddress }) {
             onChange={handleChange}
           />
           <input
+            className="input-create-account"
             name="city"
             type="text"
             placeholder="City"
@@ -49,6 +51,7 @@ function CreateOwnerAddress({ onSetAddress }) {
           />
 
           <input
+            className="input-create-account"
             name="state"
             type="text"
             placeholder="State"
@@ -57,6 +60,7 @@ function CreateOwnerAddress({ onSetAddress }) {
           />
 
           <input
+            className="input-create-account"
             name="zip"
             type="text"
             placeholder="Zip"

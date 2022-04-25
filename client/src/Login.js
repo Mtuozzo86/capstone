@@ -46,12 +46,14 @@ function Login({ userInfo }) {
       <div className="login-form-container">
         <form className="login-signin" onSubmit={handleSubmit}>
           <input
+            className="input-create-account"
             name="email"
             type="text"
             placeholder="Email"
             onChange={handleEmail}
           />
           <input
+            className="input-create-account"
             name="password"
             type="password"
             placeholder="Password"

@@ -1,4 +1,4 @@
-import "./CSS/MainLandingPage.css";
+import "../CSS/MainLandingPage.css";
 
 import { NavLink } from "react-router-dom";
 

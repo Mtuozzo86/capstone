@@ -1,5 +1,4 @@
-import { useParams, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import BusinessNavbar from "./BusinessNavbar";
 import "../CSS/BusinessFound.css";
 import CustomerLandingPage from "./CustomerLandingPage";

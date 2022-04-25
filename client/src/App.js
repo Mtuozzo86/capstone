@@ -4,7 +4,7 @@ import CreateAccount from "./CreateAccount";
 import Login from "./Login";
 import OwnerLandingPage from "./OwnerComponents/OwnerLandingPage";
 import CreateAccountSuccess from "./CreateAccountSuccess";
-import MainLandingPage from "./MainLandingPage";
+import MainLandingPage from "./MainLandingPage/MainLandingPage";
 import { useState, useEffect } from "react";
 import WhatCustomerSees from "./CustomerComponents/WhatCustomerSees";
 import PleaseLoginScreen from "./PleaseLoginScreen";
