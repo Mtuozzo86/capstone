@@ -23,14 +23,11 @@ function OwnerProfile({ owner }) {
   const [addOwnerOccupation, setAddOwnerOccupation] = useState(false);
 
   function handleDeleteImage() {
-    const formData = new FormData();
-    formData.append("image", avatarImage.purge);
-    fetch(`owners/${owner.id}`, {
+    fetch(`owners/${owner.id}/remove`, {
       method: "PATCH",
-      body: formData,
     })
       .then((resp) => resp.json())
-      .then((owner) => console.log(owner));
+      .then((owner) => setLoggedInUser(owner));
   }
 
   function handleDeleteBusiness(attr) {

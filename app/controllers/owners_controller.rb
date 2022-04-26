@@ -4,7 +4,15 @@ class OwnersController < ApplicationController
     render json: owner
   end
 
+  def remove_image
+    owner = Owner.find_by(id: params[:id])
+    owner.update(profile_params)
+    owner.image.purge
+    render json: owner
+  end
+
   def update
+    # byebug
     owner = Owner.find_by(id: params[:id])
     owner.update(profile_params)
 
