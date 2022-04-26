@@ -15,4 +15,12 @@ class Owner < ApplicationRecord
   def self.business(name)
     Owner.where("lower(business) Like ?", name.downcase)
   end
+
+  before_create do |owner|
+    owner.business = ""
+    owner.website = ""
+    owner.occupation = ""
+  end
+
+  private
 end

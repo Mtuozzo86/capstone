@@ -11,10 +11,10 @@ function Navbar() {
 
       <div className="navbar">
         <Link to="/login">
-          <p>Log In</p>
+          <p className="navbar-elem">Log In</p>
         </Link>
         <Link to="/create">
-          <p>Create Acct</p>
+          <p className="navbar-elem">Create Acct</p>
         </Link>
       </div>
     </div>

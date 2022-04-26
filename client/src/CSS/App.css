@@ -16,3 +16,8 @@
   min-height: 100vh;
   align-items: stretch;
 }
+
+a {
+  text-decoration: none;
+  color: rgb(45, 45, 45);
+}

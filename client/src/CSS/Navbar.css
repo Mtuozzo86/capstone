@@ -1,26 +1,27 @@
 .navbar-header {
   display: flex;
   justify-content: space-between;
-  box-shadow: 0px 3px 10px;
+  /* box-shadow: 0px 3px 10px; */
   align-items: center;
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(36, 0, 153);
   width: 100%;
-  height: 55px;
+  height: 75px;
 }
 
 .navbar {
   display: flex;
   margin-right: 20px;
-  color: blue;
+
 }
 
 .title {
   border-radius: 50px;
   padding: 10px 14px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.116);
-  color: black;
+  background: rgb(0, 0, 0);
+  color: white;
   margin-left: 25px;
+  font-size: 18px;
 }
 
 p {
@@ -28,7 +29,10 @@ p {
   padding-left: 25px;
 }
 
-a {
+
+
+.navbar-elem {
   text-decoration: none;
-  color: blue;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
 }

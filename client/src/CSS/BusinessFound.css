@@ -6,6 +6,14 @@
   background: linear-gradient(#a08c8c, #5b5f81);
 }
 
+.business-found-company-name {
+  padding: 10px 0px;
+  width: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+
 .business-found {
   width: 100%;
   display: flex;
@@ -15,31 +23,27 @@
 
 .business-navbar {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
   padding: 20px 0px;
+  
 }
 
-.business-found-company-name {
-  padding: 10px 0px;
-  width: 100%;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
-}
 
 .business-navbar > * {
-  width: 10%;
+  margin-bottom: 10px;
+  width: 200px;
   text-align: center;
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid black;
   padding: 10px;
   background: #4f618563;
   border-radius: 20px;
   border: none;
   transition: 0.3s;
 }
+
 
 .business-navbar > *:hover {
   background: rgb(1, 25, 48);

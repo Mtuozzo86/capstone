@@ -4,11 +4,11 @@ function MainPageSearch({ onSearch, onHandleSearch }) {
   const [searched, setSearched] = useState("");
 
   function handleSubmit(e) {
-    onHandleSearch(searched);
     e.preventDefault();
     fetch("/owners")
       .then((resp) => resp.json())
       .then((data) => onSearch(data));
+    onHandleSearch(searched);
   }
 
   return (
