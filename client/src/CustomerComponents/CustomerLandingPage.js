@@ -1,4 +1,5 @@
 import Review from "./Review";
+import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {
   const fullName = companyInfo.first_name + " " + companyInfo.last_name;
@@ -19,7 +20,7 @@ function CustomerLandingPage({ companyInfo }) {
         />
         <div className="profile-name">{fullName}</div>
       </div>
-      <Review />
+      <ReviewList reviews={companyInfo.reviews} />
     </div>
   );
 }
