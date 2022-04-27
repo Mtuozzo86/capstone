@@ -1,7 +1,11 @@
-import Review from "./Review";
+import { useEffect, useState } from "react";
 import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {
+  useEffect(() => {
+    fetch(``);
+  });
+
   const fullName = companyInfo.first_name + " " + companyInfo.last_name;
   if (!companyInfo.business) {
     return <p>Loading! </p>;
