@@ -6,11 +6,11 @@ function MainLandingPageNavbar() {
   return (
     <div className="navbar-header-landing-page">
       <div className="navbar-main-landing-page">
-        <NavLink style={{ color: "black" }} to="/login">
-          <p>Log In</p>
+        <NavLink to="/login">
+          <p className="navbar-elem">Log In</p>
         </NavLink>
-        <NavLink style={{ color: "black" }} to="/create">
-          <p>Create Acct</p>
+        <NavLink to="/create">
+          <p className="navbar-elem">Create Acct</p>
         </NavLink>
       </div>
     </div>

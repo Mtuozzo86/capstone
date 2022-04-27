@@ -36,10 +36,10 @@
 
 .navbar-header-landing-page {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
-  height: 75px;
+  height: 80px;
   background-color: rgb(36, 0, 153);
 }
 
@@ -48,8 +48,4 @@
   margin-right: 20px;
   color: rgb(0, 0, 0);
   font-size: 28px;
-}
-
-.navbar-main-landing-page > p {
-  /* color: rgb(126, 75, 75); */
 }
