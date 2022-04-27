@@ -1,8 +1,6 @@
 import Review from "./Review";
 
 function ReviewList({ reviews }) {
-  console.log(reviews);
-
   const listOfReviews = reviews.map((review) => (
     <Review
       key={review.id}

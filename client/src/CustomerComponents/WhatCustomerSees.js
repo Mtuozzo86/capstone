@@ -5,7 +5,6 @@ import BusinessFound from "./BusinessFound";
 
 function WhatCustomerSees() {
   let webAddress = useParams();
-  console.log(webAddress.website);
 
   const [business, setBusiness] = useState([]);
   const [error, setError] = useState(false);
