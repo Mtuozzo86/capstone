@@ -31,6 +31,7 @@ function OwnerProfileAddBusiness({
     <div>
       <form onSubmit={handleSubmit} className="owner-profile-form-inputs">
         <input
+          className="input-create-account"
           name="business"
           type="text"
           placeholder="Enter business"

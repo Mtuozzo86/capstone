@@ -14,13 +14,12 @@ function OwnerProfile({ owner }) {
   }, [owner]);
 
   const [loggedInUser, setLoggedInUser] = useState(owner);
-
-  const fullName = owner.first_name + " " + owner.last_name;
-
   const [addBusiness, setAddBusiness] = useState(false);
   const [addOwnerBio, setAddOwnerBio] = useState(false);
   const [addOwnerAvatar, setAddOwnerAvatar] = useState(false);
   const [addOwnerOccupation, setAddOwnerOccupation] = useState(false);
+
+  const fullName = owner.first_name + " " + owner.last_name;
 
   function handleDeleteImage() {
     fetch(`owners/${owner.id}/remove`, {
@@ -31,7 +30,8 @@ function OwnerProfile({ owner }) {
   }
 
   function handleDeleteBusiness(attr) {
-    // const attribute = attr;
+    console.log(attr);
+
     fetch(`owners/${owner.id}`, {
       method: "PATCH",
       headers: {

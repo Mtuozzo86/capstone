@@ -21,6 +21,4 @@ class Owner < ApplicationRecord
     owner.website = ""
     owner.occupation = ""
   end
-
-  private
 end

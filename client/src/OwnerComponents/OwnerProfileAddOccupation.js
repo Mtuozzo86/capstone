@@ -26,6 +26,7 @@ function OwnerProfileAddOccupation({
     <div>
       <form onSubmit={handleSubmit} className="owner-profile-form-inputs">
         <input
+          className="input-create-account"
           name="occupation"
           type="text"
           placeholder="Enter occupation"

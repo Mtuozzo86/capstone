@@ -54,7 +54,10 @@ function OwnerLandingPage({ loggedInUser }) {
         {address && <OwnerAddress loggedInUser={loggedInUser} />}
         {openCalendar && <CalenderTest />}
         {ownerProfile && (
-          <OwnerProfile owner={loggedInUser} image={loggedInUser.image} />
+          <OwnerProfile
+            owner={loggedInUser}
+            image={loggedInUser.image || undefined}
+          />
         )}
       </div>
     </div>

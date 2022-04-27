@@ -7,9 +7,6 @@ function OwnerProfileAddAvatar({
   setAddOwnerAvatar,
 }) {
   const [image, setImage] = useState("");
-  // function handleCancel(cancel) {
-  //   onHandleCancel(cancel);
-  // }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,9 +16,6 @@ function OwnerProfileAddAvatar({
 
     fetch(`/owners/${owner.id}`, {
       method: "PATCH",
-      // headers: {
-      //   "Content-type": "application/json",
-      // },
       body: formData,
     })
       .then((resp) => resp.json())

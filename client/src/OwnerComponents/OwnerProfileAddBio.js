@@ -21,6 +21,7 @@ function OwnerProfileAddBio({ owner, handleCancel, onAddBio, setAddOwnerBio }) {
     <div>
       <form onSubmit={handleSubmit} className="owner-profile-form-inputs">
         <input
+          className="input-create-account"
           name="bio"
           type="text"
           placeholder="Say something about yourself"
