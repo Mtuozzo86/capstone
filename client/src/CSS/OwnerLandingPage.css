@@ -1,7 +1,6 @@
 /* EVERYTHING AFTER SIGNING IN AS AN OWNER */
 
 .react-calendar {
-  
   border: none;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
   width: 700px;
@@ -14,7 +13,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding: 8px 14px;
+  padding: 75px 8px 14px 14px;
   align-items: flex-start;
   font-size: 18px;
   color: rgb(194, 194, 194);
