@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {
@@ -10,7 +11,7 @@ function CustomerLandingPage({ companyInfo }) {
   return (
     <div className="business-found">
       <div className="business-found-company-name">
-        <h1>{companyInfo.business}</h1>
+        <h4>{companyInfo.business}</h4>
       </div>
       <div className="business-found-owner">
         <img
@@ -21,6 +22,7 @@ function CustomerLandingPage({ companyInfo }) {
         <div className="profile-name">{fullName}</div>
       </div>
       <ReviewList reviews={companyInfo.reviews} />
+      <Footer />
     </div>
   );
 }

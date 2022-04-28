@@ -3,11 +3,15 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
-  background: linear-gradient(#a08c8c, #5b5f81);
+  background: #fbfbff;
+  color: #040f16;
 }
 
 .business-found-company-name {
-  padding: 10px 0px;
+  margin-top: 50px;
+  padding-left: 20px;
+  display: flex;
+  
   width: 100%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -19,6 +23,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .business-navbar {
@@ -27,18 +33,18 @@
   width: 100%;
   justify-content: space-around;
   padding: 20px 0px;
+  background-color: #040f16;
   
 }
 
 
 .business-navbar > * {
-  margin-bottom: 10px;
   width: 200px;
   text-align: center;
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
-  background: #4f618563;
+  background: #01baef;
   border-radius: 20px;
   border: none;
   transition: 0.3s;
@@ -46,7 +52,7 @@
 
 
 .business-navbar > *:hover {
-  background: rgb(1, 25, 48);
+  background: #0b4f6c;
   cursor: pointer;
   transition: 0.2s;
   color: white;
@@ -80,6 +86,7 @@
   background-color: gray;
   margin-bottom: 6px;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .calender-days-times:hover {
@@ -127,4 +134,18 @@
 .about-form {
   width: 75%;
   align-items: center;
+}
+
+/* FOOTER SECTION */
+
+.footer {
+  display: flex;
+  height: 75px;
+  width: 100%;
+  background: #b80c09;
+  align-items: center;
+  color: #040f16;
+  font-weight: 600;
+  font-size: 18px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }

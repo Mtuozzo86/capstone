@@ -1,5 +1,4 @@
 import { AiFillStar } from "react-icons/ai";
-console.log(<AiFillStar />);
 
 function Review({ body, rating, name, date }) {
   const dateFormat = new Date(date);
