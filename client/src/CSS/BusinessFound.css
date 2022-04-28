@@ -142,10 +142,10 @@
   display: flex;
   height: 75px;
   width: 100%;
-  background: #b80c09;
+  background: #0B4F6C;
   align-items: center;
-  color: #040f16;
-  font-weight: 600;
+  color: #ffffff;
+  font-style: italic;
   font-size: 18px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
