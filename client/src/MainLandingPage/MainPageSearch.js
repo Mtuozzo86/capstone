@@ -1,13 +1,19 @@
 import { useState } from "react";
 
-function MainPageSearch({ onSearch, onHandleSearch }) {
+function MainPageSearch({ onGetData, onHandleSearch }) {
   const [searched, setSearched] = useState("");
+  const [validSearch, setValidSearch] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (searched.trim() === 0) {
+      setValidSearch(false);
+      return;
+    }
+    setValidSearch(true);
     fetch("/owners")
       .then((resp) => resp.json())
-      .then((data) => onSearch(data));
+      .then((data) => onGetData(data));
     onHandleSearch(searched);
   }
 
