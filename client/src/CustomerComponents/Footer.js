@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className="footer">
-      <div>
+      <Link to="/">
         <p>Home</p>
-      </div>
+      </Link>
+      <p>There</p>
     </div>
   );
 }
