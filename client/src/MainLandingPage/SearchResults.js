@@ -7,6 +7,7 @@ function SearchResults({ results }) {
         key={result.id}
         business={result.business}
         website={result.website}
+        image={result.image}
       />
     );
   });

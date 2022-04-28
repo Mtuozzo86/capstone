@@ -57,3 +57,8 @@
   color: rgb(0, 0, 0);
   font-size: 28px;
 }
+
+.result-image-icon {
+  clip-path: circle();
+  height: 75px;
+}
