@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function MainPageSearch({ onGetData, onHandleSearch }) {
+function MainPageSearch({ onHandleSearch, onGetData }) {
   const [searched, setSearched] = useState("");
 
   function handleSubmit(e) {

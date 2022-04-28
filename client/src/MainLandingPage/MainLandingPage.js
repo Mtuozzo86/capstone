@@ -1,28 +1,29 @@
 import { useState, useEffect } from "react";
 import "../CSS/MainLandingPage.css";
 import MainLandingPageNavbar from "../MainLandingPage/MainLandingPageNavbar";
-import MainPageSearch from "../MainLandingPage/MainPageSearch";
 import SearchResults from "./SearchResults";
 
 function MainLandingPage() {
   const [data, setData] = useState([]);
   const [searched, setSearched] = useState("");
 
-  let searchResults = data.filter((person) => {
+  const searchResults = data.filter((each) => {
     return (
-      person.business.toLowerCase().includes(searched.toLowerCase()) ||
-      person.occupation.toLowerCase().includes(searched.toLowerCase())
+      each.business.toLowerCase().includes(searched.toLowerCase()) ||
+      each.occupation.toLowerCase().includes(searched.toLowerCase())
     );
   });
 
+  console.log(searchResults);
+
   return (
     <div className="main-landing-page-container">
-      <MainLandingPageNavbar />
-
+      <MainLandingPageNavbar
+        onHandleSearchResults={setSearched}
+        onGetData={setData}
+      />
       <div className="main-landing-page-items">
-        <div className="box-1">
-          <MainPageSearch onGetData={setData} onHandleSearch={setSearched} />
-        </div>
+        <div className="box-1"></div>
         <div className="box-2">
           <SearchResults results={searchResults} />
         </div>
