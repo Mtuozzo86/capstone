@@ -1,3 +1,4 @@
+import { FaBeer } from "react-icons/fa";
 import { useState } from "react";
 
 function MainPageSearch({ onHandleSearch, onGetData }) {
@@ -17,12 +18,16 @@ function MainPageSearch({ onHandleSearch, onGetData }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <i class={<FaBeer />}>
+        <FaBeer />
+      </i>
       <input
         onChange={(e) => setSearched(e.target.value)}
         className="main-landing-page-search"
         type="text"
         value={searched}
       />
+      <FaBeer />
     </form>
   );
 }

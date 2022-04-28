@@ -28,22 +28,29 @@
   margin: 20px;
 }
 
-.main-landing-page-search-click {
+.main-landing-page-search {
+  padding: 10px;
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  border: 3px solid black;
+  transition: 0.2s;
+  font-size: 18px;
+  outline: none;
+  border: 2px solid #555;
 }
 
-.main-landing-page-search {
-  margin-right: 20px;
+.main-landing-page-search:focus {
+  height: 35px;
+  width: 220px;
+  border: 3px solid black;
+
   outline: none;
   padding: 10px;
   font-size: 18px;
   background-color: #bec0d4;
   border: 2px solid #555;
   border-radius: 20px;
-  transition: 0.3s;
-}
-
-.main-landing-page-search:focus {
-  border: 3px solid black;
 }
 
 .navbar-header-landing-page {
