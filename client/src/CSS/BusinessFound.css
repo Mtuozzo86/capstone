@@ -95,6 +95,16 @@
   color: aliceblue;
 }
 
+.calender-days-times-clicked {
+  border: 1px solid black;
+  padding: 8px;
+  font-size: 18px;
+  background-color: dodgerblue;
+  margin-bottom: 6px;
+  transform: scale(1.06);
+  color: aliceblue;
+}
+
 /* REVIEW SECTION */
 .review-box {
   /* border: 1px solid black; */

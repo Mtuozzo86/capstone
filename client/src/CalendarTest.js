@@ -33,7 +33,7 @@ function CalendarTest() {
     setChosenTime(times);
     const removeTime = availability.filter((time) => time !== times);
 
-    setAvailability(removeTime);
+    // setAvailability(removeTime);
   }
 
   return (
