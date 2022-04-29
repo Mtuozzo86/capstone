@@ -17,7 +17,7 @@ function MainPageSearch({ onHandleSearch, onGetData }) {
   }
 
   return (
-    <form className="search-feature" classonSubmit={handleSubmit}>
+    <form className="search-feature" onSubmit={handleSubmit}>
       <div className="magnifying-glass">
         <BiSearchAlt2 />
       </div>
