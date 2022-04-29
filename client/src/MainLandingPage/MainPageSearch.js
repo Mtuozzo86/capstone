@@ -1,4 +1,4 @@
-import { FaBeer } from "react-icons/fa";
+import { BiSearchAlt2 } from "react-icons/bi";
 import { useState } from "react";
 
 function MainPageSearch({ onHandleSearch, onGetData }) {
@@ -17,17 +17,16 @@ function MainPageSearch({ onHandleSearch, onGetData }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <i class={<FaBeer />}>
-        <FaBeer />
-      </i>
+    <form className="search-feature" classonSubmit={handleSubmit}>
+      <div className="magnifying-glass">
+        <BiSearchAlt2 />
+      </div>
       <input
         onChange={(e) => setSearched(e.target.value)}
         className="main-landing-page-search"
         type="text"
         value={searched}
       />
-      <FaBeer />
     </form>
   );
 }
