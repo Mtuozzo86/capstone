@@ -18,15 +18,15 @@ function MainPageSearch({ onHandleSearch, onGetData }) {
 
   return (
     <form className="search-feature" onSubmit={handleSubmit}>
-      <div className="magnifying-glass">
-        <BiSearchAlt2 />
+      <div className="box">
+        <BiSearchAlt2 className="magnifying-glass" size={20} />
+        <input
+          onChange={(e) => setSearched(e.target.value)}
+          className="main-landing-page-search-input-box"
+          type="text"
+          value={searched}
+        />
       </div>
-      <input
-        onChange={(e) => setSearched(e.target.value)}
-        className="main-landing-page-search"
-        type="text"
-        value={searched}
-      />
     </form>
   );
 }
