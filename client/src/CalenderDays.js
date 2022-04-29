@@ -1,7 +1,5 @@
-function CalendarDays({ day, onHandleClick }) {
-  console.log(day.chosenDay);
-
-  const timeFrame = day.availability.map((time) => {
+function CalendarDays({ availability, day, onHandleClick, timeToReserve }) {
+  const timeFrame = availability.map((time) => {
     return (
       <div
         className="calender-days-times"
@@ -22,11 +20,7 @@ function CalendarDays({ day, onHandleClick }) {
       <h1>{day.chosenDay}</h1>
       <div>{timeFrame}</div>
       <h2>Booked Days</h2>
-      <div>
-        {day.bookings.map((booked) => {
-          return <li key={booked}>{booked}</li>;
-        })}
-      </div>
+      <div>{timeToReserve}</div>
     </div>
   );
 }

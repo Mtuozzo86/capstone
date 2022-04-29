@@ -16,11 +16,9 @@ function CalendarTest() {
   ];
 
   const [value, setValue] = useState(new Date());
-  const [clickedDay, setClickedDay] = useState({
-    chosenDay: value.toLocaleDateString(),
-    availability: nineToFive,
-    bookings: [],
-  });
+  const [chosenTime, setChosenTime] = useState("");
+  const [availability, setAvailability] = useState(nineToFive);
+  const [clickedDay, setClickedDay] = useState(value.toLocaleDateString());
 
   function handleChange(e) {
     setValue(e);
@@ -28,25 +26,25 @@ function CalendarTest() {
     setClickedDay({
       chosenDay: e.toLocaleDateString(),
       availability: nineToFive,
-      bookings: [],
     });
   }
 
   function handleClick(times) {
-    const removeTime = clickedDay.availability.filter((time) => time !== times);
-    const clickedTimeFrame = times;
-    const listOfBookings = [...clickedDay.bookings, clickedTimeFrame];
-    setClickedDay({
-      chosenDay: clickedDay.chosenDay,
-      availability: removeTime,
-      bookings: listOfBookings,
-    });
+    setChosenTime(times);
+    const removeTime = availability.filter((time) => time !== times);
+
+    setAvailability(removeTime);
   }
 
   return (
     <div>
       <Calendar onChange={handleChange} value={value} calendarType={"US"} />
-      <CalendarDays day={clickedDay} onHandleClick={handleClick} />
+      <CalendarDays
+        availability={availability}
+        timeToReserve={chosenTime}
+        day={clickedDay}
+        onHandleClick={handleClick}
+      />
     </div>
   );
 }
