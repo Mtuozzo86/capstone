@@ -17,7 +17,10 @@
   font-size: 24px;
 }
 
-.business-found, .about, .contact, .schedule {
+.business-found,
+.about,
+.contact,
+.schedule {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -26,8 +29,6 @@
   justify-content: space-between;
 }
 
-
-
 .business-navbar {
   display: flex;
   flex-wrap: wrap;
@@ -35,9 +36,7 @@
   justify-content: space-around;
   padding: 20px 0px;
   background-color: #040f16;
-  
 }
-
 
 .business-navbar > * {
   width: 200px;
@@ -50,7 +49,6 @@
   border: none;
   transition: 0.3s;
 }
-
 
 .business-navbar > *:hover {
   background: #0b4f6c;
@@ -92,7 +90,6 @@
   transition: 0.2s;
   cursor: pointer;
   justify-content: center;
-  
 }
 
 .calender-availability {
@@ -100,7 +97,6 @@
   flex-direction: column;
   width: 20%;
   /* align-content: center; */
-  
 }
 
 .calender-days-times:hover {
@@ -121,7 +117,16 @@
   justify-content: center;
 }
 
+.confirm-date-button {
+  padding: 8px;
+  border: 0px;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  background-color: rgb(191, 207, 207);
+}
+
 /* REVIEW SECTION */
+
 .review-box {
   /* border: 1px solid black; */
   width: 40%;
@@ -168,10 +173,10 @@
   display: flex;
   height: 75px;
   width: 100%;
-  background: #0B4F6C;
+  background: #0b4f6c;
   align-items: center;
   color: #ffffff;
   font-style: italic;
   font-size: 18px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

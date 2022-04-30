@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function CalendarDays({ availability, onHandleClick }) {
+function CalendarDays({ availability, onHandleClick, day }) {
   const [selectedTime, setSelectedTime] = useState("");
 
   const timeFrame = availability.map((time) => {
@@ -22,9 +22,15 @@ function CalendarDays({ availability, onHandleClick }) {
   function handleClick(times) {
     onHandleClick(times);
     setSelectedTime(times);
+    console.log("Date:", day, "Times:", times);
   }
 
-  return <div className="calender-availability">{timeFrame}</div>;
+  return (
+    <div className="calender-availability">
+      {timeFrame}
+      <button className="confirm-date-button">Next</button>
+    </div>
+  );
 }
 
 export default CalendarDays;
