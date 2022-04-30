@@ -11,14 +11,13 @@
   margin-top: 50px;
   padding-left: 20px;
   display: flex;
-  
   width: 100%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
 }
 
-.business-found {
+.business-found, .about, .contact, .schedule {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -26,6 +25,8 @@
   height: 100%;
   justify-content: space-between;
 }
+
+
 
 .business-navbar {
   display: flex;
@@ -79,7 +80,10 @@
   font-size: larger;
 }
 
+/* SCHEDULE SECTION */
+
 .calender-days-times {
+  display: flex;
   border: 1px solid black;
   padding: 8px;
   font-size: 18px;
@@ -87,6 +91,16 @@
   margin-bottom: 6px;
   transition: 0.2s;
   cursor: pointer;
+  justify-content: center;
+  
+}
+
+.calender-availability {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  /* align-content: center; */
+  
 }
 
 .calender-days-times:hover {
@@ -96,6 +110,7 @@
 }
 
 .calender-days-times-clicked {
+  display: flex;
   border: 1px solid black;
   padding: 8px;
   font-size: 18px;
@@ -103,6 +118,7 @@
   margin-bottom: 6px;
   transform: scale(1.06);
   color: aliceblue;
+  justify-content: center;
 }
 
 /* REVIEW SECTION */

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarDays from "./CalenderDays";
+import Footer from "./CustomerComponents/Footer";
 
 function CalendarTest() {
   const nineToFive = [
@@ -31,13 +32,10 @@ function CalendarTest() {
 
   function handleClick(times) {
     setChosenTime(times);
-    const removeTime = availability.filter((time) => time !== times);
-
-    // setAvailability(removeTime);
   }
 
   return (
-    <div>
+    <div className="schedule">
       <Calendar onChange={handleChange} value={value} calendarType={"US"} />
       <CalendarDays
         availability={availability}
@@ -45,6 +43,7 @@ function CalendarTest() {
         day={clickedDay}
         onHandleClick={handleClick}
       />
+      <Footer />
     </div>
   );
 }

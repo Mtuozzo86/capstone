@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-function CalendarDays({ availability, day, onHandleClick, timeToReserve }) {
-  console.log(timeToReserve);
-
+function CalendarDays({ availability, onHandleClick }) {
   const [selectedTime, setSelectedTime] = useState("");
 
   const timeFrame = availability.map((time) => {
@@ -26,12 +24,7 @@ function CalendarDays({ availability, day, onHandleClick, timeToReserve }) {
     setSelectedTime(times);
   }
 
-  return (
-    <div style={{ textAlign: "center" }}>
-      <h1>{day.chosenDay}</h1>
-      <div>{timeFrame}</div>
-    </div>
-  );
+  return <div className="calender-availability">{timeFrame}</div>;
 }
 
 export default CalendarDays;
