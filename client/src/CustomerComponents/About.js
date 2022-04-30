@@ -1,10 +1,11 @@
+import Footer from "./Footer";
+
 function About({ bio }) {
   return (
-    <div className="about">
+    <div>
       <p>{bio}</p>
-      <form className="about-form">
-        <input className="about-input" type="text" />
-      </form>
+
+      <Footer />
     </div>
   );
 }
