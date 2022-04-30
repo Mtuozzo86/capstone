@@ -4,7 +4,7 @@ function Contact({ companyInfo }) {
   return (
     <div className="contact">
       <p>{companyInfo.email}</p>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

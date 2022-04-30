@@ -22,7 +22,6 @@ function CustomerLandingPage({ companyInfo }) {
         <div className="profile-name">{fullName}</div>
       </div>
       <ReviewList reviews={companyInfo.reviews} />
-      <Footer />
     </div>
   );
 }

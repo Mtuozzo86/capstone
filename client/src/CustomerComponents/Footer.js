@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-function Footer() {
+function Footer({ business }) {
   return (
     <div className="footer">
       <Link to="/">
         <p>Home</p>
       </Link>
-      <p>There</p>
+      <Link to={`/business/${business.website}`}>
+        <p>{business.business}</p>
+      </Link>
     </div>
   );
 }

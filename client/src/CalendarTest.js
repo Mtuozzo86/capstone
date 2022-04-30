@@ -43,7 +43,7 @@ function CalendarTest() {
         day={clickedDay}
         onHandleClick={handleClick}
       />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import CustomerLandingPage from "./CustomerLandingPage";
 import About from "./About";
 import Contact from "./Contact";
 import CalendarTest from "../CalendarTest";
+import Footer from "./Footer";
 
 function BusinessFound({ companyInfo }) {
   return (
@@ -23,6 +24,8 @@ function BusinessFound({ companyInfo }) {
         />
         <Route path={`schedule`} element={<CalendarTest />} />
       </Routes>
+
+      <Footer business={companyInfo} />
     </div>
   );
 }

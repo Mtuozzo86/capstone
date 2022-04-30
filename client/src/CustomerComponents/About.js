@@ -5,7 +5,7 @@ function About({ bio }) {
     <div className="about">
       <p>{bio}</p>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
