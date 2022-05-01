@@ -128,7 +128,7 @@
 .confirm-page {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 35%;
   align-items: center;
   margin-top: 20px;
 }
@@ -145,13 +145,39 @@
   background-color: rgb(191, 207, 207);
 }
 
+.confirm-date-back-button {
+  margin: 40px 0px;
+  padding: 14px;
+  border: 0px;
+  width: 50%;
+  color: rgb(0, 0, 0);
+  background-color: rgb(191, 207, 207);
+}
+
+.confirm-date-confirm-button {
+  margin: 40px 0px;
+  padding: 14px;
+  border: 0px;
+  width: 50%;
+  color: rgb(0, 0, 0);
+  background-color: rgb(104, 203, 165);
+}
+
 .confirm-page-name-input {
+  margin-top: 20px;
   padding: 12px 8px;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
   border: 0px;
-  width: 100%;
+  width: 75%;
   outline: none;
   height: 30px;
+}
+
+.confirm-page-submit-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* REVIEW SECTION */

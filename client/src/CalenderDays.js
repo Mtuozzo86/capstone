@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ConfirmDate from "./CustomerComponents/ConfirmDate";
 
-function CalendarDays({ availability, onHandleClick, day }) {
+function CalendarDays({ availability, onHandleClick, day, setViewCalendar }) {
   console.log("Current day:", day);
   const [confirmPage, setConfirmPage] = useState(false);
   const [availabilityPage, setAvailabilityPage] = useState(true);
@@ -39,18 +39,19 @@ function CalendarDays({ availability, onHandleClick, day }) {
     });
     setConfirmPage(true);
     setAvailabilityPage(false);
+    setViewCalendar(false);
   }
 
   function handleBack(goBack) {
     setConfirmPage(goBack);
     setAvailabilityPage(true);
+    setViewCalendar(true);
   }
 
   return (
     <>
       {availabilityPage && (
         <div className="calender-availability">
-          {" "}
           {timeFrame}
           <button onClick={handleNext} className="confirm-date-button">
             Next

@@ -19,8 +19,7 @@ function CalendarTest() {
   const [chosenTime, setChosenTime] = useState("");
   const [availability, setAvailability] = useState(nineToFive);
   const [day, setDay] = useState(value.toLocaleDateString());
-
-  console.log("page load day: ", day);
+  const [viewCalendar, setViewCalendar] = useState(true);
 
   function handleChange(e) {
     setValue(e);
@@ -33,11 +32,15 @@ function CalendarTest() {
 
   return (
     <div className="schedule">
-      <Calendar onChange={handleChange} value={value} calendarType={"US"} />
+      {viewCalendar && (
+        <Calendar onChange={handleChange} value={value} calendarType={"US"} />
+      )}
+
       <CalendarDays
         availability={availability}
         timeToReserve={chosenTime}
         day={day}
+        setViewCalendar={setViewCalendar}
         // onHandleClick={handleClick}
       />
     </div>
