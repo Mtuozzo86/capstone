@@ -1,7 +1,14 @@
 import { useState } from "react";
+import ConfirmDate from "./CustomerComponents/ConfirmDate";
 
 function CalendarDays({ availability, onHandleClick, day }) {
+  console.log("Current day:", day);
+  const [confirmPage, setConfirmPage] = useState(false);
   const [selectedTime, setSelectedTime] = useState("");
+  const [confirmedTime, setConfirmedTime] = useState({
+    booked_time: "",
+    date: "",
+  });
 
   const timeFrame = availability.map((time) => {
     return (
@@ -20,15 +27,24 @@ function CalendarDays({ availability, onHandleClick, day }) {
   });
 
   function handleClick(times) {
-    onHandleClick(times);
+    // onHandleClick(times);
     setSelectedTime(times);
-    console.log("Date:", day, "Times:", times);
+  }
+
+  function handleNext() {
+    setConfirmedTime({
+      booked_time: selectedTime,
+      date: day,
+    });
+    setConfirmPage(true);
   }
 
   return (
     <div className="calender-availability">
       {timeFrame}
-      <button className="confirm-date-button">Next</button>
+      <button onClick={handleNext} className="confirm-date-button">
+        Next
+      </button>
     </div>
   );
 }

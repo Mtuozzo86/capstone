@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import Footer from "./Footer";
 import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {

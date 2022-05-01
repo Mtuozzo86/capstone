@@ -2,7 +2,6 @@ import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarDays from "./CalenderDays";
-import Footer from "./CustomerComponents/Footer";
 
 function CalendarTest() {
   const nineToFive = [
@@ -19,15 +18,13 @@ function CalendarTest() {
   const [value, setValue] = useState(new Date());
   const [chosenTime, setChosenTime] = useState("");
   const [availability, setAvailability] = useState(nineToFive);
-  const [clickedDay, setClickedDay] = useState(value.toLocaleDateString());
+  const [day, setDay] = useState(value.toLocaleDateString());
+
+  console.log("page load day: ", day);
 
   function handleChange(e) {
     setValue(e);
-
-    setClickedDay({
-      chosenDay: e.toLocaleDateString(),
-      availability: nineToFive,
-    });
+    setDay(e.toLocaleDateString());
   }
 
   function handleClick(times) {
@@ -40,10 +37,9 @@ function CalendarTest() {
       <CalendarDays
         availability={availability}
         timeToReserve={chosenTime}
-        day={clickedDay}
-        onHandleClick={handleClick}
+        day={day}
+        // onHandleClick={handleClick}
       />
-      {/* <Footer /> */}
     </div>
   );
 }

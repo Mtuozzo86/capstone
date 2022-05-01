@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../CSS/MainLandingPage.css";
 import MainLandingPageNavbar from "../MainLandingPage/MainLandingPageNavbar";
 import SearchResults from "./SearchResults";
