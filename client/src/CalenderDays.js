@@ -4,12 +4,13 @@ import ConfirmDate from "./CustomerComponents/ConfirmDate";
 function CalendarDays({ availability, onHandleClick, day }) {
   console.log("Current day:", day);
   const [confirmPage, setConfirmPage] = useState(false);
+  const [availabilityPage, setAvailabilityPage] = useState(true);
   const [selectedTime, setSelectedTime] = useState("");
   const [confirmedTime, setConfirmedTime] = useState({
     booked_time: "",
     date: "",
   });
-
+  console.log(confirmedTime);
   const timeFrame = availability.map((time) => {
     return (
       <div
@@ -37,15 +38,29 @@ function CalendarDays({ availability, onHandleClick, day }) {
       date: day,
     });
     setConfirmPage(true);
+    setAvailabilityPage(false);
+  }
+
+  function handleBack(goBack) {
+    setConfirmPage(goBack);
+    setAvailabilityPage(true);
   }
 
   return (
-    <div className="calender-availability">
-      {timeFrame}
-      <button onClick={handleNext} className="confirm-date-button">
-        Next
-      </button>
-    </div>
+    <>
+      {availabilityPage && (
+        <div className="calender-availability">
+          {" "}
+          {timeFrame}
+          <button onClick={handleNext} className="confirm-date-button">
+            Next
+          </button>
+        </div>
+      )}
+      {confirmPage && (
+        <ConfirmDate confirmation={confirmedTime} onGoBack={handleBack} />
+      )}
+    </>
   );
 }
 
