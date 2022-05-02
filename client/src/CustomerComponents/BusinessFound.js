@@ -8,6 +8,8 @@ import CalendarTest from "../CalendarTest";
 import Footer from "./Footer";
 
 function BusinessFound({ companyInfo }) {
+  console.log(companyInfo);
+
   return (
     <div className="business-found">
       <BusinessNavbar />
@@ -22,7 +24,10 @@ function BusinessFound({ companyInfo }) {
           path={`contact`}
           element={<Contact companyInfo={companyInfo} />}
         />
-        <Route path={`schedule`} element={<CalendarTest />} />
+        <Route
+          path={`schedule`}
+          element={<CalendarTest ownerId={companyInfo.id} />}
+        />
       </Routes>
 
       <Footer business={companyInfo} />

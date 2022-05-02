@@ -1,27 +1,46 @@
 import { useState } from "react";
 
-function ConfirmDate({ confirmation, onGoBack }) {
+function ConfirmDate({ confirmation, onGoBack, ownerId }) {
   const [name, setName] = useState("");
+
   function handleGoBack() {
     onGoBack(false);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("submitted");
+    const confirmationData = {
+      booked_time: confirmation.booked_time,
+      date: confirmation.date,
+      customer: name,
+      owner_id: ownerId,
+    };
+    fetch(`/appointments`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ confirmationData }),
+    })
+      .then((r) => r.json())
+      .then((info) => console.log(info));
   }
 
   return (
     <div className="confirm-page">
       <p className="confirm-page-info">
-        Your date and time is {confirmation.date} at: {confirmation.booked_time}
+        Your date and time is{" "}
+        <strong>
+          <em>{confirmation.date}</em>
+        </strong>{" "}
+        at: {confirmation.booked_time}
       </p>
       <p>Please give your first name and click next to confirm</p>
       <form className="confirm-page-submit-form" onSubmit={handleSubmit}>
         <input
           className="confirm-page-name-input"
           type="text"
-          onChange={(e) => e.target.value}
+          onChange={(e) => setName(e.target.value)}
         />
         <button type="submit" className="confirm-date-confirm-button">
           Confirm

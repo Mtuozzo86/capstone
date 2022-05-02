@@ -3,7 +3,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarDays from "./CalenderDays";
 
-function CalendarTest() {
+function CalendarTest({ownerId}) {
   const nineToFive = [
     "9:00am - 9:45am",
     "10:00am - 10:45am",
@@ -41,6 +41,7 @@ function CalendarTest() {
         timeToReserve={chosenTime}
         day={day}
         setViewCalendar={setViewCalendar}
+        ownerId={ownerId}
         // onHandleClick={handleClick}
       />
     </div>
