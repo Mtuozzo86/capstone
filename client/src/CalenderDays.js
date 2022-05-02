@@ -10,7 +10,7 @@ function CalendarDays({ availability, onHandleClick, day, setViewCalendar, owner
     booked_time: "",
     date: "",
   });
-  console.log(confirmedTime);
+
   const timeFrame = availability.map((time) => {
     return (
       <div

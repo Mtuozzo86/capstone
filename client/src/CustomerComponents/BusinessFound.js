@@ -26,7 +26,7 @@ function BusinessFound({ companyInfo }) {
         />
         <Route
           path={`schedule`}
-          element={<CalendarTest ownerId={companyInfo.id} />}
+          element={<CalendarTest ownerId={companyInfo.id} booked={companyInfo.appointments}/>}
         />
       </Routes>
 
