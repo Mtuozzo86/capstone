@@ -14,6 +14,14 @@ function CalendarTest({ ownerId, booked }) {
     "3:00pm - 3:45pm",
     "4:00pm - 4:45pm",
   ];
+  const [value, setValue] = useState(new Date());
+  const [chosenTime, setChosenTime] = useState("");
+  const [availability, setAvailability] = useState([]);
+  const [day, setDay] = useState(value.toLocaleDateString());
+  const [viewCalendar, setViewCalendar] = useState(true);
+  if (!booked) {
+    return <p>Loading</p>;
+  }
 
   const unavailable = booked.map((obj) => {
     return obj.booked_time;
@@ -22,15 +30,30 @@ function CalendarTest({ ownerId, booked }) {
   const freeTime = nineToFive.filter(function (val) {
     return unavailable.indexOf(val) === -1;
   });
-  const [value, setValue] = useState(new Date());
-  const [chosenTime, setChosenTime] = useState("");
-  const [availability, setAvailability] = useState(freeTime);
-  const [day, setDay] = useState(value.toLocaleDateString());
-  const [viewCalendar, setViewCalendar] = useState(true);
 
+  function compare(newDay) {
+    const result = booked.filter((each) => {
+      if (each.date === newDay) {
+        console.log("match");
+        setAvailability(freeTime);
+      } else {
+        setAvailability(nineToFive);
+      }
+    });
+    return result;
+  }
+
+  // function handleChange(e) {
+  //   setValue(e);
+  //   setDay(e.toLocaleDateString());
+
+  //   setAvailability(freeTime);
+  // }
   function handleChange(e) {
     setValue(e);
     setDay(e.toLocaleDateString());
+    // setAvailability(freeTime);
+    compare(day);
   }
 
   function handleClick(times) {

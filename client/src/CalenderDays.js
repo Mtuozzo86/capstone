@@ -1,8 +1,13 @@
 import { useState } from "react";
 import ConfirmDate from "./CustomerComponents/ConfirmDate";
 
-function CalendarDays({ availability, onHandleClick, day, setViewCalendar, ownerId }) {
-  console.log("Current day:", day);
+function CalendarDays({
+  availability,
+  onHandleClick,
+  day,
+  setViewCalendar,
+  ownerId,
+}) {
   const [confirmPage, setConfirmPage] = useState(false);
   const [availabilityPage, setAvailabilityPage] = useState(true);
   const [selectedTime, setSelectedTime] = useState("");
@@ -59,7 +64,11 @@ function CalendarDays({ availability, onHandleClick, day, setViewCalendar, owner
         </div>
       )}
       {confirmPage && (
-        <ConfirmDate confirmation={confirmedTime} onGoBack={handleBack} ownerId={ownerId}/>
+        <ConfirmDate
+          confirmation={confirmedTime}
+          onGoBack={handleBack}
+          ownerId={ownerId}
+        />
       )}
     </>
   );

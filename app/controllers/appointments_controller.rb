@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
 
   def create
     date = Appointment.create(date_params)
-    render json: date
+    render json: date, except: [:created_at, :updated_at]
   end
 
   private
