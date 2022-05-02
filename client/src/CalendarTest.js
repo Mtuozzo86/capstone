@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarDays from "./CalenderDays";
 
 function CalendarTest({ ownerId, booked }) {
-  console.log("booked:", booked);
   const nineToFive = [
     "9:00am - 9:45am",
     "10:00am - 10:45am",
@@ -16,9 +15,16 @@ function CalendarTest({ ownerId, booked }) {
     "4:00pm - 4:45pm",
   ];
 
+  const unavailable = booked.map((obj) => {
+    return obj.booked_time;
+  });
+
+  const freeTime = nineToFive.filter(function (val) {
+    return unavailable.indexOf(val) === -1;
+  });
   const [value, setValue] = useState(new Date());
   const [chosenTime, setChosenTime] = useState("");
-  const [availability, setAvailability] = useState(nineToFive);
+  const [availability, setAvailability] = useState(freeTime);
   const [day, setDay] = useState(value.toLocaleDateString());
   const [viewCalendar, setViewCalendar] = useState(true);
 
