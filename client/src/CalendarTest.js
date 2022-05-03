@@ -4,6 +4,7 @@ import "react-calendar/dist/Calendar.css";
 import CalendarDays from "./CalenderDays";
 
 function CalendarTest({ ownerId, booked }) {
+  console.log(booked);
   const nineToFive = [
     "9:00am - 9:45am",
     "10:00am - 10:45am",
