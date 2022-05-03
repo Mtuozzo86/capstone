@@ -54,6 +54,9 @@ function CalendarTest({ ownerId, booked }) {
     setValue(e);
     setDay(e.toLocaleDateString());
     // setAvailability(freeTime);
+    if (booked.length === 0) {
+      setAvailability(nineToFive);
+    }
     compare(day);
   }
 
