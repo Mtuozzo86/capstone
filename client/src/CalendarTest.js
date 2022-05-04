@@ -67,7 +67,12 @@ function CalendarTest({ ownerId, booked }) {
   return (
     <div className="schedule">
       {viewCalendar && (
-        <Calendar onChange={handleChange} value={value} calendarType={"US"} />
+        <Calendar
+          minDate={new Date()}
+          onChange={handleChange}
+          value={value}
+          calendarType={"US"}
+        />
       )}
 
       <CalendarDays
