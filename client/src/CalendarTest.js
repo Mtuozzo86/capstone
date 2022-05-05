@@ -53,13 +53,14 @@ function CalendarTest({ ownerId, booked }) {
   function handleChange(e) {
     setValue(e);
     setDay(e.toLocaleDateString());
-    // setAvailability(freeTime);
+    // setAvailability(compare(day));
+    compare(e.toLocaleDateString());
     if (booked.length === 0) {
       setAvailability(nineToFive);
     }
-    compare(day);
   }
 
+  console.log(day);
   function handleClick(times) {
     setChosenTime(times);
   }
