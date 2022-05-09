@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_26_195630) do
+ActiveRecord::Schema.define(version: 2022_05_09_191357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 2022_04_26_195630) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "date"
     t.string "booked_time"
+  end
+
+  create_table "booked_times", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "reserved"
+    t.integer "appointment_id"
   end
 
   create_table "businesses", force: :cascade do |t|

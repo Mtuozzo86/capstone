@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
   def index
     days = Appointment.all
-    render json: days, except: [:created_at, :updated_at]
+    render json: days.order(date: :asc)
   end
 
   def create
