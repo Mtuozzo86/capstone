@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_06_22_164038) do
+=======
+ActiveRecord::Schema.define(version: 2022_05_10_205813) do
+>>>>>>> 09f15f08904908f9048ae22d0158cf7c15c3ab1f
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +56,7 @@ ActiveRecord::Schema.define(version: 2022_06_22_164038) do
     t.string "booked_time"
   end
 
+<<<<<<< HEAD
   create_table "booked_times", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -61,6 +66,9 @@ ActiveRecord::Schema.define(version: 2022_06_22_164038) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
+=======
+  create_table "businesses", force: :cascade do |t|
+>>>>>>> 09f15f08904908f9048ae22d0158cf7c15c3ab1f
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "reviews"
@@ -98,6 +106,13 @@ ActiveRecord::Schema.define(version: 2022_06_22_164038) do
     t.string "body"
     t.integer "owner_id"
     t.string "name"
+  end
+
+  create_table "time_slots", force: :cascade do |t|
+    t.string "time"
+    t.integer "appointment_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
