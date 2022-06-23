@@ -1,8 +1,8 @@
 class Owner < ApplicationRecord
   has_many :owner_addresses
   has_many :appointments
- 
   has_many :reviews
+  has_many :clients, through: :reviews
   has_one_attached :image
   has_secure_password
 
