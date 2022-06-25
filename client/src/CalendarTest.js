@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarDays from "./CalenderDays";
@@ -16,7 +16,7 @@ function CalendarTest({ ownerId, booked }) {
     "4:00pm - 4:45pm",
   ];
   const [value, setValue] = useState(new Date());
-  const [chosenTime, setChosenTime] = useState("");
+  // const [chosenTime, setChosenTime] = useState("");
   const [availability, setAvailability] = useState([]);
   const [day, setDay] = useState(value.toLocaleDateString());
   const [viewCalendar, setViewCalendar] = useState(true);
@@ -32,17 +32,17 @@ function CalendarTest({ ownerId, booked }) {
     return unavailable.indexOf(val) === -1;
   });
 
-  function compare(newDay) {
-    const result = booked.filter((each) => {
-      if (each.date === newDay) {
-        console.log("match");
-        setAvailability(freeTime);
-      } else {
-        setAvailability(nineToFive);
-      }
-    });
-    return result;
-  }
+  // function compare(newDay) {
+  //   const result = booked.filter((each) => {
+  //     if (each.date === newDay) {
+  //       console.log("match");
+  //       setAvailability(freeTime);
+  //     } else {
+  //       setAvailability(nineToFive);
+  //     }
+  //   });
+  //   return result;
+  // }
 
   // function handleChange(e) {
   //   setValue(e);
@@ -54,16 +54,16 @@ function CalendarTest({ ownerId, booked }) {
     setValue(e);
     setDay(e.toLocaleDateString());
     // setAvailability(compare(day));
-    compare(e.toLocaleDateString());
+    // compare(e.toLocaleDateString());
     if (booked.length === 0) {
       setAvailability(nineToFive);
     }
   }
 
-  console.log(day);
-  function handleClick(times) {
-    setChosenTime(times);
-  }
+  // console.log(day);
+  // function handleClick(times) {
+  //   setChosenTime(times);
+  // }
 
   return (
     <div className="schedule">
@@ -78,7 +78,7 @@ function CalendarTest({ ownerId, booked }) {
 
       <CalendarDays
         availability={availability}
-        timeToReserve={chosenTime}
+        // timeToReserve={chosenTime}
         day={day}
         setViewCalendar={setViewCalendar}
         ownerId={ownerId}

@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { MdOutlineWarningAmber } from "react-icons/md";
+import { useState } from "react";
+
 function Sidebar({ onHandlePageView, components }) {
   const clickComponent = components.map((component, index) => {
     return (
@@ -17,14 +20,20 @@ function Sidebar({ onHandlePageView, components }) {
 
   function handleViews(component) {
     onHandlePageView(component);
+    console.log(component);
   }
 
   return (
     <div className="sidebar">
       <div className="sidebar-nav">{clickComponent}</div>
-      <li onClick={handleLogout} className="sidebar-logout">
-        Log out
-      </li>
+      <div>
+        <li onClick={handleLogout} className="sidebar-logout">
+          Log out
+        </li>
+        <div className="sidebar-warning" onClick={handleViews}>
+          <MdOutlineWarningAmber />
+        </div>
+      </div>
     </div>
   );
 }

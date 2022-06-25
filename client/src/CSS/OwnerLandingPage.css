@@ -21,15 +21,26 @@
   width: 150px;
 }
 
-.sidebar-nav > li,
-.sidebar-logout {
+.sidebar-nav > li {
   padding-bottom: 30px;
+  cursor: pointer;
+}
+
+.sidebar-logout{
+
   cursor: pointer;
 }
 
 .sidebar-nav > li:hover,
 .sidebar-logout:hover {
   color: white;
+}
+
+.sidebar-warning {
+  margin-top: 30px;
+  font-size: 30px;
+  display: flex;
+  color: red;
 }
 
 .landing-page-wrapper {

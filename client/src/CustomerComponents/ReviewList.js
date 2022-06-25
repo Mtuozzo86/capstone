@@ -6,12 +6,14 @@ function ReviewList({ reviews }) {
   const listOfReviews = reviews.map((review) => (
     <Review
       key={review.id}
-      name={review.name}
       rating={review.rating}
       body={review.body}
       date={review.created_at}
+      name={review.client.name}
     />
   ));
+  console.log(listOfReviews);
+
   return <>{listOfReviews}</>;
 }
 
