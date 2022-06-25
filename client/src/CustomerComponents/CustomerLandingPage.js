@@ -1,6 +1,8 @@
 import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {
+  console.log(companyInfo.reviews);
+
   const fullName = companyInfo.first_name + " " + companyInfo.last_name;
   if (!companyInfo.business) {
     return <p>Loading! </p>;

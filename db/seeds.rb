@@ -7,10 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "seeding"
-Owner.create(first_name: "Michael", last_name: "Tuozzo", email: "Chainsaw62@aol.com", password: "rooster")
-Owner.create(first_name: "Homer", last_name: "Simpson", email: "homer@aol.com", password: "rooster")
-Client.create(name: "Finn")
-Review.create(rating: 2, body: "nice", owner_id: 1, client_id: 1, name: "finn")
+mike = Owner.create(first_name: "Michael", last_name: "Tuozzo", email: "Chainsaw62@aol.com", password: "rooster")
+homer = Owner.create(first_name: "Homer", last_name: "Simpson", email: "homer@aol.com", password: "rooster", business: "Cutco", biography: "I'll just make up my own news!")
+
+10.times do
+  Client.create(name: Faker::Name.name)
+end
+
+10.times do
+  Review.create(rating: rand(1..5), body: Faker::Lorem.sentence(word_count: rand(5..20)), owner_id: rand(1..2), client_id: rand(1..10))
+end
+
 puts "we got `#{Owner.count}` owners"
 puts "we got `#{Review.count}` reviews"
 puts "we got `#{Client.count}` clients"
