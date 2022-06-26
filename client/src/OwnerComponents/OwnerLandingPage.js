@@ -6,12 +6,14 @@ import CalenderTest from "../CalendarTest";
 import OwnerProfile from "./OwnerProfile";
 import Sidebar from "./Sidebar";
 import OwnerLandingPageDashboard from "./OwnerLandingPageDashboard";
+import OwnerWarningPage from "./OwnerWarningPage";
 
 function OwnerLandingPage({ loggedInUser }) {
   const [address, setAddress] = useState(false);
   const [openCalendar, setOpenCalendar] = useState(false);
   const [landingPageContainer, setLandingPageContainer] = useState(true);
   const [ownerProfile, setOwnerProfile] = useState(false);
+  const [ownerWarning, setOwnerWarning] = useState(false);
 
   const componentWithName = [
     {
@@ -30,6 +32,10 @@ function OwnerLandingPage({ loggedInUser }) {
       comp: setOwnerProfile,
       clickName: "Profile",
     },
+    {
+      comp: setOwnerWarning,
+      clickName: "",
+    },
   ];
 
   function handleViews(component) {
@@ -44,7 +50,11 @@ function OwnerLandingPage({ loggedInUser }) {
 
   return (
     <div className="landing-page-wrapper">
-      <Sidebar onHandlePageView={handleViews} components={componentWithName} />
+      <Sidebar
+        onHandlePageView={handleViews}
+        components={componentWithName}
+        setOwnerWarning={setOwnerWarning}
+      />
       <div className="landing-page-container-home">
         <Navbar />
 
@@ -59,6 +69,7 @@ function OwnerLandingPage({ loggedInUser }) {
             image={loggedInUser.image || undefined}
           />
         )}
+        {ownerWarning && <OwnerWarningPage loggedInUser={loggedInUser} />}
       </div>
     </div>
   );

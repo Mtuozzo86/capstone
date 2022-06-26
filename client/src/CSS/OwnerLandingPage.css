@@ -8,6 +8,8 @@
   margin-top: 50px;
 }
 
+/**************** SIDEBAR ****************/
+
 .sidebar {
   justify-content: space-between;
   list-style: none;
@@ -42,6 +44,8 @@
   display: flex;
   color: red;
 }
+
+/* ************************************ */
 
 .landing-page-wrapper {
   display: flex;
@@ -88,7 +92,7 @@
   box-shadow: 0px 0px 0px 0px;
 }
 
-/* ADDRESS INFO */
+/**************** ADDRESS INFO ****************/
 
 .address-flex-container {
   display: flex;
@@ -125,8 +129,28 @@
   padding: 8px 0px;
 }
 
+/* ************************************ */
+
 .delete {
   font-size: 24px;
   color: red;
   display: flex;
+}
+
+.owner-warning-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  /* width: auto; */
+  align-self: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.owner-warning-trash-icon {
+  margin-top: 40px;
+  font-size: 60px;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
 }

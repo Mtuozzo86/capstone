@@ -33,6 +33,12 @@ class OwnersController < ApplicationController
     end
   end
 
+  def destroy
+    owner = Owner.find(params[:id])
+    owner.destroy
+    head :no_content
+  end
+
   private
 
   def owner_params

@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { MdOutlineWarningAmber } from "react-icons/md";
 import { useState } from "react";
 
-function Sidebar({ onHandlePageView, components }) {
+function Sidebar({ onHandlePageView, components, setOwnerWarning }) {
   const clickComponent = components.map((component, index) => {
     return (
       <li key={index} onClick={() => handleViews(component.comp)}>
@@ -20,7 +20,6 @@ function Sidebar({ onHandlePageView, components }) {
 
   function handleViews(component) {
     onHandlePageView(component);
-    console.log(component);
   }
 
   return (
@@ -30,7 +29,10 @@ function Sidebar({ onHandlePageView, components }) {
         <li onClick={handleLogout} className="sidebar-logout">
           Log out
         </li>
-        <div className="sidebar-warning" onClick={handleViews}>
+        <div
+          className="sidebar-warning"
+          onClick={() => handleViews(setOwnerWarning)}
+        >
           <MdOutlineWarningAmber />
         </div>
       </div>
