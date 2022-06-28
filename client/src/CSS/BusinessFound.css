@@ -202,6 +202,41 @@
   font-weight: 300;
 }
 
+.leave-review-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.leave-review {
+  background-color: #01baef;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+  border: 2px solid black;
+}
+
+.leave-review__text-area {
+  outline: none;
+  padding: 10px;
+margin-bottom: 10px;
+}
+
+.leave-review__name, .leave-review__rating {
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 40%;
+}
+
+
+
+.leave-review__submit-button {
+  align-self: center;
+  width: 50%;
+  padding: 10px;
+}
+
 /* ABOUT SECTION */
 
 .about {

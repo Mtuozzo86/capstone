@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # patch '/owners/:id', to: "business#paramaterize"
   patch "owners/:id/remove", to: "owners#remove_image"
   get "owners/:id/reviews", to: "reviews#list"
+  post "owners/:id/leavereview", to: "reviews#create_review"
   resources :owners
   resources :owner_addresses
   resources :appointments

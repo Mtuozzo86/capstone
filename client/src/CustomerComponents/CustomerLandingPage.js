@@ -1,3 +1,4 @@
+import LeaveReview from "./LeaveReview";
 import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {
@@ -20,6 +21,7 @@ function CustomerLandingPage({ companyInfo }) {
         <div className="profile-name">{fullName}</div>
       </div>
       <ReviewList reviews={companyInfo.reviews} />
+      <LeaveReview companyInfo={companyInfo}/>
     </div>
   );
 }
