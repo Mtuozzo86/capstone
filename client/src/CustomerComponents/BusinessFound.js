@@ -8,7 +8,7 @@ import CalendarTest from "../CalendarTest";
 import Footer from "./Footer";
 
 function BusinessFound({ companyInfo }) {
-  //sort date des
+  
 
   return (
     <div className="business-found">
@@ -17,7 +17,12 @@ function BusinessFound({ companyInfo }) {
       <Routes>
         <Route
           index
-          element={<CustomerLandingPage companyInfo={companyInfo} />}
+          element={
+            <CustomerLandingPage
+              companyInfo={companyInfo}
+              reviews={companyInfo.reviews}
+            />
+          }
         />
         <Route path={`about`} element={<About bio={companyInfo.biography} />} />
         <Route

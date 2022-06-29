@@ -1,8 +1,9 @@
 import Review from "./Review";
 
 function ReviewList({ reviews }) {
-  console.log(reviews);
-
+  if (!reviews) {
+    return <p>No reviews</p>;
+  }
   const listOfReviews = reviews.map((review) => (
     <Review
       key={review.id}
@@ -12,7 +13,6 @@ function ReviewList({ reviews }) {
       name={review.client.name}
     />
   ));
-  console.log(listOfReviews);
 
   return <>{listOfReviews}</>;
 }

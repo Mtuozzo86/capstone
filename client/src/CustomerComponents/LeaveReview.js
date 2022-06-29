@@ -1,12 +1,9 @@
 import { useState } from "react";
 
-function LeaveReview({ companyInfo }) {
+function LeaveReview({ companyInfo, onSubmitReview }) {
   const [reviewBody, setReviewBody] = useState("");
   const [name, setName] = useState("");
   const [rating, setRating] = useState(1);
-  function handleChange(e) {
-    e.preventDefault();
-  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -22,7 +19,9 @@ function LeaveReview({ companyInfo }) {
         "Content-type": "Application/json",
       },
       body: JSON.stringify(reviewForm),
-    });
+    })
+      .then((r) => r.json())
+      .then((data) => onSubmitReview(data));
   }
   return (
     <div className="leave-review-container">

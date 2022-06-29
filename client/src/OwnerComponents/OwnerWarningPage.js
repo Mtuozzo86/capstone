@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { IoMdTrash } from "react-icons/io";
 
 function OwnerWarningPage({ loggedInUser }) {

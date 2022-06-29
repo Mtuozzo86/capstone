@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get "/business/:website", to: "business#show"
-  # patch '/owners/:id', to: "business#paramaterize"
   patch "owners/:id/remove", to: "owners#remove_image"
   get "owners/:id/reviews", to: "reviews#list"
   post "owners/:id/leavereview", to: "reviews#create_review"

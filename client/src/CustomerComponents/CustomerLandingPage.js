@@ -1,7 +1,18 @@
+import { useState, useEffect } from "react";
 import LeaveReview from "./LeaveReview";
 import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {
+  const [list, setList] = useState(companyInfo.reviews);
+  // useEffect(() => {
+  //   fetch(`/owners/2`)
+  //     .then((r) => r.json())
+  //     .then((data) => console.log(data.reviews));
+  // }, [companyInfo.id]);
+  function handleSubmitReview(review) {
+    setList([...list, review]);
+  }
+
   const fullName = companyInfo.first_name + " " + companyInfo.last_name;
   if (!companyInfo.business) {
     return <p>Loading! </p>;
@@ -21,7 +32,10 @@ function CustomerLandingPage({ companyInfo }) {
         <div className="profile-name">{fullName}</div>
       </div>
       <ReviewList reviews={companyInfo.reviews} />
-      <LeaveReview companyInfo={companyInfo}/>
+      <LeaveReview
+        companyInfo={companyInfo}
+        // onSubmitReview={handleSubmitReview}
+      />
     </div>
   );
 }
