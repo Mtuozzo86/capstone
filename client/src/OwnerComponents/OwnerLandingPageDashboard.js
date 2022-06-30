@@ -5,8 +5,10 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
   useEffect(() => {
     fetch(`owners/${loggedInUser.id}`)
       .then((resp) => resp.json())
-      .then((user) => setUrl(user.website));
-  });
+      .then((user) => {
+        setUrl(user.website);
+      });
+  }, [loggedInUser.id]);
   const [url, setUrl] = useState("");
 
   return (
@@ -15,7 +17,7 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
         <div></div>
         <div className="user-info-name">{loggedInUser.first_name}</div>
         <p>Appointments:</p>
-        <p>Customers:</p>
+        <p>Customers: {loggedInUser.clients.length}</p>
       </div>
 
       <div className="landing-page-user-info-website">
@@ -23,9 +25,9 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
           Go to the profile tab and add the name of your business. It will
           create a custom link you can copy to advertise anywhere you like.
         </p>
-        <p>
-          <Link to={`/business/${url}`}>{`/business/${url}`}</Link>
-        </p>
+        <h2 style={{ marginTop: "20px" }}>
+          <Link to={`/business/${url}`}>www.{`business/${url}`}.com</Link>
+        </h2>
       </div>
     </div>
   );

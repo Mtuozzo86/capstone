@@ -2,18 +2,24 @@ import { useState } from "react";
 import OwnerAddress from "./OwnerAddress";
 import Navbar from "../Navbar";
 import "../CSS/OwnerLandingPage.css";
-import CalenderTest from "../CalendarTest";
 import OwnerProfile from "./OwnerProfile";
 import Sidebar from "./Sidebar";
 import OwnerLandingPageDashboard from "./OwnerLandingPageDashboard";
 import OwnerWarningPage from "./OwnerWarningPage";
+import OwnerReviewsList from "./OwnerReviewsList";
 
 function OwnerLandingPage({ loggedInUser }) {
   const [address, setAddress] = useState(false);
-  const [openCalendar, setOpenCalendar] = useState(false);
+  const [openReviews, setOpenReviews] = useState(false);
   const [landingPageContainer, setLandingPageContainer] = useState(true);
   const [ownerProfile, setOwnerProfile] = useState(false);
   const [ownerWarning, setOwnerWarning] = useState(false);
+  const [reviews, setReviews] = useState(loggedInUser.reviews);
+  
+  function handleDeleteReviews(id) {
+    const renderReview = reviews.filter((review) => review.id !== id);
+    setReviews(renderReview);
+  }
 
   const componentWithName = [
     {
@@ -25,8 +31,8 @@ function OwnerLandingPage({ loggedInUser }) {
       clickName: "Address",
     },
     {
-      comp: setOpenCalendar,
-      clickName: "Calendar",
+      comp: setOpenReviews,
+      clickName: "Your Reviews",
     },
     {
       comp: setOwnerProfile,
@@ -62,7 +68,12 @@ function OwnerLandingPage({ loggedInUser }) {
           <OwnerLandingPageDashboard loggedInUser={loggedInUser} />
         )}
         {address && <OwnerAddress loggedInUser={loggedInUser} />}
-        {openCalendar && <CalenderTest />}
+        {openReviews && (
+          <OwnerReviewsList
+            reviews={reviews}
+            onDeleteReview={handleDeleteReviews}
+          />
+        )}
         {ownerProfile && (
           <OwnerProfile
             owner={loggedInUser}

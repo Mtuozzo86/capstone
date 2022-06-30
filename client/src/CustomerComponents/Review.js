@@ -21,6 +21,7 @@ function Review({ body, rating, name, date }) {
         <p className="review-box-commenter">
           {name} - {dateFormat.toLocaleDateString()}
         </p>
+        <p>Thank you</p>
       </div>
     </div>
   );

@@ -1,7 +1,11 @@
 class OwnersController < ApplicationController
   def show
     owner = Owner.find_by(id: params[:id])
-    render json: owner, include: :reviews
+    if owner
+      render json: owner, include: :reviews
+    else
+      render json: { error: "No owner found here" }
+    end
   end
 
   def remove_image

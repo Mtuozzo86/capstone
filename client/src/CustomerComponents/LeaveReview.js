@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function LeaveReview({ companyInfo, onSubmitReview }) {
-  const navigate = useNavigate();
   const [reviewBody, setReviewBody] = useState("");
   const [name, setName] = useState("");
   const [rating, setRating] = useState(1);
