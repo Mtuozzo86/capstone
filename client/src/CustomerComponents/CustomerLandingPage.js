@@ -4,13 +4,18 @@ import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {
   useEffect(() => {
-    fetch(`/owners/${companyInfo.id}`)
-      .then((r) => r.json())
-      .then((data) => console.log(data));
-  });
+    if (companyInfo.id) {
+      fetch(`/owners/${companyInfo.id}/reviews`)
+        .then((r) => r.json())
+        .then((data) => setTest(data));
+    }
+  }, [companyInfo.id]);
 
-  const [test, setTest] = useState("false");
-  function handleSubmitReview(review) {}
+  const [test, setTest] = useState([]);
+
+  function handleSubmitReview(review) {
+    setTest([...test, review]);
+  }
 
   const fullName = companyInfo.first_name + " " + companyInfo.last_name;
   if (!companyInfo.business) {
@@ -30,7 +35,7 @@ function CustomerLandingPage({ companyInfo }) {
         />
         <div className="profile-name">{fullName}</div>
       </div>
-      <ReviewList reviews={companyInfo.reviews} />
+      <ReviewList reviews={test} />
       <LeaveReview
         companyInfo={companyInfo}
         onSubmitReview={handleSubmitReview}

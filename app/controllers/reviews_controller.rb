@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
   def list
     owner = Owner.find_by(id: params[:id])
-    render json: owner.reviews.order(rating: :desc)
+    render json: owner.reviews.order(created_at: :desc)
   end
 
   private
