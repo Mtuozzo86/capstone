@@ -11,6 +11,7 @@ import PleaseLoginScreen from "./PleaseLoginScreen";
 import About from "./CustomerComponents/About";
 import Contact from "./CustomerComponents/Contact";
 import CalendarTest from "./CalendarTest";
+import ReviewSubmitted from "./CustomerComponents/ReviewSubmitted";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -29,12 +30,12 @@ function App() {
   return (
     <div className="wrapper">
       <Routes>
-        <Route path="/business/:website" element={<WhatCustomerSees />}>
+        <Route path="/business/:website/*" element={<WhatCustomerSees />}>
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="schedule" element={<CalendarTest />} />
+          <Route path="success" element={<ReviewSubmitted />} />
         </Route>
-          
 
         <Route path="/" element={<MainLandingPage />} />
         <Route

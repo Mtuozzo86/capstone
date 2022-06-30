@@ -24,13 +24,13 @@ function CalendarTest({ ownerId, booked }) {
     return <p>Loading</p>;
   }
 
-  const unavailable = booked.map((obj) => {
-    return obj.booked_time;
-  });
+  // const unavailable = booked.map((obj) => {
+  //   return obj.booked_time;
+  // });
 
-  const freeTime = nineToFive.filter(function (val) {
-    return unavailable.indexOf(val) === -1;
-  });
+  // const freeTime = nineToFive.filter(function (val) {
+  //   return unavailable.indexOf(val) === -1;
+  // });
 
   // function compare(newDay) {
   //   const result = booked.filter((each) => {
