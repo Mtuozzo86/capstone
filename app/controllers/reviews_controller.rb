@@ -28,6 +28,12 @@ class ReviewsController < ApplicationController
     render json: review
   end
 
+  def update
+    review = Review.find_by(id: params[:id])
+    review.update(response: params[:response])
+    render json: review
+  end
+
   private
 
   def review_params

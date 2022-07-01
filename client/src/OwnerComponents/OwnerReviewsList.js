@@ -4,6 +4,7 @@ import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 
 function OwnerReviewsList({ reviews, onDeleteReview }) {
   const [response, setResponse] = useState("");
+  const [reviewId, setReviewId] = useState(null);
   function convertRating(rating) {
     let key = 0;
     let emoji = [];
@@ -22,7 +23,14 @@ function OwnerReviewsList({ reviews, onDeleteReview }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(response);
+
+    fetch(`/reviews/${reviewId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "Application/json",
+      },
+      body: JSON.stringify({ response }),
+    }).then((r) => r.json());
   }
 
   const list = reviews.map((review) => {
@@ -42,6 +50,9 @@ function OwnerReviewsList({ reviews, onDeleteReview }) {
             className="owner-review-response"
             type="text"
           />
+          <button type="submit" onClick={() => setReviewId(review.id)}>
+            Submit
+          </button>
         </form>
       </div>
     );
