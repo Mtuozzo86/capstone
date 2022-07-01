@@ -14,7 +14,7 @@ function CustomerLandingPage({ companyInfo }) {
   const [test, setTest] = useState([]);
 
   function handleSubmitReview(review) {
-    setTest([...test, review]);
+    setTest([review, ...test]);
   }
 
   const fullName = companyInfo.first_name + " " + companyInfo.last_name;

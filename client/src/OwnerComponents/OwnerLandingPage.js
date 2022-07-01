@@ -15,7 +15,7 @@ function OwnerLandingPage({ loggedInUser }) {
   const [ownerProfile, setOwnerProfile] = useState(false);
   const [ownerWarning, setOwnerWarning] = useState(false);
   const [reviews, setReviews] = useState(loggedInUser.reviews);
-  
+
   function handleDeleteReviews(id) {
     const renderReview = reviews.filter((review) => review.id !== id);
     setReviews(renderReview);
@@ -72,6 +72,7 @@ function OwnerLandingPage({ loggedInUser }) {
           <OwnerReviewsList
             reviews={reviews}
             onDeleteReview={handleDeleteReviews}
+            onSetListOfReviews={setReviews}
           />
         )}
         {ownerProfile && (

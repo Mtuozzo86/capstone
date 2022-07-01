@@ -176,4 +176,8 @@
   border-bottom: 2px solid black;
 }
 
+.owner-review-response-message {
+  font-weight: 100;
+  font-style: italic;
+}
 /* ************************************ */
