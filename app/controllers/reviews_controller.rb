@@ -3,8 +3,11 @@ class ReviewsController < ApplicationController
     client = Client.create(name: params[:name])
     owner = Owner.find(params[:id])
     review = Review.create(body: params[:body], client_id: client.id, owner_id: owner.id, rating: params[:rating])
-
-    render json: review
+    if review.valid?
+      render json: review
+    else
+      render json: { error: review.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def index

@@ -21,7 +21,9 @@ function LeaveReview({ companyInfo, onSubmitReview }) {
       body: JSON.stringify(reviewForm),
     })
       .then((r) => r.json())
-      .then((data) => onSubmitReview(data));
+      .then((data) => console.log(data));
+    // .then((r) => r.json())
+    // .then((data) => onSubmitReview(data));
   }
   return (
     <div className="leave-review-container">
