@@ -4,6 +4,7 @@ function LeaveReview({ companyInfo, onSubmitReview }) {
   const [reviewBody, setReviewBody] = useState("");
   const [name, setName] = useState("");
   const [rating, setRating] = useState(1);
+  const [errors, setErrors] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,20 +20,28 @@ function LeaveReview({ companyInfo, onSubmitReview }) {
         "Content-type": "Application/json",
       },
       body: JSON.stringify(reviewForm),
-    })
-      .then((r) => r.json())
-      .then((data) => console.log(data));
-    // .then((r) => r.json())
-    // .then((data) => onSubmitReview(data));
+    }).then((resp) => {
+      if (resp.ok) {
+        resp.json().then((data) => onSubmitReview(data));
+        setErrors(false);
+        setName("");
+        setReviewBody("");
+      } else {
+        resp.json().then(setErrors(true));
+      }
+    });
   }
+
   return (
     <div className="leave-review-container">
       <form onSubmit={handleSubmit} className="leave-review">
         Name
         <input
-          className="leave-review__name"
+          className={errors ? "leave-review__name-error" : "leave-review__name"}
           type="text"
           onChange={(e) => setName(e.target.value)}
+          placeholder={errors ? "Enter your name" : ""}
+          value={name}
         />
         Rating
         <select
@@ -48,10 +57,14 @@ function LeaveReview({ companyInfo, onSubmitReview }) {
         </select>
         Say hello
         <textarea
-          className="leave-review__text-area"
+          className={
+            errors ? "leave-review__text-area-error" : "leave-review__text-area"
+          }
           cols="50"
           rows="4"
           onChange={(e) => setReviewBody(e.target.value)}
+          placeholder={errors ? "Field required" : ""}
+          value={reviewBody}
         />
         <button className="leave-review__submit-button" type="submit">
           Submit

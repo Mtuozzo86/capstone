@@ -221,7 +221,23 @@
 margin-bottom: 10px;
 }
 
+.leave-review__text-area-error{
+  outline: none;
+  padding: 10px;
+margin-bottom: 10px;
+background-color: rgb(255, 159, 159);
+}
+
 .leave-review__name, .leave-review__rating {
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 40%;
+}
+
+.leave-review__name-error {
+  background-color: rgb(255, 159, 159);
   outline: none;
   margin-top: 10px;
   margin-bottom: 10px;
