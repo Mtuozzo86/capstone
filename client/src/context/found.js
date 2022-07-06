@@ -17,7 +17,7 @@ function FoundProvider({ children }) {
         resp.json().then((mesg) => setError(mesg.error));
       }
     });
-  }, [webAddress]);
+  }, [webAddress.website]);
 
   return (
     <FoundContext.Provider value={{ business, setBusiness, error, setError }}>
