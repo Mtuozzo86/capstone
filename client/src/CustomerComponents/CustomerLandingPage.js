@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { FoundContext } from "../context/found";
 import LeaveReview from "./LeaveReview";
 import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {
+  const reviewsCtx = useContext(FoundContext);
+
   useEffect(() => {
     if (companyInfo.id) {
       fetch(`/owners/${companyInfo.id}/reviews`)

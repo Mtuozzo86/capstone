@@ -1,7 +1,7 @@
 import { useState } from "react";
 import OwnerReview from "./OwnerReview";
 
-function OwnerReviewsList({ reviews, onDeleteReview, onSetListOfReviews }) {
+function OwnerReviewsList({ reviews, onSetListOfReviews }) {
   const [listOfReviews, setListOfReviews] = useState(reviews);
 
   function handleResponseReply(editted) {
@@ -19,6 +19,13 @@ function OwnerReviewsList({ reviews, onDeleteReview, onSetListOfReviews }) {
     setListOfReviews(edits);
   }
 
+  function handleDeleteReviews(id) {
+    const renderReview = reviews.filter((review) => review.id !== id);
+
+    onSetListOfReviews(renderReview);
+    setListOfReviews(renderReview);
+  }
+
   const list = listOfReviews.map((review) => {
     return (
       <OwnerReview
@@ -28,7 +35,7 @@ function OwnerReviewsList({ reviews, onDeleteReview, onSetListOfReviews }) {
         id={review.id}
         name={review.client.name}
         response={review.response}
-        onDeleteReview={onDeleteReview}
+        onDeleteReview={handleDeleteReviews}
         onResponseReply={handleResponseReply}
       />
     );

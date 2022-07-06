@@ -14,8 +14,6 @@ function MainLandingPage() {
     );
   });
 
-  console.log(searchResults);
-
   return (
     <div className="main-landing-page-container">
       <MainLandingPageNavbar

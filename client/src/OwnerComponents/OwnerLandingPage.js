@@ -16,11 +16,6 @@ function OwnerLandingPage({ loggedInUser }) {
   const [ownerWarning, setOwnerWarning] = useState(false);
   const [reviews, setReviews] = useState(loggedInUser.reviews);
 
-  function handleDeleteReviews(id) {
-    const renderReview = reviews.filter((review) => review.id !== id);
-    setReviews(renderReview);
-  }
-
   const componentWithName = [
     {
       comp: setLandingPageContainer,
@@ -71,7 +66,7 @@ function OwnerLandingPage({ loggedInUser }) {
         {openReviews && (
           <OwnerReviewsList
             reviews={reviews}
-            onDeleteReview={handleDeleteReviews}
+            // onDeleteReview={setReviews}
             onSetListOfReviews={setReviews}
           />
         )}

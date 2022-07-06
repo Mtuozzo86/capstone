@@ -7,9 +7,11 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
       .then((resp) => resp.json())
       .then((user) => {
         setUrl(user.website);
+        setReviewsCount(user.reviews.length);
       });
-  }, [loggedInUser.id]);
+  }, [loggedInUser.id, loggedInUser.reviews]);
   const [url, setUrl] = useState("");
+  const [reviewsCount, setReviewsCount] = useState(null);
 
   return (
     <div className="landing-page-container-dashboard">
@@ -17,7 +19,7 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
         <div></div>
         <div className="user-info-name">{loggedInUser.first_name}</div>
         <p>Appointments:</p>
-        <p>Customers: {loggedInUser.clients.length}</p>
+        <p>Customers: {reviewsCount}</p>
       </div>
 
       <div className="landing-page-user-info-website">

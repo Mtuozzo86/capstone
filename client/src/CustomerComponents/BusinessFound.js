@@ -1,3 +1,5 @@
+import React, { useContext } from "react";
+import { FoundContext } from "../context/found";
 import { Routes, Route } from "react-router-dom";
 import BusinessNavbar from "./BusinessNavbar";
 import "../CSS/BusinessFound.css";
@@ -8,7 +10,8 @@ import CalendarTest from "../CalendarTest";
 import Footer from "./Footer";
 
 function BusinessFound({ companyInfo }) {
-  
+  const found = useContext(FoundContext);
+  console.log(found);
 
   return (
     <div className="business-found">

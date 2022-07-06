@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import NoPageFoundError from "./NoPageFoundError";
+import { FoundProvider } from "../context/found";
 import BusinessFound from "./BusinessFound";
 
 function WhatCustomerSees() {
@@ -26,7 +26,9 @@ function WhatCustomerSees() {
       {error ? (
         error
       ) : (
-        <BusinessFound companyInfo={business} urlParam={webAddress} />
+        <FoundProvider>
+          <BusinessFound companyInfo={business} />
+        </FoundProvider>
       )}
     </div>
   );
