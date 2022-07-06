@@ -19,8 +19,6 @@ function FoundProvider({ children }) {
     });
   }, [webAddress]);
 
-  console.log(business);
-
   return (
     <FoundContext.Provider value={{ business, setBusiness, error, setError }}>
       {children}
