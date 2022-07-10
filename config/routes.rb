@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
   #
   # SESSIONS
-  post "/login", to: "sessions#create"
-  get "/me", to: "sessions#show"
-  delete "/logout", to: "sessions#destroy"
+  namespace :api do
+    post "/login", to: "sessions#create"
+    get "/me", to: "sessions#show"
+    delete "/logout", to: "sessions#destroy"
+  end
 end
