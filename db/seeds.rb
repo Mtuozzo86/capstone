@@ -9,7 +9,7 @@
 puts "seeding"
 mike = Owner.create(first_name: "Michael", last_name: "Tuozzo", email: "Chainsaw62@aol.com", password: "rooster")
 homer = Owner.create(first_name: "Homer", last_name: "Simpson", email: "homer@aol.com", password: "rooster", business: "Cutco", biography: "I'll just make up my own news!")
-
+#
 10.times do
   Client.create(name: Faker::Name.name)
 end
