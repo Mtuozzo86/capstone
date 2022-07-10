@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  namespace :api do
-    get "/business/:website", to: "business#show"
-    patch "owners/:id/remove", to: "owners#remove_image"
-    get "owners/:id/reviews", to: "reviews#list"
-    post "owners/:id/leavereview", to: "reviews#create_review"
-    resources :owners
-    resources :owner_addresses
-    resources :appointments
-    resources :reviews
-  end
+  get "/business/:website", to: "business#show"
+  patch "owners/:id/remove", to: "owners#remove_image"
+  get "owners/:id/reviews", to: "reviews#list"
+  post "owners/:id/leavereview", to: "reviews#create_review"
+  resources :owners
+  resources :owner_addresses
+  resources :appointments
+  resources :reviews
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
