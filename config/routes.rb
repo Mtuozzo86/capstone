@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :owners
   resources :owner_addresses
   resources :appointments
-  resources :booked_time
   resources :reviews
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
