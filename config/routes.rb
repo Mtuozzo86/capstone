@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/:website", to: "business#show"
+  get "/business_search/:website", to: "business#show"
   patch "owners/:id/remove", to: "owners#remove_image"
   get "owners/:id/reviews", to: "reviews#list"
   post "owners/:id/leavereview", to: "reviews#create_review"
