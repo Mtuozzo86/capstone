@@ -10,7 +10,7 @@ function FoundProvider({ children }) {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`/business/${webAddress.website}`).then((resp) => {
+    fetch(`/business_search/${webAddress.website}`).then((resp) => {
       if (resp.ok) {
         resp.json().then((stuff) => setBusiness(stuff));
       } else {

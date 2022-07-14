@@ -2,7 +2,7 @@ class Review < ApplicationRecord
   belongs_to :owner
   belongs_to :client
 
-  validates :body, presence: { message: "must be given please" }
+  validates :body, presence: { message: "Review must be given please" }
   validates :client_id, presence: { message: "name please" }
   validates_associated :client, presence: true
   validate :client_review_name
@@ -13,3 +13,5 @@ class Review < ApplicationRecord
     end
   end
 end
+
+# //check alias - prepend model names for validations

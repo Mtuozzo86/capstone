@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { FoundContext } from "../context/found";
 function About() {
   const found = useContext(FoundContext);
+
   if (found.business === null) {
-    return <p>Loading...</p>;
+    return <p>This aint working</p>;
   }
 
   return (

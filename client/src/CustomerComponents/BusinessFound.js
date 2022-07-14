@@ -10,6 +10,9 @@ import CalendarTest from "../CalendarTest";
 import Footer from "./Footer";
 
 function BusinessFound({ companyInfo }) {
+  const found = useContext(FoundContext);
+  console.log(found);
+
   return (
     <div className="business-found">
       <BusinessNavbar />
