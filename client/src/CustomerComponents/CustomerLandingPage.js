@@ -4,7 +4,8 @@ import LeaveReview from "./LeaveReview";
 import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {
-  const reviewsCtx = useContext(FoundContext);
+  const ctx = useContext(FoundContext);
+  console.log(ctx);
 
   useEffect(() => {
     if (companyInfo.id) {
