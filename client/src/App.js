@@ -1,5 +1,5 @@
 import "./CSS/App.css";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import CreateAccount from "./CreateAccount";
 import Login from "./Login";
 import OwnerLandingPage from "./OwnerComponents/OwnerLandingPage";
@@ -11,7 +11,6 @@ import PleaseLoginScreen from "./PleaseLoginScreen";
 import About from "./CustomerComponents/About";
 import Contact from "./CustomerComponents/Contact";
 import CalendarTest from "./CalendarTest";
-import ReviewSubmitted from "./CustomerComponents/ReviewSubmitted";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -34,7 +33,6 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="schedule" element={<CalendarTest />} />
-          <Route path="success" element={<ReviewSubmitted />} />
         </Route>
 
         <Route path="/" element={<MainLandingPage />} />

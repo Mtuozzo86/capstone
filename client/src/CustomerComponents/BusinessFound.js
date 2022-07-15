@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { FoundContext } from "../context/found";
+import React from "react";
+
 import { Routes, Route } from "react-router-dom";
 import BusinessNavbar from "./BusinessNavbar";
 import "../CSS/BusinessFound.css";
@@ -17,12 +17,7 @@ function BusinessFound({ companyInfo }) {
       <Routes>
         <Route
           index
-          element={
-            <CustomerLandingPage
-              companyInfo={companyInfo}
-              reviews={companyInfo.reviews}
-            />
-          }
+          element={<CustomerLandingPage companyInfo={companyInfo} />}
         />
         <Route path={`about`} element={<About />} />
         <Route path={`contact`} element={<Contact />} />
