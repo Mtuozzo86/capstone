@@ -4,7 +4,6 @@ import "react-calendar/dist/Calendar.css";
 import CalendarDays from "./CalenderDays";
 // calendar
 function CalendarTest({ ownerId, booked }) {
-  console.log(booked);
   const nineToFive = [
     "9:00am - 9:45am",
     "10:00am - 10:45am",
@@ -16,7 +15,7 @@ function CalendarTest({ ownerId, booked }) {
     "4:00pm - 4:45pm",
   ];
   const [value, setValue] = useState(new Date());
-  // const [chosenTime, setChosenTime] = useState("");
+  const [chosenTime, setChosenTime] = useState("");
   const [availability, setAvailability] = useState([]);
   const [day, setDay] = useState(value.toLocaleDateString());
   const [viewCalendar, setViewCalendar] = useState(true);
@@ -24,46 +23,45 @@ function CalendarTest({ ownerId, booked }) {
     return <p>Loading</p>;
   }
 
-  // const unavailable = booked.map((obj) => {
-  //   return obj.booked_time;
-  // });
+  const unavailable = booked.map((obj) => {
+    return obj.booked_time;
+  });
 
-  // const freeTime = nineToFive.filter(function (val) {
-  //   return unavailable.indexOf(val) === -1;
-  // });
+  const freeTime = nineToFive.filter(function (val) {
+    return unavailable.indexOf(val) === -1;
+  });
 
-  // function compare(newDay) {
-  //   const result = booked.filter((each) => {
-  //     if (each.date === newDay) {
-  //       console.log("match");
-  //       setAvailability(freeTime);
-  //     } else {
-  //       setAvailability(nineToFive);
-  //     }
-  //   });
-  //   return result;
-  // }
+  function compare(newDay) {
+    const result = booked.filter((each) => {
+      if (each.date === newDay) {
+        setAvailability(freeTime);
+      } else {
+        setAvailability(nineToFive);
+      }
+    });
+    return result;
+  }
 
-  // function handleChange(e) {
-  //   setValue(e);
-  //   setDay(e.toLocaleDateString());
-
-  //   setAvailability(freeTime);
-  // }
   function handleChange(e) {
     setValue(e);
     setDay(e.toLocaleDateString());
-    // setAvailability(compare(day));
-    // compare(e.toLocaleDateString());
+
+    setAvailability(freeTime);
+  }
+  function handleChange(e) {
+    setValue(e);
+    setDay(e.toLocaleDateString());
+    setAvailability(compare(day));
+    compare(e.toLocaleDateString());
     if (booked.length === 0) {
       setAvailability(nineToFive);
     }
   }
 
-  // console.log(day);
-  // function handleClick(times) {
-  //   setChosenTime(times);
-  // }
+  console.log(day);
+  function handleClick(times) {
+    setChosenTime(times);
+  }
 
   return (
     <div className="schedule">
