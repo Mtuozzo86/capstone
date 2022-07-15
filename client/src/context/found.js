@@ -6,7 +6,7 @@ const FoundContext = React.createContext();
 
 function FoundProvider({ children }) {
   let webAddress = useParams();
-  const [business, setBusiness] = useState(null);
+  const [business, setBusiness] = useState({});
   const [error, setError] = useState(false);
 
   useEffect(() => {

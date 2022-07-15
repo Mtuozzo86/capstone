@@ -21,7 +21,8 @@ function CustomerLandingPage({ companyInfo }) {
     setTest([review, ...test]);
   }
 
-  const fullName = companyInfo.first_name + " " + companyInfo.last_name;
+  // const fullName = companyInfo.first_name + " " + companyInfo.last_name;
+  const fullName = ctx.business.first_name + " " + ctx.business.last_name;
   if (!companyInfo.business) {
     return <p>Loading! </p>;
   }
