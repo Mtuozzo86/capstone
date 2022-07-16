@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OwnerAddress from "./OwnerAddress";
 import Navbar from "../Navbar";
 import "../CSS/OwnerLandingPage.css";
@@ -9,13 +9,19 @@ import OwnerWarningPage from "./OwnerWarningPage";
 import OwnerReviewsList from "./OwnerReviewsList";
 
 function OwnerLandingPage({ loggedInUser }) {
+  console.log(loggedInUser);
+
   const [address, setAddress] = useState(false);
   const [openReviews, setOpenReviews] = useState(false);
   const [landingPageContainer, setLandingPageContainer] = useState(true);
   const [ownerProfile, setOwnerProfile] = useState(false);
   const [ownerWarning, setOwnerWarning] = useState(false);
-  const [reviews, setReviews] = useState(loggedInUser.reviews);
-
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    fetch(`owners/${loggedInUser.id}/reviews`)
+      .then((r) => r.json())
+      .then((data) => setReviews(data));
+  }, []);
   const componentWithName = [
     {
       comp: setLandingPageContainer,

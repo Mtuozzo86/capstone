@@ -1,7 +1,7 @@
 class Owner < ApplicationRecord
   has_many :owner_addresses
   has_many :appointments
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :clients, through: :reviews
   has_one_attached :image
   has_secure_password
@@ -15,6 +15,12 @@ class Owner < ApplicationRecord
 
   def self.business(name)
     Owner.where("lower(business) Like ?", name.downcase)
+  end
+
+  def remove_website_and_business
+    if self.business = ""
+      self.website = ""
+    end
   end
 
   before_create do |owner|

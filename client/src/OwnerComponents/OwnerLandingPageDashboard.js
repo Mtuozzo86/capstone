@@ -2,24 +2,25 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function OwnerLandingPageDashboard({ loggedInUser }) {
+  console.log(loggedInUser);
+
   useEffect(() => {
     fetch(`owners/${loggedInUser.id}`)
       .then((resp) => resp.json())
       .then((user) => {
-        setUrl(user.website);
-        setReviewsCount(user.reviews.length);
+        setUrl(user.business);
       });
-  }, [loggedInUser.id, loggedInUser.reviews]);
+  }, [loggedInUser.business]);
   const [url, setUrl] = useState("");
-  const [reviewsCount, setReviewsCount] = useState(null);
 
+  // const parameterizedUrl = url.split(" ").join("-").toLocaleLowerCase();
   return (
     <div className="landing-page-container-dashboard">
       <div className="landing-page-user-info-container">
         <div></div>
         <div className="user-info-name">{loggedInUser.first_name}</div>
         <p>Appointments:</p>
-        <p>Customers: {reviewsCount}</p>
+        <p>Customers: </p>
       </div>
 
       <div className="landing-page-user-info-website">
@@ -27,9 +28,13 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
           Go to the profile tab and add the name of your business. It will
           create a custom link you can copy to advertise anywhere you like.
         </p>
-        <h2 style={{ marginTop: "20px" }}>
-          <Link to={`/business/${url}`}>www.{`business/${url}`}.com</Link>
-        </h2>
+        {url ? (
+          <h2 style={{ marginTop: "20px" }}>
+            <Link to={`/business/${url.split(" ").join("-").toLowerCase()}`}>
+              www.{`business/${url.split(" ").join("-").toLowerCase()}`}.com
+            </Link>
+          </h2>
+        ) : null}
       </div>
     </div>
   );

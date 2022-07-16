@@ -32,7 +32,10 @@ function Login({ userInfo }) {
       }),
     }).then((resp) => {
       if (resp.ok) {
-        resp.json().then((data) => userInfo(data));
+        resp.json().then((data) => {
+          userInfo(data);
+          console.log("Logged in", data);
+        });
         navigate("/home");
       } else {
         resp.json().then((message) => setErrors(message));

@@ -1,10 +1,12 @@
 import { IoMdTrash } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 function OwnerWarningPage({ loggedInUser }) {
+  const navigate = useNavigate();
   function handleClick() {
     fetch(`/owners/${loggedInUser.id}`, {
       method: "DELETE",
-    });
+    }).then(navigate("/"));
   }
 
   return (

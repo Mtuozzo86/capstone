@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OwnerReview from "./OwnerReview";
 
 function OwnerReviewsList({ reviews, onSetListOfReviews }) {
   const [listOfReviews, setListOfReviews] = useState(reviews);
+  // useEffect(() => {
+  //   fetch(`owner/${}`)
+  // })
 
   function handleResponseReply(editted) {
     const edits = listOfReviews.map((review) => {

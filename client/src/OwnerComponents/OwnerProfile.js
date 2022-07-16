@@ -30,8 +30,6 @@ function OwnerProfile({ owner }) {
   }
 
   function handleDeleteBusiness(attr) {
-    console.log(attr);
-
     fetch(`owners/${owner.id}`, {
       method: "PATCH",
       headers: {
