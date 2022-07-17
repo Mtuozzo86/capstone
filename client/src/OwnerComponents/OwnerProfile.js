@@ -5,6 +5,7 @@ import OwnerProfileAddBusiness from "./OwnerProfileAddBusiness";
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 import OwnerProfileAddAvatar from "./OwnerProfileAddAvatar";
 import OwnerProfileAddOwnerOccupation from "./OwnerProfileAddOccupation";
+import OptionBox from "./OptionBox";
 
 function OwnerProfile({ owner }) {
   useEffect(() => {
@@ -62,14 +63,14 @@ function OwnerProfile({ owner }) {
       <div className="owner-profile__info-container">
         <div>
           {/* BUSINESS NAME */}
+
           {loggedInUser.business ? (
             <div className="test">
               <div>{loggedInUser.business}</div>
-              <div className="delete">
-                <MdOutlineRemoveCircleOutline
-                  onClick={() => handleDeleteBusiness("business")}
-                />
-              </div>
+              <MdOutlineRemoveCircleOutline
+                className="delete"
+                onClick={() => handleDeleteBusiness("business")}
+              />
             </div>
           ) : (
             <p
@@ -79,6 +80,7 @@ function OwnerProfile({ owner }) {
               Add your business
             </p>
           )}
+
           {addBusiness && (
             <OwnerProfileAddBusiness
               owner={owner}
@@ -99,11 +101,10 @@ function OwnerProfile({ owner }) {
                   alt=""
                 />
               </div>
-              <div className="delete">
-                <MdOutlineRemoveCircleOutline
-                  onClick={() => handleDeleteImage()}
-                />
-              </div>
+              <MdOutlineRemoveCircleOutline
+                className="delete"
+                onClick={() => handleDeleteImage()}
+              />
             </div>
           ) : (
             <p
@@ -130,11 +131,10 @@ function OwnerProfile({ owner }) {
           {loggedInUser.occupation ? (
             <div className="test">
               <div>{loggedInUser.occupation}</div>
-              <div className="delete">
-                <MdOutlineRemoveCircleOutline
-                  onClick={() => handleDeleteBusiness("occupation")}
-                />
-              </div>
+              <MdOutlineRemoveCircleOutline
+                className="delete"
+                onClick={() => handleDeleteBusiness("occupation")}
+              />
             </div>
           ) : (
             <p
@@ -158,11 +158,10 @@ function OwnerProfile({ owner }) {
           {loggedInUser.biography ? (
             <div className="test">
               <div>{loggedInUser.biography}</div>
-              <div className="delete">
-                <MdOutlineRemoveCircleOutline
-                  onClick={() => handleDeleteBusiness("biography")}
-                />
-              </div>
+              <MdOutlineRemoveCircleOutline
+                className="delete"
+                onClick={() => handleDeleteBusiness("biography")}
+              />
             </div>
           ) : (
             <p
