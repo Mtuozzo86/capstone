@@ -79,14 +79,14 @@ function OwnerProfile({ owner }) {
               Add your business
             </p>
           )}
-          {addBusiness ? (
+          {addBusiness && (
             <OwnerProfileAddBusiness
               owner={owner}
               handleCancel={setAddBusiness}
               onAddAttribute={handleAddAttribute}
               setAddBusiness={setAddBusiness}
             />
-          ) : null}
+          )}
         </div>
         <div>
           {/* AVATAR IMAGE */}
@@ -113,14 +113,14 @@ function OwnerProfile({ owner }) {
               Add an image
             </p>
           )}
-          {addOwnerAvatar ? (
+          {addOwnerAvatar && (
             <OwnerProfileAddAvatar
               owner={owner}
               handleCancel={setAddOwnerAvatar}
               onAddAttribute={handleAddAttribute}
               setAddOwnerAvatar={setAddOwnerAvatar}
             />
-          ) : null}
+          )}
         </div>
         <div>
           {loggedInUser.email ? loggedInUser.email : <p>Enter an email</p>}
@@ -144,14 +144,14 @@ function OwnerProfile({ owner }) {
               Enter your occupation
             </p>
           )}
-          {addOwnerOccupation ? (
+          {addOwnerOccupation && (
             <OwnerProfileAddOwnerOccupation
               owner={owner}
               handleCancel={setAddOwnerOccupation}
               onAddOccupation={handleAddAttribute}
               setAddOwnerOccupation={setAddOwnerOccupation}
             />
-          ) : null}
+          )}
         </div>
         <div>
           {/* BIOGRAPHY */}
