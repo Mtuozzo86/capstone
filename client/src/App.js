@@ -24,6 +24,7 @@ function App() {
   }, []);
 
   function handleUserLoggedIn(user) {
+    setLoggedInUser(null);
     setLoggedInUser(user);
   }
   return (

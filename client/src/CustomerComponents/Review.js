@@ -1,6 +1,6 @@
 import { AiFillStar } from "react-icons/ai";
 
-function Review({ body, rating, name, date }) {
+function Review({ body, rating, name, date, response }) {
   const dateFormat = new Date(date);
 
   function convertRating(rating) {
@@ -21,6 +21,7 @@ function Review({ body, rating, name, date }) {
         <p className="review-box-commenter">
           {name} - {dateFormat.toLocaleDateString()}
         </p>
+        <em>{response}</em>
       </div>
     </div>
   );

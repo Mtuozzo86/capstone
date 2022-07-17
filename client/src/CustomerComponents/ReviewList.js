@@ -1,6 +1,8 @@
 import Review from "./Review";
 
 function ReviewList({ reviews }) {
+  console.log(reviews);
+
   if (!reviews) {
     return <p>No reviews</p>;
   }
@@ -11,6 +13,7 @@ function ReviewList({ reviews }) {
       body={review.body}
       date={review.created_at}
       name={review.client.name}
+      response={review.response}
     />
   ));
 
