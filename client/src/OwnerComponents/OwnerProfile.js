@@ -46,7 +46,7 @@ function OwnerProfile({ owner }) {
 
   function handleAddAttribute(attribute, val) {
     console.log(attribute, val);
-    setLoggedInUser({ ...loggedInUser, [attribute]: [val] });
+    setLoggedInUser((prevUser) => ({ ...prevUser, [attribute]: [val] }));
   }
 
   return (
