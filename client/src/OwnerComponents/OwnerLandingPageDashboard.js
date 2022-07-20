@@ -31,7 +31,7 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
         {url ? (
           <h2 style={{ marginTop: "20px" }}>
             <Link to={`/business/${url.split(" ").join("-").toLowerCase()}`}>
-              www.{`business/${url.split(" ").join("-").toLowerCase()}`}.com
+              {`business/${url.split(" ").join("-").toLowerCase()}`}.com
             </Link>
           </h2>
         ) : null}
