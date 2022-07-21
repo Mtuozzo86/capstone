@@ -2,6 +2,7 @@ import "./CSS/CreateAccount.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import NavbarHeader from "./UI/NavbarHeader";
 
 function CreateAccount() {
   const navigateToSuccessPage = useNavigate();
@@ -60,7 +61,10 @@ function CreateAccount() {
 
   return (
     <div className="create-form-flex">
-      <Navbar />
+      <NavbarHeader>
+        <Navbar />
+      </NavbarHeader>
+
       <div className="create-form-container">
         <form className="login-signin" onSubmit={handleSubmit}>
           <div className="first-lastname">

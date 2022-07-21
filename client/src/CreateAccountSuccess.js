@@ -7,7 +7,7 @@ function CreateAccountSuccess() {
       <h2>
         Thank you for signing up! <br />
         Please click
-        <Link to="/login"> here</Link> to login.
+        <Link to="/home"> here</Link> to continue.
       </h2>
     </div>
   );

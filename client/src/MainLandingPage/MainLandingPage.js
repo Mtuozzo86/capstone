@@ -1,8 +1,7 @@
 import { useState } from "react";
 import NavbarHeader from "../UI/NavbarHeader";
 import "../CSS/MainLandingPage.css";
-import MainLandingPageNavbar from "../MainLandingPage/MainLandingPageNavbar";
-import SearchResults from "./SearchResults";
+import Navbar from "../Navbar";
 
 function MainLandingPage() {
   const [data, setData] = useState([]);
@@ -18,11 +17,12 @@ function MainLandingPage() {
   return (
     <div className="main-landing-page-container">
       <NavbarHeader>
-        <MainLandingPageNavbar />
+        
+        <Navbar />
       </NavbarHeader>
-
     </div>
   );
 }
 
 export default MainLandingPage;
+

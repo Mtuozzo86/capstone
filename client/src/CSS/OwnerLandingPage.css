@@ -19,8 +19,9 @@
   align-items: flex-start;
   font-size: 18px;
   color: rgb(194, 194, 194);
-  background-color: rgb(36, 0, 153);
-  width: 150px;
+  background-color: #040F16;
+  width: 10%;
+  height: 100%;
 }
 
 .sidebar-nav > li {
@@ -35,7 +36,7 @@
 
 .sidebar-nav > li:hover,
 .sidebar-logout:hover {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .sidebar-warning {
@@ -52,13 +53,18 @@
   width: 100%;
   height: auto;
 }
+  
 
 .landing-page-container-home {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
   background-color: rgba(238, 238, 238, 0.603);
+}
+
+.con {
+  display: flex;
+  height: 100%;
 }
 
 .landing-page-container-dashboard {

@@ -7,6 +7,7 @@ import Sidebar from "./Sidebar";
 import OwnerLandingPageDashboard from "./OwnerLandingPageDashboard";
 import OwnerWarningPage from "./OwnerWarningPage";
 import OwnerReviewsList from "./OwnerReviewsList";
+import NavbarHeader from "../UI/NavbarHeader";
 
 function OwnerLandingPage({ loggedInUser }) {
   console.log(loggedInUser);
@@ -57,32 +58,37 @@ function OwnerLandingPage({ loggedInUser }) {
 
   return (
     <div className="landing-page-wrapper">
-      <Sidebar
-        onHandlePageView={handleViews}
-        components={componentWithName}
-        setOwnerWarning={setOwnerWarning}
-      />
       <div className="landing-page-container-home">
-        <Navbar />
-
-        {landingPageContainer && (
-          <OwnerLandingPageDashboard loggedInUser={loggedInUser} />
-        )}
-        {address && <OwnerAddress loggedInUser={loggedInUser} />}
-        {openReviews && (
-          <OwnerReviewsList
-            reviews={reviews}
-            // onDeleteReview={setReviews}
-            onSetListOfReviews={setReviews}
+        <NavbarHeader>
+          <Navbar />
+        </NavbarHeader>
+        <div className="con">
+          <Sidebar
+            onHandlePageView={handleViews}
+            components={componentWithName}
+            setOwnerWarning={setOwnerWarning}
           />
-        )}
-        {ownerProfile && (
-          <OwnerProfile
-            owner={loggedInUser}
-            image={loggedInUser.image || undefined}
-          />
-        )}
-        {ownerWarning && <OwnerWarningPage loggedInUser={loggedInUser} />}
+          <div>
+            {landingPageContainer && (
+              <OwnerLandingPageDashboard loggedInUser={loggedInUser} />
+            )}
+            {address && <OwnerAddress loggedInUser={loggedInUser} />}
+            {openReviews && (
+              <OwnerReviewsList
+                reviews={reviews}
+                // onDeleteReview={setReviews}
+                onSetListOfReviews={setReviews}
+              />
+            )}
+            {ownerProfile && (
+              <OwnerProfile
+                owner={loggedInUser}
+                image={loggedInUser.image || undefined}
+              />
+            )}
+            {ownerWarning && <OwnerWarningPage loggedInUser={loggedInUser} />}
+          </div>
+        </div>
       </div>
     </div>
   );

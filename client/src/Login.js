@@ -3,6 +3,7 @@ import "./CSS/Login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import NavbarHeader from "./UI/NavbarHeader";
 
 function Login({ userInfo }) {
   const [email, setEmail] = useState("");
@@ -45,7 +46,10 @@ function Login({ userInfo }) {
 
   return (
     <div className="login-form-flex">
-      <Navbar />
+      <NavbarHeader>
+        <Navbar />
+      </NavbarHeader>
+
       <div className="login-form-container">
         <form className="login-signin" onSubmit={handleSubmit}>
           <input

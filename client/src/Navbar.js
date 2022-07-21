@@ -1,21 +1,18 @@
-import "./CSS/Navbar.css";
-
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+// import "./CSS/MainLandingPage.css";
 
 function Navbar() {
   return (
-    <div className="navbar-header">
-      <Link to="/">
-        <p className="title">I Know A Guy</p>
-      </Link>
-
-      <div className="navbar">
-        <Link to="/login">
-          <p className="navbar-elem">Log In</p>
-        </Link>
-        <Link to="/create">
-          <p className="navbar-elem">Create Acct</p>
-        </Link>
+    <div className="navbar">
+      <h1>LightBulb</h1>
+      <div className="navbar-links">
+        {" "}
+        <NavLink to="/login">
+          <p>Log In</p>
+        </NavLink>
+        <NavLink to="/create">
+          <p>Create Acct</p>
+        </NavLink>
       </div>
     </div>
   );
