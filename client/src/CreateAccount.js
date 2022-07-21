@@ -1,4 +1,5 @@
 import "./CSS/CreateAccount.css";
+import "./CSS/FormContainer.css"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -60,13 +61,13 @@ function CreateAccount() {
   }
 
   return (
-    <div className="create-form-flex">
+    <div className="create-page">
       <NavbarHeader>
         <Navbar />
       </NavbarHeader>
 
-      <div className="create-form-container">
-        <form className="login-signin" onSubmit={handleSubmit}>
+      <div>
+        <form className="inputs-form" onSubmit={handleSubmit}>
           <div className="first-lastname">
             {" "}
             <input

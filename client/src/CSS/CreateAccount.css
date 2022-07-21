@@ -14,19 +14,11 @@
   width: 100%;
 }
 
-.input-create-account {
-  /* padding: 12px 8px; */
-  /* margin: 10px; */
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
-  border: 0px;
-  /* width: 100%; */
-}
-
 .form-submit-button {
   padding: 8px;
   margin: 10px;
   border: 0px;
-  /* width: 100%; */
+  width: auto;
   color: rgb(0, 0, 0);
   background-color: rgb(191, 207, 207);
 }

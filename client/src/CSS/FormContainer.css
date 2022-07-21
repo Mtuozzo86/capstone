@@ -1,16 +1,13 @@
-.form-container {
-    display: flex;
-}
-
 .inputs-form {
     display: flex;
     flex-direction: column;
     margin: auto;
     height: auto;
-    width: 50%;
+    width: 35%;
   }
 
 .inputs-form input {
   padding: 12px 8px;
   margin: 10px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
   }
