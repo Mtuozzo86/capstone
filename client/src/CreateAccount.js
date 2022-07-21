@@ -1,5 +1,5 @@
 import "./CSS/CreateAccount.css";
-import "./CSS/FormContainer.css"
+import "./CSS/FormContainer.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -68,26 +68,21 @@ function CreateAccount() {
 
       <div>
         <form className="inputs-form" onSubmit={handleSubmit}>
-          <div className="first-lastname">
-            {" "}
-            <input
-              className="input-create-account"
-              name="first_name"
-              type="text"
-              placeholder="First Name"
-              value={owner.first_name}
-              onChange={handleChange}
-            />
-            <input
-              className="input-create-account"
-              name="last_name"
-              type="text"
-              placeholder="Last Name"
-              value={owner.last_name}
-              onChange={handleChange}
-            />
-          </div>
-
+          {" "}
+          <input
+            name="first_name"
+            type="text"
+            placeholder="First Name"
+            value={owner.first_name}
+            onChange={handleChange}
+          />
+          <input
+            name="last_name"
+            type="text"
+            placeholder="Last Name"
+            value={owner.last_name}
+            onChange={handleChange}
+          />
           <input
             className="input-create-account"
             name="email"
@@ -104,7 +99,6 @@ function CreateAccount() {
             value={owner.password}
             onChange={handleChange}
           />
-
           <input
             className="input-create-account"
             name="password_confirmation"
@@ -113,12 +107,10 @@ function CreateAccount() {
             value={owner.password_confirmation}
             onChange={handleChange}
           />
-
           <br />
           <button type="submit" className="form-submit-button">
             Submit
           </button>
-
           {errorMessages}
         </form>
       </div>
