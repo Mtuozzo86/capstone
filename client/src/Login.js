@@ -1,5 +1,5 @@
 import "./CSS/Login.css";
-
+import "./CSS/FormContainer.css"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -45,13 +45,13 @@ function Login({ userInfo }) {
   }
 
   return (
-    <div className="login-form-flex">
+    <div className="login-page">
       <NavbarHeader>
         <Navbar />
       </NavbarHeader>
 
-      <div className="login-form-container">
-        <form className="login-signin" onSubmit={handleSubmit}>
+      <div>
+        <form className="inputs-form" onSubmit={handleSubmit}>
           <input
             className="input-create-account"
             name="email"

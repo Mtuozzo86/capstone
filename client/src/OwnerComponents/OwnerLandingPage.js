@@ -8,9 +8,11 @@ import OwnerLandingPageDashboard from "./OwnerLandingPageDashboard";
 import OwnerWarningPage from "./OwnerWarningPage";
 import OwnerReviewsList from "./OwnerReviewsList";
 import NavbarHeader from "../UI/NavbarHeader";
+import SidebarData from "../UI/SidebarData";
 
 function OwnerLandingPage({ loggedInUser }) {
-  console.log(loggedInUser);
+
+  
 
   const [address, setAddress] = useState(false);
   const [openReviews, setOpenReviews] = useState(false);
@@ -23,6 +25,9 @@ function OwnerLandingPage({ loggedInUser }) {
       .then((r) => r.json())
       .then((data) => setReviews(data));
   }, []);
+
+  console.log("imported data", SidebarData);
+  
   const componentWithName = [
     {
       comp: setLandingPageContainer,

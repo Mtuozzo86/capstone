@@ -19,8 +19,8 @@ function BusinessFound({ companyInfo }) {
           index
           element={<CustomerLandingPage companyInfo={companyInfo} />}
         />
-        <Route path={`about`} element={<About />} />
-        <Route path={`contact`} element={<Contact />} />
+        <Route path={`about`} element={<About companyInfo={companyInfo}/>} />
+        <Route path={`contact`} element={<Contact companyInfo={companyInfo}/>} />
         <Route
           path={`schedule`}
           element={

@@ -23,13 +23,7 @@ function WhatCustomerSees() {
 
   return (
     <div className="business-found-wrapper">
-      {error ? (
-        error
-      ) : (
-        <FoundProvider>
-          <BusinessFound companyInfo={business} />
-        </FoundProvider>
-      )}
+      {error ? error : <BusinessFound companyInfo={business} />}
     </div>
   );
 }

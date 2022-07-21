@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
-// import "./CSS/MainLandingPage.css";
+import styles from "./Navbar.module.css";
+console.log(styles);
 
 function Navbar() {
   return (
-    <div className="navbar">
+    <div className={styles.navbar}>
       <h1>LightBulb</h1>
-      <div className="navbar-links">
+      <div className={styles['navbar-links']}>
         {" "}
         <NavLink to="/login">
           <p>Log In</p>

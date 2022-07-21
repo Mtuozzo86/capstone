@@ -4,8 +4,6 @@ import LeaveReview from "./LeaveReview";
 import ReviewList from "./ReviewList";
 
 function CustomerLandingPage({ companyInfo }) {
-  const ctx = useContext(FoundContext);
-  console.log(ctx);
 
   useEffect(() => {
     if (companyInfo.id) {
@@ -22,7 +20,7 @@ function CustomerLandingPage({ companyInfo }) {
   }
 
   // const fullName = companyInfo.first_name + " " + companyInfo.last_name;
-  const fullName = ctx.business.first_name + " " + ctx.business.last_name;
+  const fullName = companyInfo.first_name + " " + companyInfo.last_name;
   if (!companyInfo.business) {
     return <p>Page may no longer exist</p>;
   }
