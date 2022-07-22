@@ -69,7 +69,7 @@ function Login({ userInfo }) {
         <button type="submit" className="form-submit-button">
           Submit
         </button>
-        {errors ? <p>{errors.error}</p> : null}
+        <div>{errors ? <p>{errors.error}</p> : null}</div>
       </form>
     </div>
   );

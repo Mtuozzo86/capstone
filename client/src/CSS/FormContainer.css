@@ -1,11 +1,11 @@
 .inputs-form {
-  margin:  auto auto;
+  margin:  130px auto 0px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 30%;
-  flex-shrink: 0;
+  width: 450px;
+
 }
 
 .inputs-form input {

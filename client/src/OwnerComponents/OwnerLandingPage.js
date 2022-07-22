@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import OwnerAddress from "./OwnerAddress";
-import Navbar from "../Navbar";
+import { BsFillLightbulbFill} from 'react-icons/bs'
 import "../CSS/OwnerLandingPage.css";
 import OwnerProfile from "./OwnerProfile";
 import Sidebar from "./Sidebar";
@@ -8,7 +8,7 @@ import OwnerLandingPageDashboard from "./OwnerLandingPageDashboard";
 import OwnerWarningPage from "./OwnerWarningPage";
 import OwnerReviewsList from "./OwnerReviewsList";
 import NavbarHeader from "../UI/NavbarHeader";
-import SidebarData from "../UI/SidebarData";
+
 
 function OwnerLandingPage({ loggedInUser }) {
 
@@ -26,7 +26,6 @@ function OwnerLandingPage({ loggedInUser }) {
       .then((data) => setReviews(data));
   }, []);
 
-  console.log("imported data", SidebarData);
   
   const componentWithName = [
     {
@@ -65,7 +64,7 @@ function OwnerLandingPage({ loggedInUser }) {
     <div className="landing-page-wrapper">
       <div className="landing-page-container-home">
         <NavbarHeader>
-          <Navbar />
+        <BsFillLightbulbFill className="lightbulb"/>
         </NavbarHeader>
         <div className="con">
           <Sidebar
