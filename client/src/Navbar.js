@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
+import { BsFillLightbulbFill} from 'react-icons/bs'
 import styles from "./Navbar.module.css";
 console.log(styles);
 
 function Navbar() {
   return (
     <div className={styles.navbar}>
+      <BsFillLightbulbFill className={styles.lightbulb}/>
       <h1>LightBulb</h1>
       <div className={styles['navbar-links']}>
         {" "}

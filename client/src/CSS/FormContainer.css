@@ -1,24 +1,31 @@
 .inputs-form {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    height: auto;
-    width: 35%;
-  }
+  margin:  auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 30%;
+  flex-shrink: 0;
+}
 
 .inputs-form input {
   padding: 12px 8px;
   margin: 10px;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
-  }
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.436);
+outline: none;
+}
 
-  .inputs-form button {
+.inputs-form button {
   padding: 10px;
   margin: 10px;
   border: 0px;
   width: auto;
   color: #01BAEF;
   background-color: #0B4F6C;
-  }
+}
 
+@media only screen and (max-width: 600px) {
+  .inputs-form {
+    width: 80%;
+  }
+}

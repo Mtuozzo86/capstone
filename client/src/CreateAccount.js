@@ -1,4 +1,3 @@
-import "./CSS/CreateAccount.css";
 import "./CSS/FormContainer.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,9 +8,6 @@ function CreateAccount() {
   const navigateToSuccessPage = useNavigate();
   const [errors, setErrors] = useState([]);
 
-  // HANDLING SUCCUSSFUL ACCOUNT CREATION
-
-  // HANDLING ERROR MESSAGES
   const errorMessages = errors.length > 0 && (
     <ul>
       {errors.map((error) => (
@@ -66,7 +62,7 @@ function CreateAccount() {
         <Navbar />
       </NavbarHeader>
 
-      <div>
+      
         <form className="inputs-form" onSubmit={handleSubmit}>
           {" "}
           <input
@@ -84,7 +80,6 @@ function CreateAccount() {
             onChange={handleChange}
           />
           <input
-            className="input-create-account"
             name="email"
             type="text"
             placeholder="Email"
@@ -92,7 +87,6 @@ function CreateAccount() {
             onChange={handleChange}
           />
           <input
-            className="input-create-account"
             name="password"
             type="password"
             placeholder="Password"
@@ -100,7 +94,6 @@ function CreateAccount() {
             onChange={handleChange}
           />
           <input
-            className="input-create-account"
             name="password_confirmation"
             type="password"
             placeholder="Confirm Password"
@@ -113,7 +106,7 @@ function CreateAccount() {
           </button>
           {errorMessages}
         </form>
-      </div>
+      
     </div>
   );
 }

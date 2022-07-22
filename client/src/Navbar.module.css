@@ -22,12 +22,30 @@
 .navbar-links a{
   color: white;
   padding-right: 50px;
+  text-decoration: none;
 }
 
 .navbar-links a:hover {
   color: #FBFBFF;
 }
 
+.lightbulb {
+  font-size: 50px;
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar h1 {
+    display: none;
+  }
+  .lightbulb {
+    font-size: 3rem;
+    visibility: visible;
+    flex-shrink: 0;
+    margin-left: 50px;
+  }
+
+}
 
 
 

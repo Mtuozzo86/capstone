@@ -75,11 +75,6 @@
   display: none;
 }
 
-
-.navbar-main-landing-page {
-  display: flex;
-}
-
 .result-image-icon {
   clip-path: circle();
   width: 90px;

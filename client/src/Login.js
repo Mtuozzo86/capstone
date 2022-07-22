@@ -1,5 +1,5 @@
 import "./CSS/Login.css";
-import "./CSS/FormContainer.css"
+import "./CSS/FormContainer.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -50,29 +50,27 @@ function Login({ userInfo }) {
         <Navbar />
       </NavbarHeader>
 
-      <div>
-        <form className="inputs-form" onSubmit={handleSubmit}>
-          <input
-            className="input-create-account"
-            name="email"
-            type="text"
-            placeholder="Email"
-            onChange={handleEmail}
-          />
-          <input
-            className="input-create-account"
-            name="password"
-            type="password"
-            placeholder="Password"
-            onChange={handlePassword}
-          />
-          <br />
-          <button type="submit" className="form-submit-button">
-            Submit
-          </button>
-          {errors ? <p>{errors.error}</p> : null}
-        </form>
-      </div>
+      <form className="inputs-form" onSubmit={handleSubmit}>
+        <input
+          className="input-create-account"
+          name="email"
+          type="text"
+          placeholder="Email"
+          onChange={handleEmail}
+        />
+        <input
+          className="input-create-account"
+          name="password"
+          type="password"
+          placeholder="Password"
+          onChange={handlePassword}
+        />
+        <br />
+        <button type="submit" className="form-submit-button">
+          Submit
+        </button>
+        {errors ? <p>{errors.error}</p> : null}
+      </form>
     </div>
   );
 }
