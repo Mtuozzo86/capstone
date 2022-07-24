@@ -191,3 +191,13 @@
   font-style: italic;
 }
 /* ************************************ */
+
+@media only screen and (max-width: 600px) {
+  .landing-page-container-home {
+    flex-direction: column-reverse;
+  }
+  .sidebar{
+    display: none;
+  }
+
+}

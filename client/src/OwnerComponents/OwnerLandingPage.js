@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import OwnerAddress from "./OwnerAddress";
 import { BsFillLightbulbFill} from 'react-icons/bs'
 import "../CSS/OwnerLandingPage.css";
+// import "../UI/Navbar.css"
 import styles from '../Navbar.module.css'
 import OwnerProfile from "./OwnerProfile";
 import Sidebar from "./Sidebar";
