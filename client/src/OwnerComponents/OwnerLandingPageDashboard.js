@@ -15,7 +15,7 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
 
   // const parameterizedUrl = url.split(" ").join("-").toLocaleLowerCase();
   return (
-    <div className="landing-page-container-dashboard">
+    <>
       <div className="landing-page-user-info-container">
         <div></div>
         <div className="user-info-name">{loggedInUser.first_name}</div>
@@ -36,7 +36,7 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
           </h2>
         ) : null}
       </div>
-    </div>
+    </>
   );
 }
 

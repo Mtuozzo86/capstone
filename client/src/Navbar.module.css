@@ -39,6 +39,7 @@
     display: none;
   }
   .lightbulb {
+    color:#01BAEF;
     font-size: 3rem;
     visibility: visible;
     flex-shrink: 0;

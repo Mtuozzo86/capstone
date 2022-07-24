@@ -15,13 +15,13 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding: 75px 8px 14px 14px;
+  padding: 55px 14px 0px 14px;
   align-items: flex-start;
   font-size: 18px;
   color: rgb(194, 194, 194);
   background-color: #040F16;
-  width: 10%;
-  height: 100%;
+  width: 140px;
+  /* height: 100%; */
 }
 
 .sidebar-nav > li {
@@ -47,33 +47,37 @@
 }
 
 /* ************************************ */
-
 .landing-page-wrapper {
   display: flex;
   width: 100%;
   height: auto;
+
 }
+
+.options-container{
+  padding: 50px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(238, 238, 238, 0.603);
+}
+
   
 
 .landing-page-container-home {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  background-color: rgba(238, 238, 238, 0.603);
 }
 
 .con {
   display: flex;
   height: 100%;
-}
-
-.landing-page-container-dashboard {
-  display: flex;
+  width: 100%;
+  
 }
 
 .landing-page-user-info-container {
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
-  margin: 100px;
   height: 400px;
   width: 400px;
   background-color: white;

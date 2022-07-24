@@ -10,5 +10,6 @@
 .wrapper {
   display: flex;
   min-height: 100vh;
-  align-items: stretch;
+  width: 100%;
+
 }

@@ -5,7 +5,7 @@ import OwnerProfileAddBusiness from "./OwnerProfileAddBusiness";
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 import OwnerProfileAddAvatar from "./OwnerProfileAddAvatar";
 import OwnerProfileAddOwnerOccupation from "./OwnerProfileAddOccupation";
-import OptionBox from "./OptionBox";
+
 
 function OwnerProfile({ owner }) {
   useEffect(() => {

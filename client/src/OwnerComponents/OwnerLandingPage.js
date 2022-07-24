@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import OwnerAddress from "./OwnerAddress";
 import { BsFillLightbulbFill} from 'react-icons/bs'
 import "../CSS/OwnerLandingPage.css";
+import styles from '../Navbar.module.css'
 import OwnerProfile from "./OwnerProfile";
 import Sidebar from "./Sidebar";
 import OwnerLandingPageDashboard from "./OwnerLandingPageDashboard";
@@ -9,7 +10,7 @@ import OwnerWarningPage from "./OwnerWarningPage";
 import OwnerReviewsList from "./OwnerReviewsList";
 import NavbarHeader from "../UI/NavbarHeader";
 
-
+console.log(styles.lightbulb)
 function OwnerLandingPage({ loggedInUser }) {
 
   
@@ -64,7 +65,8 @@ function OwnerLandingPage({ loggedInUser }) {
     <div className="landing-page-wrapper">
       <div className="landing-page-container-home">
         <NavbarHeader>
-        <BsFillLightbulbFill className="lightbulb"/>
+        <BsFillLightbulbFill className={styles.lightbulb}/>
+        <h1>LightBulb</h1>
         </NavbarHeader>
         <div className="con">
           <Sidebar
@@ -72,7 +74,9 @@ function OwnerLandingPage({ loggedInUser }) {
             components={componentWithName}
             setOwnerWarning={setOwnerWarning}
           />
-          <div>
+          <div className="options-container">
+
+          
             {landingPageContainer && (
               <OwnerLandingPageDashboard loggedInUser={loggedInUser} />
             )}
