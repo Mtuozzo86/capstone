@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { FoundContext } from "../context/found";
+import React from "react";
+
 function About({companyInfo}) {
   
 

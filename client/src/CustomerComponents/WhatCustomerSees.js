@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { FoundProvider } from "../context/found";
 import BusinessFound from "./BusinessFound";
 
 function WhatCustomerSees() {

@@ -30,8 +30,13 @@
 }
 
 .lightbulb {
+  display: none;
   font-size: 50px;
-  visibility: hidden;
+  color:#01BAEF;
+  font-size: 3rem;
+  visibility: visible;
+  flex-shrink: 0;
+  margin-left: 50px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -39,11 +44,7 @@
     display: none;
   }
   .lightbulb {
-    color:#01BAEF;
-    font-size: 3rem;
-    visibility: visible;
-    flex-shrink: 0;
-    margin-left: 50px;
+    display:initial;
   }
 
 }

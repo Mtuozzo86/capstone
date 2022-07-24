@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from "react";
-import { FoundContext } from "../context/found";
+import { useState, useEffect } from "react";
 import LeaveReview from "./LeaveReview";
 import ReviewList from "./ReviewList";
 

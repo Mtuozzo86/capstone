@@ -64,7 +64,7 @@ function OwnerLandingPage({ loggedInUser }) {
   return (
     <div className="landing-page-wrapper">
       <div className="landing-page-container-home">
-        <NavbarHeader>
+        <NavbarHeader style={styles.navbar}>
         <BsFillLightbulbFill className={styles.lightbulb}/>
         <h1>LightBulb</h1>
         </NavbarHeader>
