@@ -8,6 +8,7 @@
 .navbar h1 {
   padding-left: 10%;
   align-content: flex-start;
+  letter-spacing: 1px;
 }
   
 .navbar-links{
