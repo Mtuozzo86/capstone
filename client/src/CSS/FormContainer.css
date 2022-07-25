@@ -16,12 +16,22 @@ outline: none;
 }
 
 .inputs-form button {
+  text-transform:uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
   padding: 10px;
   margin: 10px;
   border: 0px;
   width: auto;
-  color: #01BAEF;
+  color: white;
   background-color: #0B4F6C;
+  background: linear-gradient(90deg, #0B4F6C, #01BAEF);
+}
+
+.inputs-form button:hover{
+  color: white;
+  background-color:#216d8d;
+  
 }
 
 @media only screen and (max-width: 600px) {
