@@ -46,6 +46,11 @@
   color: red;
 }
 
+.sidebar lower {
+  color:#01BAEF;
+  font-size: 3rem;
+}
+
 /* ************************************ */
 .landing-page-wrapper {
   display: flex;
@@ -81,7 +86,7 @@
 .landing-page-user-info-container {
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
   height: 400px;
-  width: 400px;
+  max-width: 400px;
   background-color: white;
   border-radius: 8px;
 }
@@ -91,8 +96,9 @@
 }
 
 .landing-page-user-info-website {
-  margin-top: 100px;
-  width: 350px;
+  margin-top: 2rem;
+  /* margin-top: 20px; */
+  max-width: 350px;
 }
 
 .user-info-name {
@@ -169,6 +175,10 @@
 
 /**************** OWNER REVIEW LIST ****************/
 
+.owner-review-list {
+  max-width: 400px;
+}
+
 .owner-review-response {
   padding: 12px 8px;
   margin: 10px;
@@ -179,7 +189,6 @@
 }
 
 .owner-review-box {
-  width: 40%;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;

@@ -1,20 +1,14 @@
 .owner-profile-wrapper {
     display: flex;
     flex-direction: column;
-}
-
-.owner-profile__info-container {
-    margin-top: 10px;
-    margin-left: 10px;
-    
+    gap: 20px;
 }
 
 .owner-profile__info-container > * {
     
-    width: 35%;
+    width: 100%;
     padding: 10px;
     padding: 12px 8px;
-    margin: 30px;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.123);
     width: 50%;
     }
