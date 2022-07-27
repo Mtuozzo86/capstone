@@ -22,6 +22,24 @@ function OwnerLandingPageDashboard({ loggedInUser }) {
         <p>Appointments:</p>
         <p>Customers: </p>
       </div>
+      <div className="landing-page-user-info-container">
+        <div></div>
+        <div className="user-info-name">{loggedInUser.first_name}</div>
+        <p>Appointments:</p>
+        <p>Customers: </p>
+      </div>
+      <div className="landing-page-user-info-container">
+        <div></div>
+        <div className="user-info-name">{loggedInUser.first_name}</div>
+        <p>Appointments:</p>
+        <p>Customers: </p>
+      </div>
+      <div className="landing-page-user-info-container">
+        <div></div>
+        <div className="user-info-name">{loggedInUser.first_name}</div>
+        <p>Appointments:</p>
+        <p>Customers: </p>
+      </div>
 
       <div className="landing-page-user-info-website">
         <p>

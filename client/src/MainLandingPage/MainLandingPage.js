@@ -17,7 +17,6 @@ function MainLandingPage() {
   return (
     <div className="main-landing-page-container">
       <NavbarHeader>
-        
         <Navbar />
       </NavbarHeader>
     </div>
@@ -25,4 +24,5 @@ function MainLandingPage() {
 }
 
 export default MainLandingPage;
+        
 

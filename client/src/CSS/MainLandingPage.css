@@ -12,21 +12,6 @@
   flex-direction: row;
 }
 
-.box-1 {
-  padding: 50px;
-  height: 80%;
-  width: 90%;
-  margin: 20px;
-  border: 1px solid black;
-}
-
-.box-2 {
-  padding: 50px;
-  height: 80%;
-  width: 90%;
-  margin: 20px;
-}
-
 /* SEARCH FIELD  */
 .box {
   display: flex;
