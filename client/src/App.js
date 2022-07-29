@@ -13,23 +13,26 @@ import Contact from "./CustomerComponents/Contact";
 import CalendarTest from "./CalendarTest";
 
 function App() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [loggedInUser, setLoggedInUser] = useState(null);
-  
+
   useEffect(() => {
     fetch("/me").then((response) => {
       if (response.ok) {
-        response.json().then((user) => setLoggedInUser(user));
+        response
+          .json()
+          .then((user) => setLoggedInUser(user))
+          .then(navigate("/home"));
       }
-    }).then(navigate('/home'));
+    });
   }, []);
-  
+
   function handleUserLoggedIn(user) {
     setLoggedInUser(user);
   }
 
   function handleLogOut() {
-    setLoggedInUser(null)
+    setLoggedInUser(null);
   }
 
   return (
@@ -49,7 +52,10 @@ function App() {
           path="/home"
           element={
             loggedInUser ? (
-              <OwnerLandingPage loggedInUser={loggedInUser} onLogOut={handleLogOut} />
+              <OwnerLandingPage
+                loggedInUser={loggedInUser}
+                onLogOut={handleLogOut}
+              />
             ) : (
               <PleaseLoginScreen />
             )
