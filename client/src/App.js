@@ -1,5 +1,5 @@
 import "./CSS/App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import CreateAccount from "./CreateAccount";
 import Login from "./Login";
 import OwnerLandingPage from "./OwnerComponents/OwnerLandingPage";
@@ -13,20 +13,25 @@ import Contact from "./CustomerComponents/Contact";
 import CalendarTest from "./CalendarTest";
 
 function App() {
+  const navigate = useNavigate()
   const [loggedInUser, setLoggedInUser] = useState(null);
-
+  
   useEffect(() => {
     fetch("/me").then((response) => {
       if (response.ok) {
         response.json().then((user) => setLoggedInUser(user));
       }
-    });
+    }).then(navigate('/home'));
   }, []);
-
+  
   function handleUserLoggedIn(user) {
-    setLoggedInUser(null);
     setLoggedInUser(user);
   }
+
+  function handleLogOut() {
+    setLoggedInUser(null)
+  }
+
   return (
     <div className="wrapper">
       <Routes>
@@ -36,12 +41,15 @@ function App() {
           <Route path="schedule" element={<CalendarTest />} />
         </Route>
 
-        <Route path="/" element={<MainLandingPage />} />
+        <Route
+          path="/"
+          element={<MainLandingPage loggedInUser={loggedInUser} />}
+        />
         <Route
           path="/home"
           element={
             loggedInUser ? (
-              <OwnerLandingPage loggedInUser={loggedInUser} />
+              <OwnerLandingPage loggedInUser={loggedInUser} onLogOut={handleLogOut} />
             ) : (
               <PleaseLoginScreen />
             )

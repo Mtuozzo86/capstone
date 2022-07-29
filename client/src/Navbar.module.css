@@ -5,10 +5,19 @@
   color: #01BAEF;
 }
 
-.navbar h1 {
-  padding-left: 10%;
+/* .navbar h1 {
+  
   align-content: flex-start;
   letter-spacing: 1px;
+  text-decoration: none;
+} */
+
+.navbar-title {
+  margin-left: 10%;
+  align-content: flex-start;
+  letter-spacing: 1px;
+  color:#01BAEF;
+  text-decoration: none;
 }
   
 .navbar-links{
@@ -22,12 +31,13 @@
 
 .navbar-links a{
   color: white;
-  padding-right: 50px;
+  margin-right: 50px;
   text-decoration: none;
 }
 
 .navbar-links a:hover {
-  color: #FBFBFF;
+  color: #cccccc;
+ 
 }
 
 .lightbulb {

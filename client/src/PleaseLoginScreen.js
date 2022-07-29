@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import NavbarHeader from "./UI/NavbarHeader";
 
 function PleaseLoginScreen() {
   return (
     <div className="main-landing-page-container">
-      <Navbar />
+      <NavbarHeader><Navbar /></NavbarHeader>
+      
       <h2>
         Sorry, please{" "}
         <Link style={{ color: "blue" }} to="/login">

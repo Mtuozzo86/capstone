@@ -3,7 +3,7 @@ import NavbarHeader from "../UI/NavbarHeader";
 import "../CSS/MainLandingPage.css";
 import Navbar from "../Navbar";
 
-function MainLandingPage() {
+function MainLandingPage({loggedInUser}) {
   const [data, setData] = useState([]);
   const [searched, setSearched] = useState("");
 
@@ -19,6 +19,7 @@ function MainLandingPage() {
       <NavbarHeader>
         <Navbar />
       </NavbarHeader>
+        {loggedInUser && <h3>{`Hello, ${loggedInUser.first_name}`}</h3>}
     </div>
   );
 }

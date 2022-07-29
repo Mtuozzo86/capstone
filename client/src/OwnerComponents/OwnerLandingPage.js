@@ -3,6 +3,7 @@ import { BsFillLightbulbFill } from "react-icons/bs";
 import { BsHouse } from "react-icons/bs";
 import { BsPerson } from "react-icons/bs";
 import { BsPeople } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 
 import "../CSS/OwnerLandingPage.css";
 // import "../UI/Navbar.css"
@@ -13,23 +14,21 @@ import OwnerLandingPageDashboard from "./OwnerLandingPageDashboard";
 import OwnerWarningPage from "./OwnerWarningPage";
 import NavbarHeader from "../UI/NavbarHeader";
 
-
-function OwnerLandingPage({ loggedInUser }) {
+function OwnerLandingPage({ loggedInUser, onLogOut }) {
   const [landingPageContainer, setLandingPageContainer] = useState(true);
   const [ownerProfile, setOwnerProfile] = useState(false);
   const [ownerWarning, setOwnerWarning] = useState(false);
-
 
   const componentWithName = [
     {
       comp: setLandingPageContainer,
       clickName: "Dashboard",
-      icon: <BsHouse />
+      icon: <BsHouse />,
     },
     {
       comp: setOwnerProfile,
       clickName: "Profile",
-      icon: <BsPerson />
+      icon: <BsPerson />,
     },
     {
       comp: setOwnerWarning,
@@ -50,15 +49,17 @@ function OwnerLandingPage({ loggedInUser }) {
   return (
     <div className="landing-page-wrapper">
       <div className="landing-page-container-home">
-        <NavbarHeader style={styles.navbar}>
-          
-          <h1>LightBulb</h1>
+        <NavbarHeader>
+          <NavLink className={styles["navbar-title"]} to="/">
+            <h1>LightBulb</h1>
+          </NavLink>
         </NavbarHeader>
         <div className="con">
           <Sidebar
             onHandlePageView={handleViews}
             components={componentWithName}
             setOwnerWarning={setOwnerWarning}
+            onLogOut={onLogOut}
           />
           <div className="options-container">
             {landingPageContainer && (

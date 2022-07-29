@@ -35,7 +35,6 @@ function Login({ userInfo }) {
       if (resp.ok) {
         resp.json().then((data) => {
           userInfo(data);
-          console.log("Logged in", data);
         });
         navigate("/home");
       } else {

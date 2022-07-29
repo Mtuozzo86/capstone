@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { MdOutlineWarningAmber } from "react-icons/md";
 
-
-function Sidebar({ onHandlePageView, components, setOwnerWarning }) {
+function Sidebar({ onHandlePageView, components, setOwnerWarning, onLogOut }) {
+  const navigate = useNavigate();
+  
+  // Creates list of navigation and options for sidebar
   const clickComponent = components.map((component, index) => {
     return (
       <li key={index} onClick={() => handleViews(component.comp)}>
@@ -10,13 +12,16 @@ function Sidebar({ onHandlePageView, components, setOwnerWarning }) {
       </li>
     );
   });
+  //
+
 
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
-    }).then(navigate("/"));
+    })
+    .then(onLogOut)
+    .then(navigate("/"))
   }
-  const navigate = useNavigate();
 
   function handleViews(component) {
     onHandlePageView(component);

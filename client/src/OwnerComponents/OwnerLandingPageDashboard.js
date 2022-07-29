@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function OwnerLandingPageDashboard({ loggedInUser }) {
-  console.log(loggedInUser);
+
 
   useEffect(() => {
     fetch(`owners/${loggedInUser.id}`)
