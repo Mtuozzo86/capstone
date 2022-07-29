@@ -7,7 +7,8 @@ function Navbar() {
   return (
     <div className={styles.navbar}>
       <BsFillLightbulbFill className={styles.lightbulb}/>
-      <h1>LightBulb</h1>
+      <NavLink styles={styles.navbar} to="/"><h1>LightBulb</h1></NavLink>
+      
       <div className={styles['navbar-links']}>
         {" "}
         <NavLink to="/login">
