@@ -18,6 +18,6 @@ end
   Review.create(rating: rand(1..5), body: Faker::Lorem.sentence(word_count: rand(5..20)), owner_id: rand(1..2), client_id: rand(1..10))
 end
 
-puts "we got `#{Owner.count}` owners"
-puts "we got `#{Review.count}` reviews"
-puts "we got `#{Client.count}` clients"
+puts "There are `#{Owner.count}` owners"
+puts "There is a total of `#{Review.count}` reviews"
+puts "There are `#{Client.count}` clients"
