@@ -1,8 +1,13 @@
+Creating a brand new user
+In their model, create a - has_secure_password - macro
+Add -> password_digest <- string to their table
 
-// create a random number
+
+create a random number
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
+from laptop

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ConfirmDate from "./ConfirmDate";
+import ConfirmDate from "./CustomerComponents/ConfirmDate";
 
 function CalendarDays({
   availability,
