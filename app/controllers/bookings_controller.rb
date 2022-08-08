@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
     
     def index
-    bookings = Booking.all
-    render json: bookings
+        bookings = Booking.all
+        render json: bookings
     end
 
     def show
@@ -11,12 +11,19 @@ class BookingsController < ApplicationController
     end
 
     def create
+        booking = Booking.create!(booking_params)
+        render json: booking
+    end
 
+    def destroy
+        booking = Booking.find(params[:id])
+        booking.destroy
+        head :no_content
     end
 
     private
 
     def booking_params
-        params.require(:booking).permit(:title, :time_meeting, :start_date, :end_date, :start_time, :end_time)
+        params.require(:booking).permit(:name, :date, :time, :email, :message)
     end
 end
