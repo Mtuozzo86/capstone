@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_10_154751) do
+ActiveRecord::Schema.define(version: 2022_08_08_153038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,13 +43,16 @@ ActiveRecord::Schema.define(version: 2022_07_10_154751) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "appointments", force: :cascade do |t|
-    t.string "customer"
-    t.integer "owner_id"
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "meeting_id", null: false
+    t.string "name"
+    t.date "date"
+    t.time "time"
+    t.string "email"
+    t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "date"
-    t.string "booked_time"
+    t.index ["meeting_id"], name: "index_bookings_on_meeting_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -57,6 +60,17 @@ ActiveRecord::Schema.define(version: 2022_07_10_154751) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "review_body"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string "title"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.time "start_time"
+    t.time "end_time"
+    t.string "time_meeting"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "owner_addresses", force: :cascade do |t|
@@ -94,13 +108,7 @@ ActiveRecord::Schema.define(version: 2022_07_10_154751) do
     t.integer "client_id"
   end
 
-  create_table "time_slots", force: :cascade do |t|
-    t.string "time"
-    t.integer "appointment_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "meetings"
 end

@@ -10,7 +10,7 @@ import WhatCustomerSees from "./CustomerComponents/WhatCustomerSees";
 import PleaseLoginScreen from "./PleaseLoginScreen";
 import About from "./CustomerComponents/About";
 import Contact from "./CustomerComponents/Contact";
-import CalendarTest from "./CustomerComponents/CalendarTest";
+import CalendarTest from "./CalendarTest";
 
 function App() {
   const navigate = useNavigate();
